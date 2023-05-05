@@ -36,14 +36,14 @@ extra requirements.
 
 ## Submodules
 
-* [Maven Plugin Adventure] (https://github.com/moderneinc/springboot-migration-workshop/maven-plugin-adventure)
+* [Maven Plugin Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/maven-plugin-adventure)
 
-* [Gradle Plugin Adventure] (https://github.com/moderneinc/springboot-migration-workshop/gradle-plugin-adventure)
+* [Gradle Plugin Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/gradle-plugin-adventure)
 
-* [Spring Boot Migration Adventure] (https://github.com/moderneinc/springboot-migration-workshop/spring-boot-migration-adventure)
+* [Spring Boot Migration Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/spring-boot-migration-adventure)
  
-* [Spring Tools Adventure] (https://github.com/moderneinc/springboot-migration-workshop/spring-tools-adventure)
+* [Spring Tools Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/spring-tools-adventure)
 
-* [Moderne Platform] (https://github.com/moderneinc/springboot-migration-workshop/moderne-platform-adventure)
+* [Moderne Platform](https://github.com/moderneinc/springboot-migration-workshop/tree/main/moderne-platform-adventure)
 
-* [CLI adventure] (https://github.com/moderneinc/springboot-migration-workshop/cli-adventure)
+* [CLI adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/cli-adventure)
