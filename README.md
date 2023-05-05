@@ -21,15 +21,18 @@ In order to participate, you will need the following:
 
 ## Getting started
 
-* Clone this Git repository
-
-    git clone https://github.com/moderneinc/springboot-migration-workshop
-
-* Clone the Spring Petclinic repository
-
-    git clone https://github.com/spring-projects/spring-petclinic
-
-* Verify that you can build the Spring Petclinic repo
+1. Clone this Git repository
+```
+git clone https://github.com/moderneinc/springboot-migration-workshop
+```
+2. Clone the Spring Petclinic repository
+```
+git clone https://github.com/spring-projects/spring-petclinic
+```
+3. Verify that you can build the Spring Petclinic repo
+```
+./gradlew build
+```
 
 * Once you have completed the basics, continue with any of the other modules, which might introduce
 extra requirements.
