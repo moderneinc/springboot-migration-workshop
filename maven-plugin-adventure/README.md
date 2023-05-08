@@ -1,4 +1,4 @@
-#Maven Plugin Adventure
+# Maven Plugin Adventure
 
 In this adventure we are going to see how to use open rewrite in a Maven project
 and run a recipe to apply static code analysis best practises to our repository.
@@ -6,7 +6,7 @@ and run a recipe to apply static code analysis best practises to our repository.
 This [recipe](https://docs.openrewrite.org/recipes/java/cleanup/commonstaticanalysis) 
 consists of more than 50 types of issues.
 
-##Prepare your environment
+## Prepare your environment
 
 In this case we are going to use the [Spring WS](https://github.com/spring-projects/spring-ws)
 repository. 
@@ -21,7 +21,7 @@ Test you can build it
 ./mvnw package -DskipTests
 ```
 
-##Run OpenRewrite
+## Run OpenRewrite
 
 The only thing you need to run open-rewrite is 
 
