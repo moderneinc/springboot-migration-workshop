@@ -1,10 +1,10 @@
-#Spring Tools Adventure
+# Spring Tools Adventure
 
 In this adventure, we are going to migrate an old version
 of a Spring (Maven) application to Spring Boot 3 using 
 Visual Studio.
 
-##Prepare your environment
+## Prepare your environment
 
 - Install Visual Studio Code.
 - Install Spring Tools 4 plugin from https://spring.io/tools
@@ -21,7 +21,7 @@ Now, let's come back to the past where Spring 2.7 was used.
 git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ```
 
-##Migrate to Spring Boot 3 using Spring Tools 4 
+## Migrate to Spring Boot 3 using Spring Tools 4 
 
 Spring Tools 4 embeds OpenRewrite, and from Visual Studio, there is 
 a limited number of OpenRewrite migrations that can be applied. This
