@@ -1,4 +1,4 @@
-#Gradle Plugin Adventure
+# Gradle Plugin Adventure
 
 In this adventure we are going to see how we can migrate an old version of
 the spring-petclinic repository that was using Spring Boot 2 to Spring Boot 3.
