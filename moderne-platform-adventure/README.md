@@ -1,4 +1,4 @@
-#moderne platform adventure
+# Moderne platform adventure
 
 In this adventure, there are two challeges:
 
@@ -51,16 +51,63 @@ name to see the results.
 
 - It is important to see that the results contain:
 
-  - The removal of `@Autowired`
-  - The replacement of Junit 4 for JUnit 5
-  - The replacement of `javax` for `jakarta`
+  - The removal of `@Autowired`.
+  - The replacement of Junit 4 for JUnit 5.
+  - The replacement of `javax` for `jakarta`.
   - It is migrated to Java 17 and uses text blocks.
-  - Some best practices are applied such as test modifiers are removed
+  - Some best practices are applied such as test modifiers are removed.
  
 
 ## Security Vulnerabilities
 
+Another use case to use the platform is for detecting CVEs in the dependencies
+and upgrade a set of repositories with the last versions. Since the Moderne platform
+supports complex refactorings such as the SpringBoot 3 migration, it is expected
+that the community can contribute and provide recipe for other major migrations that
+not only require to bump the dependency version. In this challenge, we are going to see
+how we can see the list of vulnerabilities in important open source repositories and
+create a composite refactor with many the minor vulnerabilities that we want to fix.
 
+- In this case, we are going to use the `Check for dependency vulnerabilities` recipe.
+This recipe offers three options. For this exercise, We recommend to simply 
+select the `compile` scope and do not select any value for the other paramaters, but it is 
+up to you to experiment with the other values. 
+
+- In the top menu, select the default repository group, which is composed by a hundred (142) of
+open source Netflix and Spring repositories.
+
+- Select `DRY RUN`, this should take 10 minutes approx. 
+
+- Click on data tables (right side blue button) and download the vulnerability report in CSV format.
+
+- Open the CSV with Google spreadsheets or your preferred tool.You will see that the CSV contains
+an entry per vulnerability, depedency and repository. There is an interesting column called
+`fixedVersion`, which tells you what is the immediate version that fixes the vulnerability. It
+is also important to notice that there is a `depth` column because we also analyze transitive
+dependencies.
+
+
+- Now, it is time to fix these vulnerabilities through the platform using OpenRewrite.
+Let's assume that we want to fix the following vulnerability:
+
+- `CVE-2020-36518` updating:
+        `com.fasterxml.jackson.core:jackson-databind:2.11.2`
+        `com.fasterxml.jackson.core:jackson-databind:2.11.3`
+        `com.fasterxml.jackson.core:jackson-databind:2.11.4`
+        `com.fasterxml.jackson.core:jackson-databind:2.12.1`
+  to `com.fasterxml.jackson.core:jackson-databind:2.12.6.1`
+
+
+- To do this, we are going to use the following recipes:
+
+  - [maven / Update Maven dependency version](https://public.moderne.io/recipes/org.openrewrite.maven.UpgradeDependencyVersion?)
+  - [gradle / Update Gradle dependency versions] (https://public.moderne.io/recipes/org.openrewrite.gradle.UpgradeDependencyVersion?)
+
+  However, now, instead of a DRY RUN, we are going to use `Add to the builder` option. 
+
+- Now, you should be able to see the results.   
+
+   
 
 
 
