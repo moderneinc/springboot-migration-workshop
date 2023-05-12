@@ -43,7 +43,7 @@ extra requirements.
 
 * [Gradle Plugin Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/gradle-plugin-adventure)
 
-* [Spring Boot Migration Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/spring-boot-migration-adventure)
+* [Spring Boot Migrator Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/spring-boot-migrator-adventure)
  
 * [Spring Tools Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/spring-tools-adventure)
 
