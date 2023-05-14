@@ -1,4 +1,4 @@
-#Spring Boot Migrator Adventure
+# Spring Boot Migrator Adventure
 
 Spring Boot Migrator(SBM) offers a CLI to run recipes to migrate or upgrade 
 a given application to Spring Boot 3. For developing new and custom recipes, SBM 
