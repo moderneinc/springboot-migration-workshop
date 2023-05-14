@@ -55,8 +55,8 @@ cp init.gradle spring-petclinic/init.gradle
 
 ## Rewrite the project to Spring Boot 3
 
-- Run `./gradlew --info --init-script init.gradle rewriteRun`
+1. Run `./gradlew --info --init-script init.gradle rewriteRun`
 
-- Review the changes with `git diff`
+2. Review the changes with `git diff`
 
 ## Play with more recipes!
