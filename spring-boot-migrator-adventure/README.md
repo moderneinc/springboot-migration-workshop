@@ -6,7 +6,7 @@ provides an opinionated API compatible with OpenRewrite recipes and a set of
 specialized resource representations to simplify recipe development for 
 Spring Boot.
 
-IMPORTANT: It is important to notice that this is a very experimental project and not
+IMPORTANT: This is a very experimental project and not
 our recommended way to migrate to Spring Boot 3. The project has not created more
 releases since 2022 and there are important reported bugs that need to be fixed to 
 propertly run in any repository. However, the goal of this workshop is to show
