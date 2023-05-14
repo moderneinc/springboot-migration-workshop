@@ -14,7 +14,9 @@ are not for Java developers.
 - Create a Moderne Access Token from `https://public.moderne.io/settings/access-token`
 and store it in your local file system.
 
+```
 echo "YOUR_ACCESS_TOKEN" > $HOME/.moderne/token.txt
+```
 
 - Clone the repository `https://github.com/spring-projects/spring-petclinic`
 
