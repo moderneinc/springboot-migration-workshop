@@ -23,18 +23,18 @@ repository.
 
 ## Prepare your environment
 
-- Clone the repository `https://github.com/spring-projects/spring-petclinic`
+1. Clone the repository `https://github.com/spring-projects/spring-petclinic`
 
 ```
 git clone https://github.com/spring-projects/spring-petclinic
 ```
 
-- Checkout the last commit in Spring Boot 2.0
+2. Checkout the last commit in Spring Boot 2.0
 
 ```
 git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ```
-- Test you can build it
+3. Test you can build it
 
 ```
 ./gradlew build -x test
