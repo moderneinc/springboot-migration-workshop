@@ -37,19 +37,19 @@ java -version
 
 ## Run the SBM
 
-4. Run SBM
+1. Run SBM
 
 ```
 java -jar ../spring-boot-upgrade.jar .
 ```
 
-5. Open http://localhost:8080/spring-boot-upgrade with your browser and follow the instructions. The instructions will list you a list of 
+2. Open http://localhost:8080/spring-boot-upgrade with your browser and follow the instructions. The instructions will list you a list of 
 mandatory recipes and others that are optional depending on your preferences. 
 
 Notice that there are GitHub issues listed in some of the listed 
 recipes. To see what have changed by each recipe, you need to check what commits have been introduced with your Git user in the repository.
 
-6. Simply run `git log` and detect the commits that starts with `SBM:`.
+3. Simply run `git log` and detect the commits that starts with `SBM:`.
 
 ```
 git log
