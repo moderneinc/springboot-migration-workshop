@@ -25,6 +25,7 @@ git clone https://github.com/spring-projects/spring-petclinic
 - Checkout the last commit in Spring Boot 2.0
    
 ```
+cd spring-petclinic
 git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ```
 - Test you can build it
@@ -35,7 +36,7 @@ git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 
 ## Run the CLI 
 
-- Run the following command
+- Run the following command from the `spring-petclinic` repository
 
 ```
 mod run --path . --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAV org.openrewrite.recipe:rewrite-spring:4.36.0
