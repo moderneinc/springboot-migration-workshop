@@ -6,22 +6,22 @@ provides an opinionated API compatible with OpenRewrite recipes and a set of
 specialized resource representations to simplify recipe development for 
 Spring Boot.
 
-IMPORTANT: This is a very experimental project and not
+*IMPORTANT: This is a very experimental project and not
 our recommended way to migrate to Spring Boot 3. The project has not created more
 releases since 2022 and there are important reported bugs that need to be fixed to 
 propertly run in any repository. However, the goal of this workshop is to show
 what are the current available alternatives to migrate to Spring Boot 3 and enable
-you to decide by your own. 
+you to decide by your own.* 
 
 ## Prepare your environment
 
--  Download the spring-boot-upgrade.jar
+1.  Download the spring-boot-upgrade.jar
 
 ```
 wget https://github.com/spring-projects-experimental/spring-boot-migrator/releases/latest/download/spring-boot-upgrade.jar
 ```
 
-- Clone the Spring Boot 2 repository example: ` https://github.com/sanagaraj-pivotal/demo-spring-song-app.git`
+2. Clone the Spring Boot 2 repository example: ` https://github.com/sanagaraj-pivotal/demo-spring-song-app.git`
 
 ```
 git clone https://github.com/sanagaraj-pivotal/demo-spring-song-app.git
@@ -29,7 +29,7 @@ cd demo-spring-song-app
 git checkout -b boot-3-upgrade-demo tags/demo
 ```
 
-- Validate that you are running with Java 17`. SBM fails when it is tested with Java 19.
+3. Validate that you are running with Java 17`. SBM fails when it is tested with Java 19.
 
 ```
 java -version
@@ -37,19 +37,19 @@ java -version
 
 ## Run the SBM
 
-- Run SBM
+4. Run SBM
 
 ```
 java -jar ../spring-boot-upgrade.jar .
 ```
 
-- Open http://localhost:8080/spring-boot-upgrade with your browser and follow the instructions. The instructions will list you a list of 
+5. Open http://localhost:8080/spring-boot-upgrade with your browser and follow the instructions. The instructions will list you a list of 
 mandatory recipes and others that are optional depending on your preferences. 
 
 Notice that there are GitHub issues listed in some of the listed 
 recipes. To see what have changed by each recipe, you need to check what commits have been introduced with your Git user in the repository.
 
-- Simply run `git log` and detect the commits that starts with `SBM:`.
+6. Simply run `git log` and detect the commits that starts with `SBM:`.
 
 ```
 git log
