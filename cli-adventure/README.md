@@ -34,7 +34,7 @@ git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 
 ```
 ./gradlew build -x test
-
+```
 
 ## Run the CLI 
 
