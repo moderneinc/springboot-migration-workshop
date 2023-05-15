@@ -14,7 +14,7 @@ Visit https://public.moderne.io/ and register yourself with your GitHub account.
 anything in your build system. If you are interested to see how you can publish a new open source repository, we recommend to also play
 with  the Moderne CLI adventure.
 
-## Spring Boot Migration
+## Spring Boot Migration using the Moderne Platform
 
 1. Now, we are going to create a repository group with one repository that contains the
 Spring Petclinic content when it was using a 2.x Spring Boot version. To do so,
@@ -56,7 +56,7 @@ name to see the results.
   - Some best practices are applied such as test modifiers are removed.
  
 
-## Security Vulnerabilities
+## Security Vulnerabilities using the Moderne Platform
 
 Another use case to use the platform is for detecting CVEs in the dependencies
 and upgrade a set of repositories with the last versions. Since the Moderne platform
