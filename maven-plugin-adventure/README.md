@@ -5,11 +5,11 @@ and run a recipe to migrate to Spring Boot 3.
 
 OpenRewrite recipes are lego blocks and therefore this process consists of multiple steps that are invisible for you:
 
-Migrate to Spring Boot 2.7
-Migrate to Java 17
-Migrate to Jakarta EE 9
-Migrate to Spring Security 6.0
-Migrate to Spring Cloud 2022 ...
+- Migrate to Spring Boot 2.7
+- Migrate to Java 17
+- Migrate to Jakarta EE 9
+- Migrate to Spring Security 6.0
+- Migrate to Spring Cloud 2022 ...
 
 Therefore, you only need to apply a single [Migrate to Spring Boot 3.0](https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot_3_0) adding the 
 OpenRewrite's plug-in to your project and configuring the recipe.
