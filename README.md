@@ -5,8 +5,9 @@ Each adventure represent a valid option to apply a SpringBoot migration.
 It is not expected that you complete all the adventure, but only those that are
 interesting to you because of the technologies that are applied. 
 
-For all the adventures we are going to use the https://github.com/spring-projects/spring-petclinic/
-repository.
+For all the adventures we are going to use different solutions to migrate 
+an old version of the https://github.com/spring-projects/spring-petclinic/
+to SpringBoot 3.
 
 ## Requirements
 
