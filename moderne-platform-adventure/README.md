@@ -1,4 +1,4 @@
-# Moderne platform adventure
+# Moderne Platform Adventure
 
 In this adventure, there are two challeges:
 
