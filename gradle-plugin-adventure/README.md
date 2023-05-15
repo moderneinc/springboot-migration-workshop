@@ -61,8 +61,7 @@ cp init.gradle spring-petclinic/init.gradle
 
 ## Fix Static Code Analysis Issues
 
-If you are interested to play with more recipes, we recommend to play with one of the most populare OpenRewrite recipes: [static code analysis 
-recipe](static code analysis recipe), which is composed by more than 50 other recipes. In this case, we are going to use a different 
+If you are interested to play with more recipes, we recommend to play with one of the most populare OpenRewrite recipes: ([static code analysis recipe](https://docs.openrewrite.org/recipes/java/cleanup/commonstaticanalysis)), which is composed by more than 50 other recipes. In this case, we are going to use a different 
 active Gradle repository that shows a wide variety of errors. The selected repository is the [Netflix Testing Framework]( 
 https://github.com/Netflix/q)
 
