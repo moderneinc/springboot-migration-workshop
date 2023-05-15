@@ -11,8 +11,7 @@ Migrate to Jakarta EE 9
 Migrate to Spring Security 6.0
 Migrate to Spring Cloud 2022 ...
 
-Therefore, you only need to apply a single [Migrate to Spring Boot 3.0] 
-(https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot_3_0) adding the 
+Therefore, you only need to apply a single [Migrate to Spring Boot 3.0](https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot_3_0) adding the 
 OpenRewrite's plug-in to your project and configuring the recipe.
 
 Optionally, if you can also play with another of the most important recipes 
@@ -29,6 +28,7 @@ git clone https://github.com/spring-projects/spring-petclinic
 2. Checkout the last commit in Spring Boot 2.0
 
 ```
+cd spring-petclinic
 git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ```
 3. Test you can build it
@@ -77,11 +77,8 @@ The only thing you need to run open-rewrite is
 Or, alternative, without modifying the `pom.xml` file, you can run
 
 ```
-./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run \ 
--Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 \
--Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.36.0
+./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.36.0
 ```
-
 
 Now, you can compare the results by simply running 
 
