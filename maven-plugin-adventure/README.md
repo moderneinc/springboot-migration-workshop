@@ -37,7 +37,7 @@ git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ./mvnw package -DskipTests
 ``` 
 
-## Run OpenRewrite
+## Migrate to SpringBoot 3 with OpenRewrite
 
 In this case, one way is to modify the `pom.xml` file and add the following information:
 
