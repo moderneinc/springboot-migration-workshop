@@ -1,4 +1,4 @@
-# Moderne CLI adventure
+# Moderne CLI Adventure
 
 In this session we are going to use a free Moderne CLI that allows to 
 run OpenRewrite recipes without requiring to configure any build plugins
