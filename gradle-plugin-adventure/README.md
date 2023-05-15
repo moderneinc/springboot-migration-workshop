@@ -36,23 +36,70 @@ git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ./gradlew build -x test
 ``` 
 
-## Configure OpenRewrite
+## Migrate to SpringBoot 3 with OpenRewrite
 
 OpenRewrite can be configured in the `build.gradle` file or as an additional `init.gradle` [see how 
 here](https://docs.openrewrite.org/running-recipes/running-rewrite-on-a-gradle-project-without-modifying-the-build)
 file without having to edit any previous build configuration. 
 
-For simplicity, copy the `init.gradle` file that is in this folder, which already contains the Spring Boot
+1. For simplicity, copy the `init.gradle` file that is in this folder, which already contains the Spring Boot
 recipe configured.
 
 ```
 cp init.gradle spring-petclinic/init.gradle
 ```
 
-## Rewrite the project to Spring Boot 3
+2. Run OpenRewrite
 
-1. Run `./gradlew --info --init-script init.gradle rewriteRun`
+```
+./gradlew --info --init-script init.gradle rewriteRun
+```
 
-2. Review the changes with `git diff`
+3. Review the changes with `git diff`
 
-## Play with more recipes!
+## Play with Static Code Analysis recipes!
+
+If you are interested to play with more recipes, we recommend to play with one of the most populare OpenRewrite recipes: [static code analysis 
+recipe](static code analysis recipe), which is composed by more than 50 other recipes. In this case, we are going to use a different 
+active Gradle repository that shows a wide variety of errors. The selected repository is the [Netflix Testing Framework]( 
+https://github.com/Netflix/q)
+
+1. Clone the repository 
+
+```
+git clone https://github.com/Netflix/q
+```
+
+2. For this repository, you need to switch to Java 8 to properly build it. So, you might need to download Java 8 and update your `JAVA_HOME` 
+environment variable.
+
+```
+export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_8
+```
+
+3. Test that you can build it
+
+```
+cd q
+./gradlew build -x test
+```
+
+4. Apply the patch that is in this directory to the build.gradle file
+
+```
+git apply configure-build.patch
+```
+
+5. Run OpenRewrite
+
+```
+./gradlew rewriteRun
+```
+
+6. Look at the automatic changes we made
+
+```
+git diff
+```
+
+
