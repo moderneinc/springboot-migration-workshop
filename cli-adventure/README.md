@@ -3,7 +3,10 @@
 In this session we are going to use a free Moderne CLI that allows to 
 run OpenRewrite recipes without requiring to configure any build plugins
 and therefore support other programming languages and build tools that 
-are not for Java developers. 
+are not for Java developers. In this adventure, we suggest two exercises:
+
+- Migrate to Spring Boot 3 using the CLI.
+- Publish a new OSS repository into the Moderne Platform. 
 
 ## Prepare your environment
 
@@ -36,7 +39,7 @@ git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ./gradlew build -x test
 ```
 
-## Run the CLI 
+## Migrate ti Spring Boot 3 using the Moderne CLI
 
 1. Run the following command from the `spring-petclinic` repository
 
