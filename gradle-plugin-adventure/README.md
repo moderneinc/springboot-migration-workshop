@@ -17,10 +17,6 @@ Therefore, you only need to apply a single [Migrate to Spring Boot 3.0]
 (https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot_3_0) 
 adding the OpenRewrite's plug-in to your project and configuring the recipe.
 
-In this case we are going to use the [Spring WS](https://github.com/Netflix/metacat)
-repository. 
-
-
 ## Prepare your environment
 
 1. Clone the repository `https://github.com/spring-projects/spring-petclinic`
