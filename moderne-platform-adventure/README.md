@@ -10,9 +10,7 @@ like we have completed in the other exercises.
 
 ## Prepare environment
 
-1. Visit https://public.moderne.io/ and register yourself with your GitHub account.
-
-Moderne has more than 30k open source repositories loaded that can be used to test the OpenRewrite recipes without having to configure 
+Visit https://public.moderne.io/ and register yourself with your GitHub account. Moderne has more than 30k open source repositories loaded that can be used to test the OpenRewrite recipes without having to configure 
 anything in your build system. If you are interested to see how you can publish a new open source repository, we recommend to also play
 with  the Moderne CLI adventure.
 
@@ -42,7 +40,7 @@ Notice that there is a GitHub icon on the right side, which enables you to find 
 source code of the recipe, which are always open source. They are all OpenRewrite 
 recipes.
 
-5. Click on `DRY RUN`
+5. Click on `DRY RUN`.
 
 6. Then you will see a recipe running, and when it is completed, you can click on the repository
 name to see the results. 
