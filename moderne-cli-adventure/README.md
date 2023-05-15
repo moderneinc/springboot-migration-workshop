@@ -39,7 +39,7 @@ git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ./gradlew build -x test
 ```
 
-## Migrate ti Spring Boot 3 using the Moderne CLI
+## Migrate to Spring Boot 3 using the Moderne CLI
 
 1. Run the following command from the `spring-petclinic` repository
 
@@ -61,4 +61,22 @@ git apply REPLACE_FOR_PATCH_FILE
 git diff
 ```
 
+## Publish your OSS repositories to the Moderne platform
 
+Publishing LSTs into the platform allows to run multiple recipes without having to build the repository every single time. LSTs have 
+all the information required to run a recipe and therefore, it is not necessary to compile the source code. 
+
+
+1. In this case, we suggest you to publish multiple OSS repositories of your personal GitHub account or organization to really see the benefit 
+of running OpenRewrite at scale. 
+
+```
+git clone REPLACE_WITH_MY_REPO_URL
+mod publish --path REPLACE_WITH_PATH_TO_MY_REPO
+```
+
+2. Now, after 2 minutes or so, you should be able to see it in the [Moderne Platform](https://public.moderne.io/). To check if the 
+repository has been added, go to https://public.moderne.io/organizations and search your repository name.
+
+3. In case you want to run a recipe to your repository from the platform, we recommend to continue with the [Moderne Platform 
+Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/moderne-platform-adventure).
