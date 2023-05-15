@@ -39,6 +39,8 @@ git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 
 ## Migrate to SpringBoot 3 with OpenRewrite
 
+### Option 1: Updating the pom.xml
+
 In this case, one way is to modify the `pom.xml` file and add the following information:
 
 ```
@@ -73,8 +75,9 @@ The only thing you need to run open-rewrite is:
 ```
  ./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run
 ```
+### Option 2: Without requiring to update the pom.xml
 
-Or, alternative, without modifying the `pom.xml` file, you can run the following Maven command:
+You can also run a recipe, in this case the `UpgradeSpringBoot_3_0` recipe without editing the `pom.xml` file using the following Maven command:
 
 ```
 ./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.36.0
