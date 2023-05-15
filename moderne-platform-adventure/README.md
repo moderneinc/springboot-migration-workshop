@@ -1,98 +1,113 @@
-# Moderne Platform Adventure
+# Moderne platform Adventure
 
-In this adventure, there are two challeges:
+In this adventure, you will utilize the [Moderne platform](https://public.moderne.io/) to:
 
-- The first one, which is all about migrating the spring-petclinic project from a UI 
-like we have completed in the other exercises. 
+* Migrate the [Spring
+  PetClinic](https://github.com/spring-projects/spring-petclinic) repository
+  from Spring Boot 2 to 3
+* Fix security vulnerabilities across hundreds of open-source projects
 
-- The second one is about fixing all the security vulnerabilities across hundreds of projects.
+## Prepare your environment
 
+Go to [https://public.moderne.io/](https://public.moderne.io/) and register with
+your GitHub account. Once you've signed in, you'll find more than 30,000
+open-source repositories that can be used to test OpenRewrite recipes without
+you having to configure anything.
 
-## Prepare environment
+*Note: If you're interested in adding your own repository to the Moderne
+platform, please see the [CLI adventure](/moderne-cli-adventure/README.md)*
 
-Visit https://public.moderne.io/ and register yourself with your GitHub account. Moderne has more than 30k open source repositories loaded that can be used to test the OpenRewrite recipes without having to configure 
-anything in your build system. If you are interested to see how you can publish a new open source repository, we recommend to also play
-with  the Moderne CLI adventure.
+## Migrating to Spring Boot 3 with the Moderne platform
 
-## Spring Boot Migration using the Moderne Platform
-
-1. Now, we are going to create a repository group with one repository that contains the
-Spring Petclinic content when it was using a 2.x Spring Boot version. To do so,
-click on the `Create` option of the `Repository Groups` section.
+1. Once you're logged in to [Moderne](https://public.moderne.io/), the first
+   thing you'll want to do is to create a repository group with just the Spring
+   PetClinic repository in it. To do so, click on the `Default` group in the top
+   right-hand corner of your screen and select `Create` from the menu that
+   appears:
 
 ![context menu](assets/menu.png)
 
-2. A repository group is a list of repositories that are grouped under a name that it is
-only visible for your user. You can use any name for the repository group. We are going
-to call it `petclinic`. After giving a name, you need to select the repository 
-`github.com/timtebeek/spring-petclinic@2.0.0`. Then click on the `Save` option.   
+2. A repository group is a list of repositories that are grouped under a name
+that is only visible to you. You can use any name for the repository group. For
+this adventure, let's call it `petclinic`. After giving it a name, select
+`github.com/timtebeek/spring-petclinic@2.0.0` from the list of available
+repositories. To save this repository group, please press the `Save` button in
+the bottom right corner of your screen:
 
 ![repository-groups](assets/repository-groups.png)
 
-3. Now, you can go back, and in the `Marketplace` menu, you can click on `Java` and 
-then `Spring`, and finally select `Spring Boot 3.x`.
+3. With the repository group created, you can go to the [Moderne
+   Marketplace](https://public.moderne.io/marketplace). From there, click on
+   `Java`, then `Spring`, then `Spring Boot 3.x`, and finally select [Migrate to
+   Spring Boot 3.0](https://public.moderne.io/recipes/org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0?):
 
 ![recipe](assets/springboot-recipe.png) 
 
-4. After that, check again that in the top menu, your new repository group is selected 
-(in our case `petclinic`)and the`DRY RUN` option says that there is 1 single repository.
-Notice that there is a GitHub icon on the right side, which enables you to find the 
-source code of the recipe, which are always open source. They are all OpenRewrite 
-recipes.
+4. After that, double-check that the repository group you created is selected by
+   looking at the top right-hand corner of the screen. It should say
+   `petclinic`. Likewise, above the `DRY RUN` button, you should see that the
+   recipe will run against `1` repository. If you want more details about the
+   recipe, you can click on the `More Details` link. From there, you can find
+   additional information such as a link to the source code for this recipe (all
+   of the recipes are OpenRewrite recipes).
 
-5. Click on `DRY RUN`.
+5. To begin running the recipe, click on the `DRY RUN` button.
 
-6. Then you will see a recipe running, and when it is completed, you can click on the repository
-name to see the results. 
+6. You will now be redirected to a page that shows all of the relevant recipe
+   run information. Once it's finished, you can click on the repository name to
+   see the results:
 
 ![results](assets/execution.png)
 
-7. It is important to see that the results contain:
+7. If you look at the results you should see that:
 
-  - The removal of `@Autowired`.
-  - The replacement of Junit 4 for JUnit 5.
-  - The replacement of `javax` for `jakarta`.
-  - It is migrated to Java 17 and uses text blocks.
-  - Some best practices are applied such as `public` test method modifiers.
- 
+  * `@Autowired` was removed
+  * JUnit 4 has been replaced with JUnit 5
+  * `javax` has been replaced with `jakarata`
+  * The code has been migrated to Java 17 and text blocks are used
+  * Some best practices are applied (such as adding the `public` test method modifier)
 
-## Security Vulnerabilities using the Moderne Platform
+## Fixing security vulnerabilities with the Moderne platform
 
-Another use case to use the platform is for detecting CVEs in the dependencies
-and upgrade a set of repositories with the last versions. Since the Moderne platform
-supports complex refactorings such as the SpringBoot 3 migration, it is expected
-that the community can contribute and provide recipe for other major migrations that
-not only require to bump the dependency version. In this challenge, we are going to see
-how we can see the list of vulnerabilities in important open source repositories and
-create a composite refactor with many the minor vulnerabilities that we want to fix.
+Another substantial use case for the Moderne platform is detecting and
+potentially resolving CVEs in your projects and their dependencies. Since the
+Moderne platform supports complex refactoring recipes (such as the Spring Boot 3
+migration), the community can contribute and provide recipes for other major
+migrations that do more than bump a dependency version.
 
-1. In this case, we are going to use the `Check for dependency vulnerabilities` recipe.
-This recipe offers three options. For demo purposes, we recommend to simply 
-select:
+In this part of the adventure, let's use the Moderne platform to get a list of
+vulnerabilities in open-source repositories. 
 
-    - Scope:  `compile`. 
-    - Overwrite management version: true.
-    - Add markers: No value selected.
+1. Begin by navigating to the [Check for dependency vulnerabilities
+   recipe](https://public.moderne.io/recipes/org.openrewrite.java.dependencies.DependencyVulnerabilityCheck
+   ).
+  
+2. Select `compile` for the first option (`scope`), `true`, for the second
+   option (`override managed version`), and leave the third option as blank
+   (`add markers`).
 
-2. In the top menu, select the default repository group, which is composed by a hundred (142) of
-open source Netflix and Spring repositories.
+3. Click on the repository group link in the top right-hand corner of the screen
+   and select `Default` as the group to run on.
 
-3. Select `DRY RUN`, this should take 10 minutes approx. Now, clicking on each of the repositories, 
-you should be able to see what dependency changes are required to remove vulnerabilities, in 
-case dependencies can be locally fixed.
+4. Click on the `DRY RUN` button to begin executing this recipe. It should take
+   a few minutes to run.
 
-4. Click on data tables (right side blue button) and download the vulnerability report in CSV format.
+5. Once the recipe is done running, you can click on the individual repositories
+   to see suggested changes that fix some vulnerabilities. You can also click on
+   the `Data Tables` button to get taken to a page that allows you to download a
+   CSV that contains a list of CVEs that the repositories are
+   vulnerable to. Download the CSV vulnerability report.
 
-5. Open the CSV with Google spreadsheets or your preferred tool.You will see that the CSV contains
-an entry per vulnerability, depedency and repository. There is an interesting column called
-`fixedVersion`, which tells you what is the immediate version that fixes the vulnerability. It
-is also important to notice that there is a `depth` column because we also analyze transitive
-dependencies.
-
+6. Open the CSV with your preferred CSV reader. You will see that the CSV
+   contains an entry per vulnerability, dependency, and repository. Take special
+   note of the column called `fixedVersion`. That tells you what version fixes
+   that vulnerability. Also take note of the `depth` column, which lets you see
+   how many dependencies away it is from your original dependency.
    
-## Misk
+## Relevant links
 
-- [Moderne Platform documentation](https://docs.moderne.io/)
+* [Moderne platform documentation](https://docs.moderne.io/)
+* [OpenRewrite documentation](https://docs.openrewrite.org/)
 
 
 

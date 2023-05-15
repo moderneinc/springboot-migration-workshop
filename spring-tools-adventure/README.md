@@ -6,49 +6,48 @@ Visual Studio.
 
 ## Prepare your environment
 
-- Install Visual Studio Code.
-- Install Spring Tools 4 plugin from https://spring.io/tools
-- Clone the Spring Petclinic repository, which is an Spring Boot
-application example for demo purposes:
+1. Install [Visual Studio Code](https://code.visualstudio.com/)
 
-```
+2. Install the [Spring Tools 4 plugin](https://spring.io/tools)
+
+3. Clone the [Spring PetClinic
+   repository](https://github.com/spring-projects/spring-petclinic):
+
+```shell
 git clone https://github.com/spring-projects/spring-petclinic
 ```
 
-Now, let's come back to the past where Spring 2.7 was used.
+4. Check out the last Spring Boot 2.0 commit:
 
-```
+```shell
 git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ```
 
 ## Migrate to Spring Boot 3 using Spring Tools 4 
 
-Spring Tools 4 embeds OpenRewrite, and from Visual Studio, there is 
-a limited number of OpenRewrite migrations that can be applied. This
-is a very recent feature that it is only available for Maven projects.
+Spring Tools 4 has OpenRewrite embedded into it. From VS Code, you can open the
+`pom.xml` file and right-click anywhere in the file. You should see two
+important options appear:
 
-To see the list of refactors available, you need to open the `pom.xml`
-file. You will see two important options:
-
-- Refactor Spring Boot project
-- Upgrade Spring Boot version  
+* Refactor Spring Boot Project
+* Upgrade Spring Boot Version
 
 ![Visual Studio Dialog](context-menu-options.png)
 
-In this exercise, we will select `Upgrade Spring Boot Version`, then the
-following dialog should appear:
+For this adventure, let's click on `Upgrade Spring Boot Version`. The following
+dialog window should then appear: 
 
 ![Migration options](migration-options.png)
 
-Select `Migrate to Spring Boot 3.0`. Then a progress message will appear at 
-the very bottom of Visual Studio Code. After the process finishes, the changes
-has not been yet saved into disk and you might perceive that there are just few
-changes applied.
+Select `Migrate to Spring Boot 3.0`. A progress message should appear at the
+bottom of VS Code. After the process finishes, the changes won't be saved yet.
+You'll need to click on `File` > `Save All` to save all of the files and preview
+the changes in Git:
 
-Click on `File` > `Save All` and then you can easily preview the changes
-in Git. 
-
-```
+```shell
 git diff
 ```
 
+**Note:** This is a very recent feature that is only available for Maven
+projects. Only some of the OpenRewrite migrations can be applied with this
+feature.
