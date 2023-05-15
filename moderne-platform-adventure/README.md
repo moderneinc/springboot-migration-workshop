@@ -47,7 +47,7 @@ name to see the results.
 
 ![results](assets/execution.png)
 
-- It is important to see that the results contain:
+7. It is important to see that the results contain:
 
   - The removal of `@Autowired`.
   - The replacement of Junit 4 for JUnit 5.
