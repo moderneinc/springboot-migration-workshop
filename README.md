@@ -2,22 +2,26 @@
 
 This is a collection of adventures for automatic remediation based on OpenRewrite.
 Each adventure represent a valid option to apply a SpringBoot migration.
-It is not expected that you complete all the adventure, but only those that are
-interesting to you because of the technologies that are applied. 
+It is not expected that you complete all our adventures, but enjoy with the ones 
+that are interesting to you because of the technologies that are applied. 
 
 For all the adventures we are going to use different solutions to migrate 
 an old version of the [spring-petclinic](https://github.com/spring-projects/spring-petclinic/)
 to SpringBoot 3.
 
+## Introduction
+
+[Spring Boot 3 is here; Where are you?](https://docs.google.com/presentation/d/1onKVe3tsCm9wPWMQ0i4fLDfM8vpQHyXH/edit?usp=sharing&ouid=106870370074198362402&rtpof=true&sd=true)
+
 ## Requirements
 
 In order to participate, you will need the following:
 
-* Basic Spring knowlege
+* Basic Spring and Git knowlege
 
 * Java 17 and Java 8
 
-* IDE of your choice
+* IDE of your choice, but Visual Studio Code for the Spring Tools Adventure. 
 
 ## Getting started
 
