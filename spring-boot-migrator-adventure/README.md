@@ -21,15 +21,25 @@ you to decide by your own.*
 wget https://github.com/spring-projects-experimental/spring-boot-migrator/releases/latest/download/spring-boot-upgrade.jar
 ```
 
-2. Clone the Spring Boot 2 repository example: ` https://github.com/sanagaraj-pivotal/demo-spring-song-app.git`
+1. Clone the repository `https://github.com/spring-projects/spring-petclinic`
 
 ```
-git clone https://github.com/sanagaraj-pivotal/demo-spring-song-app.git
-cd demo-spring-song-app
-git checkout -b boot-3-upgrade-demo tags/demo
+git clone https://github.com/spring-projects/spring-petclinic
 ```
 
-3. Validate that you are running with Java 17`. SBM fails when it is tested with Java 19.
+2. Checkout the last commit in Spring Boot 2.0
+
+```
+cd spring-petclinic
+git checkout 9ecdc1111e3da388a750ace41a125287d9620534
+```
+3. Test you can build it
+
+```
+./mvnw package -DskipTests
+``` 
+
+4. Validate that you are running with Java 17`. SBM fails when it is tested with Java 19.
 
 ```
 java -version
@@ -95,5 +105,27 @@ Date:   Fri May 12 12:30:37 2023 +0200
     SBM: applied recipe 'sbu30-upgrade-dependencies'
 ```
  
-To understand the code changes of each change, you can use the `git show $SHA` command. 
+To understand the code changes of each change, you can use the `git show $SHA` command. What is rellevant from
+this execution, is that the codechanges are different than running the last version of `rewrite-spring` using
+the Moderne CLI, Gradle or Maven. For instance, this patch is not included:
+
+```
+--- a/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java
++++ b/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java
+@@ -17,10 +17,10 @@ package org.springframework.samples.petclinic.model;
+ 
+ import java.io.Serializable;
+ 
+-import javax.persistence.GeneratedValue;
+-import javax.persistence.GenerationType;
+-import javax.persistence.Id;
+-import javax.persistence.MappedSuperclass;
++import jakarta.persistence.GeneratedValue;
++import jakarta.persistence.GenerationType;
++import jakarta.persistence.Id;
++import jakarta.persistence.MappedSuperclass;
+```
+
+The reason is that this project is still experimental and has not been 
+recently updated while the SpringBoot 3 recipe has been evolved. 
 
