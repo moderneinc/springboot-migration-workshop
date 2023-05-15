@@ -84,7 +84,7 @@ cd q
 ./gradlew build -x test
 ```
 
-4. Apply the patch that is in this directory to the build.gradle file
+4. Apply the patch that is in this directory to the build.gradle file. This will automatically configure the rewrite Gradle plugin in the repository for you. We recommend to look at the differences to understand how it is configured.
 
 ```
 git apply configure-build.patch
