@@ -21,6 +21,8 @@ In complete our adventures, you will need some basic Spring and Git knowlege and
 
 * IDE of your choice, but Visual Studio Code for the Spring Tools Adventure. 
 
+* GitHub account
+
 ## Getting started
 
 Clone this Git repository and follow the desired adventures. 
