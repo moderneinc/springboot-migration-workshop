@@ -53,7 +53,7 @@ name to see the results.
   - The replacement of Junit 4 for JUnit 5.
   - The replacement of `javax` for `jakarta`.
   - It is migrated to Java 17 and uses text blocks.
-  - Some best practices are applied such as test modifiers are removed.
+  - Some best practices are applied such as `public` test method modifiers.
  
 
 ## Security Vulnerabilities using the Moderne Platform
