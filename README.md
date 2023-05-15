@@ -1,12 +1,12 @@
 # springboot-migration-workshop
 Workshop for SpringBoot Migration
 
-This is a collection of challenges for automatic remediation based on OpenRewrite.
-Each challenge represent a valid option to apply some existing OpenRewrite recipes.
-It is not expected that you complete all the challenges, but only those that are
+This is a collection of adventures for automatic remediation based on OpenRewrite.
+Each adventure represent a valid option to apply a SpringBoot migration.
+It is not expected that you complete all the adventure, but only those that are
 interesting to you because of the technologies that are applied. 
 
-For all the challenges we are going to use the https://github.com/spring-projects/spring-petclinic/
+For all the adventures we are going to use the https://github.com/spring-projects/spring-petclinic/
 repository.
 
 ## Requirements
@@ -15,29 +15,20 @@ In order to participate, you will need the following:
 
 * Basic Spring knowlege
 
-* Java 17+
+* Java 17+ and Java 8
 
 * IDE of your choice
 
 ## Getting started
 
-1. Clone this Git repository
+Clone this Git repository and follow the desired adventures. 
 ```
 git clone https://github.com/moderneinc/springboot-migration-workshop
 ```
-2. Clone the Spring Petclinic repository
-```
-git clone https://github.com/spring-projects/spring-petclinic
-```
-3. Verify that you can build the Spring Petclinic repo
-```
-./gradlew build
-```
 
-* Once you have completed the basics, continue with any of the other modules, which might introduce
-extra requirements.
+## Adventures
 
-## Submodules
+We recommend to follow the adventures in the described order, but it is just a recommendation, not a requirement.
 
 * [Maven Plugin Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/maven-plugin-adventure)
 
@@ -47,6 +38,6 @@ extra requirements.
  
 * [Spring Tools Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/spring-tools-adventure)
 
-* [Moderne Platform](https://github.com/moderneinc/springboot-migration-workshop/tree/main/moderne-platform-adventure)
+* [Moderne Platform Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/moderne-platform-adventure)
 
-* [CLI adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/cli-adventure)
+* [Moderne CLI Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/moderne-cli-adventure)
