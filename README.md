@@ -1,5 +1,4 @@
 # Springboot Migration Workshop
-Workshop for SpringBoot Migration
 
 This is a collection of adventures for automatic remediation based on OpenRewrite.
 Each adventure represent a valid option to apply a SpringBoot migration.
