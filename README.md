@@ -15,7 +15,7 @@ In order to participate, you will need the following:
 
 * Basic Spring knowlege
 
-* Java 17+ and Java 8
+* Java 17 and Java 8
 
 * IDE of your choice
 
