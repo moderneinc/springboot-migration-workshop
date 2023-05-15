@@ -15,9 +15,7 @@ to SpringBoot 3.
 
 ## Requirements
 
-In order to participate, you will need the following:
-
-* Basic Spring and Git knowlege
+In complete our adventures, you will need some basic Spring and Git knowlege and:
 
 * Java 17 and Java 8
 
