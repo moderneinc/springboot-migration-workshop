@@ -68,13 +68,13 @@ In this case, one way is to modify the `pom.xml` file and add the following info
     </build>
 </project>
 ```
-The only thing you need to run open-rewrite is 
+The only thing you need to run open-rewrite is: 
 
 ```
  ./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run
 ```
 
-Or, alternative, without modifying the `pom.xml` file, you can run
+Or, alternative, without modifying the `pom.xml` file, you can run the following Maven command:
 
 ```
 ./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.36.0
