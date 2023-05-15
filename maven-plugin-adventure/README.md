@@ -1,9 +1,6 @@
 # Maven Plugin Adventure
 
-In this adventure we are going to see how to use open rewrite in a Maven project
-and run a recipe to migrate to Spring Boot 3. 
-
-OpenRewrite recipes are lego blocks and therefore this process consists of multiple steps that are invisible for you:
+In this adventure we are going to see how to use open rewrite in a Maven project and run a recipe to migrate to Spring Boot 3. OpenRewrite recipes are lego blocks and therefore this process consists of multiple steps that are invisible for you:
 
 - Migrate to Spring Boot 2.7
 - Migrate to Java 17
@@ -14,8 +11,7 @@ OpenRewrite recipes are lego blocks and therefore this process consists of multi
 Therefore, you only need to apply a single [Migrate to Spring Boot 3.0](https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot_3_0) adding the 
 OpenRewrite's plug-in to your project and configuring the recipe.
 
-Optionally, if you can also play with another of the most important recipes 
-for Static Code Analysis.
+Optionally, if you have time, you can also play with another of the most important recipes that fixes lots of static code analysis issues in a very old repository.
 
 ## Prepare your environment
 
