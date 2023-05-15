@@ -13,9 +13,11 @@ steps that are invisible for you:
 - Migrate to Spring Cloud 2022
 ...
 
-Therefore, you only need to apply a single [Migrate to Spring Boot 3.0]
-(https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot_3_0) 
+Therefore, you only need to apply a single [Migrate to Spring Boot 3.0](https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot_3_0) 
 adding the OpenRewrite's plug-in to your project and configuring the recipe.
+
+Optionally, if you have time, we recommend to play with one of the most important recipes in OpenRewrite to fix static code analysis issues in an old 
+repository.
 
 ## Prepare your environment
 
@@ -57,7 +59,7 @@ cp init.gradle spring-petclinic/init.gradle
 
 3. Review the changes with `git diff`
 
-## Play with Static Code Analysis recipes!
+## Fix Static Code Analysis Issues
 
 If you are interested to play with more recipes, we recommend to play with one of the most populare OpenRewrite recipes: [static code analysis 
 recipe](static code analysis recipe), which is composed by more than 50 other recipes. In this case, we are going to use a different 
