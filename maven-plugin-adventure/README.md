@@ -85,9 +85,9 @@ Now, you can compare the results by simply running
 git diff
 ```
 
-## Play with Static Code Analysis recipes
+## Fix Static Code Analysis issues
 
-In this case we are going to use the [Spring WS](https://github.com/spring-projects/spring-ws)
+In this case, for demo purposes, we are going to use the [Spring WS](https://github.com/spring-projects/spring-ws)
 repository. This is an existing Spring repository that it is good to see what kind of static 
 code analysis issues can be fixed. 
 
