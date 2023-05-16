@@ -20,7 +20,7 @@ repository to Spring Boot 3.
 
 To complete our adventures, you will need:
 
-* Some basic Spring and Git knowledge and:
+* Some basic Spring and Git knowledge
 * To be familiar with Java 8 and Java 17
 * A GitHub account
 * An IDE of your choice (although we recommend using [Visual Studio Code](https://code.visualstudio.com/) for the Spring Tools Adventure)
@@ -29,7 +29,7 @@ To complete our adventures, you will need:
 
 Clone this Git repository and follow the desired adventures.
 
-```
+```shell
 git clone https://github.com/moderneinc/springboot-migration-workshop
 ```
 
