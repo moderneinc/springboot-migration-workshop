@@ -1,82 +1,96 @@
-# Moderne CLI Adventure
+# Moderne CLI adventure Adventure
 
-In this session we are going to use a free Moderne CLI that allows to 
-run OpenRewrite recipes without requiring to configure any build plugins
-and therefore support other programming languages and build tools that 
-are not for Java developers. In this adventure, we suggest two exercises:
+In this adventure, you will use the [Moderne
+CLI](https://docs.moderne.io/moderne-cli/cli-intro), a free tool that allows
+developers to run OpenRewrite recipes without configuring any build plugin, to
+migrate a repository from Spring Boot 2 to Spring Boot 3.
 
-- Migrate to Spring Boot 3 using the CLI.
-- Publish a new OSS repository into the Moderne Platform. 
+Afterwards, you'll use the CLI to publish your own OSS repository to the Moderne
+platform so that you can run recipes on it without having to build it over and
+over.
 
 ## Prepare your environment
 
-1. Download the CLI. To do so, download the CLI from `https://public.moderne.io`
+1. Download the Moderne CLI by going to
+   [https://public.moderne.io](https://public.moderne.io), clicking on the `?`
+   in the top right corner, and selecting `Moderne CLI` from the menu:
 
 ![context menu](assets/cli-download.png)
 
-2. Create a Moderne Access Token from `https://public.moderne.io/settings/access-token`
-and store it in your local file system.
+2. Create a Moderne Access Token by going to
+   [https://public.moderne.io/settings/access-token](https://public.moderne.io/settings/access-token).
+   Once there, enter a name for the token and press `generate`.
 
-```
-echo "YOUR_ACCESS_TOKEN" > $HOME/.moderne/token.txt
+3. Store the token in your local file system so it can be used by the CLI:
+
+```shell
+mkdir -p ~/.moderne && echo "mat-YOUR_TOKEN_HERE" > ~/.moderne/token.txt
 ```
 
-3. Clone the repository `https://github.com/spring-projects/spring-petclinic`
+4. Clone the [Spring PetClinic
+   repository](https://github.com/spring-projects/spring-petclinic) to your
+   machine:
 
-```
+```shell
 git clone https://github.com/spring-projects/spring-petclinic
 ```
 
-4. Checkout the last commit in Spring Boot 2.0
-   
-```
-cd spring-petclinic
-git checkout 9ecdc1111e3da388a750ace41a125287d9620534
-```
-5. Test you can build it
+5. Check out the last Spring Boot 2.0 commit:
 
 ```
-./gradlew build -x test
+git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ```
+
+6. Make sure it runs on your machine:
+
+```shell
+./gradlew build -x test
+``` 
 
 ## Migrate to Spring Boot 3 using the Moderne CLI
 
-1. Run the following command from the `spring-petclinic` repository
+1. Run the following command from the `spring-petclinic` repository:
 
-```
+```shell
 mod run --path . --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAV org.openrewrite.recipe:rewrite-spring:4.36.0
 ```
 
-2. Apply the patch
+2. The previous command should have printed a path to a patch file in the
+   standard output. Let's take that patch file and apply it:
 
-The previous command should have printed a patch file in the standard output. To properly see the changes, let's apply them.
-
+```shell
+git apply PATCH_FILE_NAME
 ```
-git apply REPLACE_FOR_PATCH_FILE 
-```
 
-3. and then, see the changes with:
+3. You can then see the changes made by running:
 
-```
+```shell
 git diff
 ```
 
 ## Publish your OSS repositories to the Moderne platform
 
-Publishing LSTs into the platform allows to run multiple recipes without having to build the repository every single time. LSTs have 
-all the information required to run a recipe and therefore, it is not necessary to compile the source code. 
+Publishing your [Lossless Semantic
+Tree](https://docs.moderne.io/concepts/lossless-semantic-trees) (LST) artifacts
+to the platform allows you to run multiple recipes without having to build the
+repository every time (as LSTs contain all of the information needed to run a
+recipe).
 
+Let's walk through how to build and publish artifacts for your repository.
 
-1. In this case, we suggest you to publish multiple OSS repositories of your personal GitHub account or organization to really see the benefit 
-of running OpenRewrite at scale. 
+1. Clone your repository locally and run the `mod publish` command:
 
+```shell
+git clone YOUR_REPO
+mod publish --path PATH_TO_YOUR_REPO
 ```
-git clone REPLACE_WITH_MY_REPO_URL
-mod publish --path REPLACE_WITH_PATH_TO_MY_REPO
-```
 
-2. Now, after 2 minutes or so, you should be able to see it in the [Moderne Platform](https://public.moderne.io/). To check if the 
-repository has been added, go to https://public.moderne.io/organizations and search your repository name.
+2. After a few minutes, you should see it appear in the [Moderne
+   platform](https://public.moderne.io/). To check if the repository has been
+   added, go to
+   [https://public.moderne.io/organizations](https://public.moderne.io/organizations)
+   and search for your repository name.
 
-3. In case you want to run a recipe to your repository from the platform, we recommend to continue with the [Moderne Platform 
-Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/moderne-platform-adventure).
+3. If you want to run a recipe against your repository on the Moderne platform,
+   please continue to the [Moderne platform
+   Adventure](/moderne-platform-adventure/README.md).

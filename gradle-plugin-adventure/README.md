@@ -1,106 +1,128 @@
 # Gradle Plugin Adventure
 
-In this adventure we are going to see how we can migrate an old version of
-the spring-petclinic repository that was using Spring Boot 2 to Spring Boot 3.
+In this adventure, you will migrate an old version of the
+[Spring PetClinic](https://github.com/spring-projects/spring-petclinic/)
+repository (that uses Spring Boot 2) to Spring Boot 3.
 
-OpenRewrite recipes are lego blocks and therefore this process consists of multiple
-steps that are invisible for you:
+If you were migrating this by hand, you would need to do a variety of things
+such as:
 
-- Migrate to Spring Boot 2.7
-- Migrate to Java 17
-- Migrate to Jakarta EE 9
-- Migrate to Spring Security 6.0
-- Migrate to Spring Cloud 2022
-...
+* Migrating to Spring Boot 2.7
+* Migrating to Java 17
+* Migrating to Jakarata EE 9
+* Migrating to Spring Security 6.0
+* Migrating to Spring Cloud 2022
+* ... 
 
-Therefore, you only need to apply a single [Migrate to Spring Boot 3.0](https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot_3_0) 
-adding the OpenRewrite's plug-in to your project and configuring the recipe.
+Fortunately, [OpenRewrite](https://docs.openrewrite.org/) has a
+[recipe](https://docs.openrewrite.org/concepts-explanations/recipes) that takes
+care of all of these pieces for you. Because of that, you only need to add the
+OpenRewrite plugin to your project and run a single [Migrate to Spring Boot
+3.0](https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot_3_0)
+recipe.
 
-Optionally, if you have time, we recommend to play with one of the most important recipes in OpenRewrite to fix static code analysis issues in an old 
-repository.
+Let's walk through how to do that.
 
 ## Prepare your environment
 
-1. Clone the repository `https://github.com/spring-projects/spring-petclinic`
+1. Clone the [Spring PetClinic repository](https://github.com/spring-projects/spring-petclinic):
 
-```
+```shell
 git clone https://github.com/spring-projects/spring-petclinic
 ```
 
-2. Checkout the last commit in Spring Boot 2.0
+2. Check out the last Spring Boot 2.0 commit:
 
-```
+```shell
 git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ```
-3. Test you can build it
 
-```
+3. Make sure it runs on your machine:
+
+```shell
 ./gradlew build -x test
-``` 
+```
 
 ## Migrate to SpringBoot 3 with OpenRewrite
 
-OpenRewrite can be configured in the `build.gradle` file or as an additional `init.gradle` [see how 
-here](https://docs.openrewrite.org/running-recipes/running-rewrite-on-a-gradle-project-without-modifying-the-build)
-file without having to edit any previous build configuration. 
+OpenRewrite can be configured in your `build.gradle` file or as an additional
+`init.gradle` script without having to edit any previous build configuration
+([see how
+here](https://docs.openrewrite.org/running-recipes/running-rewrite-on-a-gradle-project-without-modifying-the-build)). 
 
-1. For simplicity, copy the `init.gradle` file that is in this folder, which already contains the Spring Boot
-recipe configured.
+1. For simplicity, we've included an [init.gradle](./init.gradle) file in this
+   folder that contains the Spring Boot migration recipe as well as the
+   OpenRewrite dependencies. Please copy [this file](./init.gradle) to the
+   Spring PetClinic repository you have checked out locally.
 
-```
-cp init.gradle spring-petclinic/init.gradle
-```
+2. With that file copied over, if you run `rewriteRun`, you will apply the
+   migration recipe:
 
-2. Run OpenRewrite
-
-```
+```shell
 ./gradlew --info --init-script init.gradle rewriteRun
 ```
 
-3. Review the changes with `git diff`
+3. You can then review the changes by running `git diff`. 
 
-## Fix Static Code Analysis Issues
+## (Optional) Fix Static Code Analysis Issues
 
-If you are interested to play with more recipes, we recommend to play with one of the most populare OpenRewrite recipes: ([static code analysis recipe](https://docs.openrewrite.org/recipes/java/cleanup/commonstaticanalysis)), which is composed by more than 50 other recipes. In this case, we are going to use a different 
-active Gradle repository that shows a wide variety of errors. The selected repository is the [Netflix Testing Framework]( 
-https://github.com/Netflix/q)
+If you have time, we recommend trying out one of the most important recipes in
+OpenRewrite: [common static
+analysis](https://docs.openrewrite.org/recipes/java/cleanup/commonstaticanalysis).
+This recipe is composed of 50+ recipes that find and fix common mistakes people
+make.
 
-1. Clone the repository 
+To demonstrate this recipe, we'll use a different Gradle repository that has a
+variety of errors that need to be fixed.
 
-```
+1. Clone the [Netflix Testing Framework](https://github.com/Netflix/q)
+   repository:
+
+```shell
 git clone https://github.com/Netflix/q
 ```
 
-2. For this repository, you need to switch to Java 8 to properly build it. So, you might need to download Java 8 and update your `JAVA_HOME` 
-environment variable.
+2. Switch to Java 8 so you can properly build this repository. You might need to
+   download Java 8 and update your `JAVA_HOME` environment variable. If you are
+   on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
 
+```shell
+sdk install java 8.0.372-tem
+sdk use java 8.0.372-tem
 ```
+
+  * If you aren't on a Unix-based system or you don't want to install SDKMan,
+    you'll need to install Java 8 and run something like:
+
+```shell
 export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_8
 ```
 
-3. Test that you can build it
+3. With the right version of Java installed, test that you can build it:
 
-```
-cd q
+```shell
 ./gradlew build -x test
 ```
 
-4. Apply the patch that is in this directory to the build.gradle file. This will automatically configure the rewrite Gradle plugin in the repository for you. We recommend to look at the differences to understand how it is configured.
+4. Copy and apply the [patch](./configure-build.patch) that is in this directory
+   to the `build.gradle` file. This will automatically configure the rewrite
+   Gradle plugin in the repository for you. We recommend that you look at the
+   differences to understand how it is configured:
 
-```
+```shell
+// Copy the file to the q repository first
+
 git apply configure-build.patch
 ```
 
-5. Run OpenRewrite
+5. With the patch applied, you can now run OpenRewrite:
 
-```
+```shell
 ./gradlew rewriteRun
 ```
 
-6. Look at the automatic changes we made
+6. Check out all of the changes that were made by running: 
 
-```
+```shell
 git diff
 ```
-
-

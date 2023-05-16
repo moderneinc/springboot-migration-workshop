@@ -1,73 +1,72 @@
 # Spring Boot Migrator Adventure
 
-Spring Boot Migrator(SBM) offers a CLI to run recipes to migrate or upgrade 
-a given application to Spring Boot 3. For developing new and custom recipes, SBM 
-provides an opinionated API compatible with OpenRewrite recipes and a set of 
-specialized resource representations to simplify recipe development for 
-Spring Boot.
+The Spring Boot Migrator (SBM) is a CLI tool that automates code migrations to
+upgrade or migrate to Spring Boot 3. It offers an opinionated API that is compatible
+with OpenRewrite recipes as well as a specialized resource representation to
+simplify recipe development for Spring Boot.
 
-*IMPORTANT: This is a very experimental project and not
-our recommended way to migrate to Spring Boot 3. The project has not created more
-releases since 2022 and there are important reported bugs that need to be fixed to 
-propertly run in any repository. However, the goal of this workshop is to show
-what are the current available alternatives to migrate to Spring Boot 3 and enable
-you to decide by your own.* 
+**Warning**: This is a very experimental project and not our recommended way of
+migrating to Spring Boot 3. The project has not created any more releases since
+2022 and there are substantial bugs that need to be fixed for it to run properly
+in any repository. With that being said, we wanted to show what alternatives
+exist so that you can make the decision that best meets your own needs.
 
 ## Prepare your environment
 
-1.  Download the spring-boot-upgrade.jar
+1.  Download the `spring-boot-upgrade.jar`:
 
-```
+```shell
 wget https://github.com/spring-projects-experimental/spring-boot-migrator/releases/latest/download/spring-boot-upgrade.jar
 ```
 
-1. Clone the repository `https://github.com/spring-projects/spring-petclinic`
+2. Clone the [Spring PetClinic](https://github.com/spring-projects/spring-petclinic) repository
 
-```
+```shell
 git clone https://github.com/spring-projects/spring-petclinic
 ```
 
-2. Checkout the last commit in Spring Boot 2.0
+3. Check out the last Spring Boot 2.0 commit:
 
-```
-cd spring-petclinic
+```shell
 git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ```
-3. Test you can build it
 
-```
+4. Make sure it runs on your machine:
+
+```shell
 ./mvnw package -DskipTests
 ``` 
 
-4. Validate that you are running with Java 17`. SBM fails when it is tested with Java 19.
+5. Make sure that you are using Java 17. We've found that SBM does not work with
+  Java 19.
 
-```
+```shell
 java -version
 ```
 
 ## Run the SBM
 
-1. Run SBM
+1. To run the SBM, navigate to your Spring PetClinic repository and execute this
+   command:
 
-```
+```shell
 java -jar ../spring-boot-upgrade.jar .
 ```
 
-2. Open http://localhost:8080/spring-boot-upgrade with your browser and follow the instructions. The instructions will list you a list of 
-mandatory recipes and others that are optional depending on your preferences. 
+2. Open
+   [http://localhost:8080/spring-boot-upgrade](http://localhost:8080/spring-boot-upgrade)
+   with your browser and follow the instructions on that page. You will find a
+   list of mandatory recipes and other optional ones that you can select
+   depending on your preferences. 
 
-Notice that there are GitHub issues listed in some of the listed 
-recipes. To see what have changed by each recipe, you need to check what commits have been introduced with your Git user in the repository.
+3. Note that there are GitHub issues listed in some of the recipes. To see what
+  has changed for each recipe, you need to check what commits have been
+  introduced from your Git user in the repository. To do so, run `git log` and
+  look for commits starting with `SBM: `.
 
-3. Simply run `git log` and detect the commits that starts with `SBM:`.
+4. This should print you a list of commits like:
 
-```
-git log
-```
-
-This should print you a list of commits like:
-
-```
+```shell
 commit dd308045cff42f384a51c42428030eaeaa5185f3 (HEAD -> boot-3-upgrade-demo)
 Author: rpau <raquel@moderne.io>
 Date:   Fri May 12 12:32:26 2023 +0200
@@ -105,11 +104,12 @@ Date:   Fri May 12 12:30:37 2023 +0200
     SBM: applied recipe 'sbu30-upgrade-dependencies'
 ```
  
-To understand the code changes of each change, you can use the `git show $SHA` command. What is rellevant from
-this execution, is that the codechanges are different than running the last version of `rewrite-spring` using
-the Moderne CLI, Gradle or Maven. For instance, this patch is not included:
+5. To understand the code changes for each commit, you can use the `git show $SHA`
+command. Please note that these code changes will be different than what you'd
+get from the other adventures in this workshop. For instance, this patch is not
+included with SBM: 
 
-```
+```shell
 --- a/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java
 +++ b/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java
 @@ -17,10 +17,10 @@ package org.springframework.samples.petclinic.model;
@@ -126,6 +126,6 @@ the Moderne CLI, Gradle or Maven. For instance, this patch is not included:
 +import jakarta.persistence.MappedSuperclass;
 ```
 
-The reason is that this project is still experimental and has not been 
-recently updated while the SpringBoot 3 recipe has been evolved. 
-
+The reason for these differences is largely due to the fact that this project
+has not been recently updated, whereas the Spring Boot 3 recipe has evolved over
+time.

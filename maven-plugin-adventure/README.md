@@ -1,45 +1,60 @@
 # Maven Plugin Adventure
 
-In this adventure we are going to see how to use open rewrite in a Maven project and run a recipe to migrate to Spring Boot 3. OpenRewrite recipes are lego blocks and therefore this process consists of multiple steps that are invisible for you:
+In this adventure, you will migrate an old version of the
+[Spring PetClinic](https://github.com/spring-projects/spring-petclinic/)
+repository (that uses Spring Boot 2) to Spring Boot 3.
 
-- Migrate to Spring Boot 2.7
-- Migrate to Java 17
-- Migrate to Jakarta EE 9
-- Migrate to Spring Security 6.0
-- Migrate to Spring Cloud 2022 ...
+If you were migrating this by hand, you would need to do a variety of things
+such as:
 
-Therefore, you only need to apply a single [Migrate to Spring Boot 3.0](https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot_3_0) adding the 
-OpenRewrite's plug-in to your project and configuring the recipe.
+* Migrating to Spring Boot 2.7
+* Migrating to Java 17
+* Migrating to Jakarata EE 9
+* Migrating to Spring Security 6.0
+* Migrating to Spring Cloud 2022
+* ... 
 
-Optionally, if you have time, you can also play with another of the most important recipes that fixes lots of static code analysis issues in a very old repository.
+Fortunately, [OpenRewrite](https://docs.openrewrite.org/) has a
+[recipe](https://docs.openrewrite.org/concepts-explanations/recipes) that takes
+care of all of these pieces for you. Because of that, you only need to add the
+OpenRewrite plugin to your project and run a single 
+[Migrate to Spring Boot 3.0](https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot_3_0)
+recipe.
+
+Let's walk through how to do that.
 
 ## Prepare your environment
 
-1. Clone the repository `https://github.com/spring-projects/spring-petclinic`
+1. Clone the [Spring PetClinic
+   repository](https://github.com/spring-projects/spring-petclinic):
 
-```
+```shell
 git clone https://github.com/spring-projects/spring-petclinic
 ```
 
-2. Checkout the last commit in Spring Boot 2.0
+2. Check out the last Spring Boot 2.0 commit:
 
-```
-cd spring-petclinic
+```shell
 git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ```
-3. Test you can build it
 
-```
+3. Make sure it runs on your machine:
+
+```shell
 ./mvnw package -DskipTests
 ``` 
 
 ## Migrate to SpringBoot 3 with OpenRewrite
 
-### Option 1: Updating the pom.xml
+For Maven projects, you can choose to update the `pom.xml` to add the
+OpenRewrite dependencies or you can run a more complex command in the command
+line that includes all of the information needed to run the recipe.
 
-In this case, one way is to modify the `pom.xml` file and add the following information:
+### Option 1: Update the pom.xml
 
-```
+Modify the `pom.xml` file and add the following information:
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     ...
@@ -66,52 +81,69 @@ In this case, one way is to modify the `pom.xml` file and add the following info
     </build>
 </project>
 ```
-The only thing you need to run open-rewrite is: 
 
-```
+Once you've done that, you can run the Upgrade Spring Boot 3.0 recipe by running
+this command:
+
+```shell
  ./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run
 ```
-### Option 2: Without requiring to update the pom.xml
 
-You can also run a recipe, in this case the `UpgradeSpringBoot_3_0` recipe without editing the `pom.xml` file using the following Maven command:
+You can then compare the results by running:
 
-```
-./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.36.0
-```
-
-Now, you can compare the results by simply running 
-
-```
+```shell
 git diff
 ```
 
-## Fix Static Code Analysis issues
+### Option 2: Use the command line
 
-In this case, for demo purposes, we are going to use the [Spring WS](https://github.com/spring-projects/spring-ws)
-repository. This is an existing Spring repository that it is good to see what kind of static 
-code analysis issues can be fixed. 
+You can run a recipe without editing the `pom.xml` file by including all of the
+details in the command line. Below is the command for running the
+`UpgradeSpringBoot_3_0` recipe:
 
-The [static code analysis recipe](https://docs.openrewrite.org/recipes/java/cleanup/commonstaticanalysis)
-consists of more than 50 types of coding style issues that are automatically fixed with OpenRewrite.
-
-1. Clone the spring-ws repository
-
+```shell
+./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.36.0
 ```
+
+You can then compare the results by running:
+
+```shell
+git diff
+```
+
+## (Optional) Fix Static Code Analysis Issues
+
+If you have time, we recommend trying out one of the most important recipes in
+OpenRewrite: [common static analysis](https://docs.openrewrite.org/recipes/java/cleanup/commonstaticanalysis).
+This recipe is composed of 50+ recipes that find and fix common mistakes people
+make.
+
+To demonstrate this recipe, we'll use a different Maven repository that has a
+variety of errors that need to be fixed.
+
+1. Clone the [Spring WS](https://github.com/spring-projects/spring-ws)
+   repository:
+
+```shell
 git clone https://github.com/spring-projects/spring-ws
 ```
 
-2. Test you can build it
+2. Test that you can build it:
 
-```
+```shell
 cd spring-ws
 ./mvnw package -DskipTests
 ```
 
-3. Run OpenRewrite. The only thing you need to run open-rewrite is
+3. Run the common static analysis recipe:
 
-```
- ./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run \
+```shell
+./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.activeRecipes=org.openrewrite.java.cleanup.CommonStaticAnalysis
 ```
 
+4. Check out all of the changes that were made by running: 
 
+```shell
+git diff
+```

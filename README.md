@@ -1,13 +1,16 @@
 # Springboot Migration Workshop
 
-This is a collection of adventures for automatic remediation based on OpenRewrite.
-Each adventure represent a valid option to apply a SpringBoot migration.
-It is not expected that you complete all our adventures, but enjoy with the ones 
-that are interesting to you because of the technologies that are applied. 
+In this repository, you'll find a variety of "adventures" that demonstrate the
+different ways you can automatically migrate or upgrade an application to Spring
+Boot 3. The core technology behind each of these adventures is
+[OpenRewrite](https://github.com/openrewrite/rewrite).
 
-For all the adventures we are going to use different solutions to migrate 
-an old version of the [spring-petclinic](https://github.com/spring-projects/spring-petclinic/)
-to SpringBoot 3.
+You do not need to complete all of these adventures. Instead, please pick the
+ones that are more interesting or relevant to your needs.
+
+Regardless of which adventure you pick, you will migrate an old version of the
+[Spring PetClinic](https://github.com/spring-projects/spring-petclinic/)
+repository to Spring Boot 3.
 
 ## Introduction
 
@@ -15,24 +18,22 @@ to SpringBoot 3.
 
 ## Requirements
 
-In complete our adventures, you will need some basic Spring and Git knowlege and:
+To complete our adventures, you will need:
 
-* Java 17 and Java 8
-
-* IDE of your choice, but Visual Studio Code for the Spring Tools Adventure. 
-
-* GitHub account
+* Some basic Spring and Git knowledge
+* To be familiar with Java 8 and Java 17
+* A GitHub account
+* An IDE of your choice (although we recommend using [Visual Studio Code](https://code.visualstudio.com/) for the Spring Tools Adventure)
 
 ## Getting started
 
-Clone this Git repository and follow the desired adventures. 
-```
+Clone this Git repository and follow the desired adventures.
+
+```shell
 git clone https://github.com/moderneinc/springboot-migration-workshop
 ```
 
 ## Adventures
-
-We recommend to follow the adventures in the described order, but it is just a recommendation, not a requirement.
 
 * [Maven Plugin Adventure](./maven-plugin-adventure)
 
