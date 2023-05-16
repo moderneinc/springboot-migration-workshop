@@ -9,7 +9,7 @@ You do not need to complete all of these adventures. Instead, please pick the
 ones that are more interesting or relevant to your needs.
 
 Regardless of which adventure you pick, you will migrate an old version of the
-[spring-petclinic](https://github.com/spring-projects/spring-petclinic/)
+[Spring PetClinic](https://github.com/spring-projects/spring-petclinic/)
 repository to Spring Boot 3.
 
 ## Introduction

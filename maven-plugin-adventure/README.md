@@ -1,7 +1,7 @@
 # Maven Plugin Adventure
 
 In this adventure, you will migrate an old version of the
-[spring-petclinic](https://github.com/spring-projects/spring-petclinic/)
+[Spring PetClinic](https://github.com/spring-projects/spring-petclinic/)
 repository (that uses Spring Boot 2) to Spring Boot 3.
 
 If you were migrating this by hand, you would need to do a variety of things
