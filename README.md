@@ -35,14 +35,14 @@ git clone https://github.com/moderneinc/springboot-migration-workshop
 
 ## Adventures
 
-* [Maven Plugin Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/maven-plugin-adventure)
+* [Maven Plugin Adventure](./maven-plugin-adventure)
 
-* [Gradle Plugin Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/gradle-plugin-adventure)
+* [Gradle Plugin Adventure](./gradle-plugin-adventure)
 
-* [Spring Boot Migrator Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/spring-boot-migrator-adventure)
+* [Spring Boot Migrator Adventure](./spring-boot-migrator-adventure)
  
-* [Spring Tools Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/spring-tools-adventure)
+* [Spring Tools Adventure](./spring-tools-adventure)
 
-* [Moderne Platform Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/moderne-platform-adventure)
+* [Moderne Platform Adventure](./moderne-platform-adventure)
 
-* [Moderne CLI Adventure](https://github.com/moderneinc/springboot-migration-workshop/tree/main/moderne-cli-adventure)
+* [Moderne CLI Adventure](./moderne-cli-adventure)
