@@ -1,4 +1,4 @@
-# Moderne CLI adventure Adventure
+# Moderne CLI Adventure
 
 In this adventure, you will use the [Moderne
 CLI](https://docs.moderne.io/moderne-cli/cli-intro), a free tool that allows

@@ -61,9 +61,9 @@ the bottom right corner of your screen:
 
 7. If you look at the results you should see that:
 
-  * `@Autowired` was removed
+  * The `@Autowired` annotation was removed
   * JUnit 4 has been replaced with JUnit 5
-  * `javax` has been replaced with `jakarata`
+  * `javax` has been replaced with `jakarta`
   * The code has been migrated to Java 17 and text blocks are used
   * Some best practices are applied (such as adding the `public` test method modifier)
 
