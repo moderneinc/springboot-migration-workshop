@@ -27,9 +27,13 @@ git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 
 Spring Tools 4 has OpenRewrite embedded into it. 
 
-Open the `spring-petclinic` repository with VS Code.
+Open the `spring-petclinic` repository with VS Code. You might see a pop-up in
+the bottom right saying that build tool conflicts are detected. Make sure you
+select `Use Maven` or the next steps won't work:
 
-Once the project is opened in VS Code, you can open the
+![](./maven-popup.png)
+
+Once the project builds and `Maven` is selected, you can open the
 `pom.xml` file and right-click anywhere in the file. You should see two
 important options appear:
 
@@ -42,6 +46,10 @@ For this adventure, let's click on `Upgrade Spring Boot Version`. The following
 dialog window should then appear: 
 
 ![Migration options](migration-options.png)
+
+*Note: If you don't see the above window and you get an error about `No Spring Boot`
+project being found, please try restarting VS Code and select `Use Maven` in the
+popup that appears when VS Code loads.*
 
 Select `Migrate to Spring Boot 3.0`. A progress message should appear at the
 bottom of VS Code. After the process finishes, the changes won't be saved yet.
