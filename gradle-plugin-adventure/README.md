@@ -62,8 +62,14 @@ here](https://docs.openrewrite.org/running-recipes/running-rewrite-on-a-gradle-p
 ./gradlew --info --init-script init.gradle rewriteRun
 ```
 
-3. You can then review the changes by running `git diff`. 
+3. You can then review the changes by running `git diff`. If you look at the results you should see that:
 
+  * The `@Autowired` annotation was removed
+  * JUnit 4 has been replaced with JUnit 5
+  * `javax` has been replaced with `jakarta`
+  * The code has been migrated to Java 17 and text blocks are used
+  * Some best practices are applied (such as adding the `public` test method modifier)
+   
 ## (Optional) Fix Static Code Analysis Issues
 
 If you have time, we recommend trying out one of the most important recipes in

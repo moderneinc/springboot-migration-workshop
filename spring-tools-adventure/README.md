@@ -25,7 +25,13 @@ git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 
 ## Migrate to Spring Boot 3 using Spring Tools 4 
 
-Spring Tools 4 has OpenRewrite embedded into it. From VS Code, you can open the
+Spring Tools 4 has OpenRewrite embedded into it. 
+
+Open the spring-petclinic repository with visual studio. You'll need to
+click on `File` > `Open Folder` and select the folder where you have 
+downloaed the Spring Petclinic repository. 
+
+From VS Code, you can open the
 `pom.xml` file and right-click anywhere in the file. You should see two
 important options appear:
 
@@ -51,3 +57,12 @@ git diff
 **Note:** This is a very recent feature that is only available for Maven
 projects. Only some of the OpenRewrite migrations can be applied with this
 feature.
+
+However, if you look at the results you should see that:
+
+  * The `@Autowired` annotation was removed
+  * JUnit 4 has been replaced with JUnit 5
+  * `javax` has been replaced with `jakarta`
+  * The code has been migrated to Java 17 and text blocks are used
+  * Some best practices are applied (such as adding the `public` test method modifier)
+   
