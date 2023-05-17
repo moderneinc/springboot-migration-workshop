@@ -27,11 +27,9 @@ git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 
 Spring Tools 4 has OpenRewrite embedded into it. 
 
-Open the spring-petclinic repository with visual studio. You'll need to
-click on `File` > `Open Folder` and select the folder where you have 
-downloaed the Spring Petclinic repository. 
+Open the `spring-petclinic` repository with VS Code.
 
-From VS Code, you can open the
+Once the project is opened in VS Code, you can open the
 `pom.xml` file and right-click anywhere in the file. You should see two
 important options appear:
 

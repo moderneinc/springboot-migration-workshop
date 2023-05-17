@@ -21,7 +21,7 @@ repository to Spring Boot 3.
 To complete our adventures, you will need:
 
 * Some basic Spring and Git knowledge
-* Having Java 8 and Java 17 installed
+* To have Java 8 and Java 17 installed
 * A GitHub account
 * An IDE of your choice (although we recommend using [Visual Studio Code](https://code.visualstudio.com/) for the Spring Tools Adventure)
 
