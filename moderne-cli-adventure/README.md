@@ -21,10 +21,10 @@ over.
    [https://public.moderne.io/settings/access-token](https://public.moderne.io/settings/access-token).
    Once there, enter a name for the token and press `generate`.
 
-3. Store the token in your local file system so it can be used by the CLI:
+3. Export your token as an envorinment variable
 
 ```shell
-mkdir -p ~/.moderne && echo "mat-YOUR_TOKEN_HERE" > ~/.moderne/token.txt
+export MODERNE_ACCESS_TOKEN="mat-YOUR_TOKEN_HERE"
 ```
 
 4. Clone the [Spring PetClinic
@@ -55,20 +55,13 @@ git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 mod run --path . --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAV org.openrewrite.recipe:rewrite-spring:4.36.0
 ```
 
-2. The previous command should have printed a path to a patch file in the
-   standard output. Let's take that patch file and apply it:
-
-```shell
-git apply PATCH_FILE_NAME
-```
-
-3. You can then see the changes made by running:
+2. The previous command should have updates your source files. You can then see the changes made by running:
 
 ```shell
 git diff
 ```
 
-## Publish your OSS repositories to the Moderne platform
+## Run a recipe in a remote repositories
 
 Publishing your [Lossless Semantic
 Tree](https://docs.moderne.io/concepts/lossless-semantic-trees) (LST) artifacts
@@ -76,21 +69,20 @@ to the platform allows you to run multiple recipes without having to build the
 repository every time (as LSTs contain all of the information needed to run a
 recipe).
 
-Let's walk through how to build and publish artifacts for your repository.
+We have already many LST open source repositories in the platform. With the
+Moderne CLI you can run an existing recipe or debug a recipe to see if it
+might work in repositories that have published their LSTs.
 
-1. Clone your repository locally and run the `mod publish` command:
+With the following command you will run the CleanUp recipe for all the Netflix 
+repositories we have in the Moderne platform. 
 
-```shell
-git clone YOUR_REPO
-mod publish --path PATH_TO_YOUR_REPO
+````shell
+mod run --repositories "github.com/Netflix/.+@main" --recipeName org.openrewrite.java.cleanup.Cleanup --recipeGAV 
+org.openrewrite:rewrite-java:7.38.0
 ```
 
-2. After a few minutes, you should see it appear in the [Moderne
-   platform](https://public.moderne.io/). To check if the repository has been
-   added, go to
-   [https://public.moderne.io/organizations](https://public.moderne.io/organizations)
-   and search for your repository name.
+The [CleanUp recipe](https://public.moderne.io/recipes/org.openrewrite.java.cleanup.Cleanup?) 
+removes unnecessary parenthesis and simplify some expressions.
 
-3. If you want to run a recipe against your repository on the Moderne platform,
-   please continue to the [Moderne platform
-   Adventure](/moderne-platform-adventure/README.md).
+We invite you to experiment to run [any of our recipes](https://public.moderne.io/marketplace) 
+in the OSS repositories we have from Netflix.  
