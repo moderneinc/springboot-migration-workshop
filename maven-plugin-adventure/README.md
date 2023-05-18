@@ -2,7 +2,7 @@
 
 In this adventure, you will migrate an old version of the
 [Spring PetClinic](https://github.com/spring-projects/spring-petclinic/)
-repository (that uses Spring Boot 2) to Spring Boot 3.
+repository (that uses Spring Boot 2) to Spring Boot 3 using Maven.
 
 If you were migrating this by hand, you would need to do a variety of things
 such as:
@@ -110,7 +110,14 @@ You can then compare the results by running:
 ```shell
 git diff
 ```
+If you look at the results you should see that:
 
+  * The `@Autowired` annotation was removed
+  * JUnit 4 has been replaced with JUnit 5
+  * `javax` has been replaced with `jakarta`
+  * The code has been migrated to Java 17 and text blocks are used
+  * Some best practices are applied (such as adding the `public` test method modifier)
+   
 ## (Optional) Fix Static Code Analysis Issues
 
 If you have time, we recommend trying out one of the most important recipes in
