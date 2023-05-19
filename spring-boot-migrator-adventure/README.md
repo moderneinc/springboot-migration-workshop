@@ -25,7 +25,8 @@ wget https://github.com/spring-projects-experimental/spring-boot-migrator/releas
 git clone https://github.com/spring-projects/spring-petclinic
 ```
 
-3. Check out the last Spring Boot 2.0 commit:
+3. Check out the last Spring Boot 2.0 commit. **In this case it is a different commit, 
+because we need a solution that builds with Java 17**:
 
 ```shell
 git checkout 9ecdc1111e3da388a750ace41a125287d9620534
