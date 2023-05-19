@@ -25,6 +25,22 @@ Let's walk through how to do that.
 
 ## Prepare your environment
 
+Switch to Java 8 so you can properly build this repository. You might need to
+   download Java 8 and update your `JAVA_HOME` environment variable. If you are
+   on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
+
+```shell
+sdk install java 8.0.372-tem
+sdk use java 8.0.372-tem
+```
+
+  * If you aren't on a Unix-based system or you don't want to install SDKMan,
+    you'll need to install Java 8 and run something like:
+
+```shell
+export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_8
+```
+
 1. Clone the [Spring PetClinic
    repository](https://github.com/spring-projects/spring-petclinic):
 
@@ -35,7 +51,7 @@ git clone https://github.com/spring-projects/spring-petclinic
 2. Check out the last Spring Boot 2.0 commit:
 
 ```shell
-git checkout 9ecdc1111e3da388a750ace41a125287d9620534
+git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
 ```
 
 3. Make sure it runs on your machine:
