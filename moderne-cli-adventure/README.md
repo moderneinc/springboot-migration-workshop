@@ -27,21 +27,37 @@ over.
 export MODERNE_ACCESS_TOKEN="mat-YOUR_TOKEN_HERE"
 ```
 
-4. Clone the [Spring PetClinic
-   repository](https://github.com/spring-projects/spring-petclinic) to your
-   machine:
+4. Switch to Java 8 so you can properly build this repository. You might need to
+download Java 8 and update your `JAVA_HOME` environment variable. If you are
+on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
+
+```shell
+sdk install java 8.0.372-tem
+sdk use java 8.0.372-tem
+```
+
+  * If you aren't on a Unix-based system or you don't want to install SDKMan,
+    you'll need to install Java 8 and run something like:
+
+```shell
+export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_8
+```
+
+6. Clone the [Spring PetClinic
+   repository](https://github.com/spring-projects/spring-petclinic):
 
 ```shell
 git clone https://github.com/spring-projects/spring-petclinic
 ```
 
-5. Check out the last Spring Boot 2.0 commit:
+7. Check out the last Spring Boot 2.0 commit:
 
-```
-git checkout 9ecdc1111e3da388a750ace41a125287d9620534
+```shell
+git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
 ```
 
-6. Make sure it runs on your machine:
+
+8. Make sure it runs on your machine:
 
 ```shell
 ./gradlew build -x test
@@ -49,13 +65,25 @@ git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 
 ## Migrate to Spring Boot 3 using the Moderne CLI
 
-1. Run the following command from the `spring-petclinic` repository:
+1. Run the build command to generate the repository LST
 
 ```shell
-mod run --path . --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAV org.openrewrite.recipe:rewrite-spring:4.36.0
+mod build --path .
 ```
 
-2. The previous command should have updates your source files. You can then see the changes made by running:
+2. Now, witch to Java 17 to run recipes. This is a requirement of the CLI.
+
+```shell
+export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_17
+```
+ 
+3. following command from the `spring-petclinic` repository:
+
+```shell
+mod run --path . --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAV org.openrewrite.recipe:rewrite-spring:4.36.0 --skipBuild
+```
+
+4. The previous command should have updates your source files. You can then see the changes made by running:
 
 ```shell
 git diff
