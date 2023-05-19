@@ -10,18 +10,40 @@ Visual Studio.
 
 2. Install the [Spring Tools 4 plugin](https://spring.io/tools)
 
-3. Clone the [Spring PetClinic
+3. Switch to Java 8 so you can properly build this repository and restart your Visual Studio. 
+You might need to download Java 8 and update your `JAVA_HOME` environment variable. If you are
+   on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
+
+```shell
+sdk install java 8.0.372-tem
+sdk use java 8.0.372-tem
+```
+
+  * If you aren't on a Unix-based system or you don't want to install SDKMan,
+    you'll need to install Java 8 and run something like:
+
+```shell
+export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_8
+```
+
+4. Clone the [Spring PetClinic
    repository](https://github.com/spring-projects/spring-petclinic):
 
 ```shell
 git clone https://github.com/spring-projects/spring-petclinic
 ```
 
-4. Check out the last Spring Boot 2.0 commit:
+5. Check out the last Spring Boot 2.0 commit:
 
 ```shell
-git checkout 9ecdc1111e3da388a750ace41a125287d9620534
+git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
 ```
+
+6. Make sure it runs on your machine:
+
+```shell
+./mvnw package -DskipTests
+``` 
 
 ## Migrate to Spring Boot 3 using Spring Tools 4 
 
@@ -61,8 +83,8 @@ git diff
 ```
 
 **Note:** This is a very recent feature that is only available for Maven
-projects. Only some of the OpenRewrite migrations can be applied with this
-feature.
+projects and takes several minutes to execute. 
+Only some of the OpenRewrite migrations can be applied with this feature.
 
 However, if you look at the results you should see that:
 
