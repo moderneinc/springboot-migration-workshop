@@ -30,7 +30,7 @@ platform, please see the [CLI adventure](/moderne-cli-adventure/README.md)*
 2. A repository group is a list of repositories that are grouped under a name
 that is only visible to you. You can use any name for the repository group. For
 this adventure, let's call it `petclinic`. After giving it a name, select
-`github.com/timtebeek/spring-petclinic@2.0.0` from the list of available
+`github.com/moderneinc/spring-petclinic@2.0.0` from the list of available
 repositories. To save this repository group, please press the `Save` button in
 the bottom right corner of your screen:
 
