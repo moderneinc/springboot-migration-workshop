@@ -13,32 +13,48 @@ exist so that you can make the decision that best meets your own needs.
 
 ## Prepare your environment
 
-1.  Download the `spring-boot-upgrade.jar`:
+1. Switch to Java 17 so you can properly build this repository. You might need to
+download Java 17 and update your `JAVA_HOME` environment variable. If you are
+on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
+
+```shell
+sdk install java 17.0.4.1-tem
+sdk use java 17.0.4.1-tem
+```
+
+  * If you aren't on a Unix-based system or you don't want to install SDKMan,
+    you'll need to install Java 17 and run something like:
+
+```shell
+export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_17
+```
+
+2.  Download the `spring-boot-upgrade.jar`:
 
 ```shell
 wget https://github.com/spring-projects-experimental/spring-boot-migrator/releases/latest/download/spring-boot-upgrade.jar
 ```
 
-2. Clone the [Spring PetClinic](https://github.com/spring-projects/spring-petclinic) repository
+3. Clone the [Spring PetClinic](https://github.com/spring-projects/spring-petclinic) repository
 
 ```shell
 git clone https://github.com/spring-projects/spring-petclinic
 ```
 
-3. Check out the last Spring Boot 2.0 commit. **In this case it is a different commit, 
+4. Check out the last Spring Boot 2.0 commit. **In this case it is a different commit, 
 because we need a solution that builds with Java 17**:
 
 ```shell
 git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ```
 
-4. Make sure it runs on your machine:
+5. Make sure it runs on your machine:
 
 ```shell
 ./mvnw package -DskipTests
 ``` 
 
-5. Make sure that you are using Java 17. We've found that SBM does not work with
+6. Make sure that you are using Java 17. We've found that SBM does not work with
   Java 19.
 
 ```shell
