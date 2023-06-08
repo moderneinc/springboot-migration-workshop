@@ -35,8 +35,8 @@ on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
 sdk install java 8.0.372-tem
 sdk use java 8.0.372-tem
 ```
-  * If you want to use `sdk` and the `java 8.0.372-temp distribution 
-    is not available for you, select any that represents a Java 8 version.
+  * If you want to use `sdk` and the `java 8.0.372-tem` distribution 
+    is not available for you, select any distribution that represents a Java 8 version.
     
   * If you aren't on a Unix-based system or you don't want to install SDKMan,
     you'll need to install Java 8 and run something like:
