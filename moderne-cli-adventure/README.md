@@ -35,7 +35,9 @@ on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
 sdk install java 8.0.372-tem
 sdk use java 8.0.372-tem
 ```
-
+  * If you want to use `sdk` and the `java 8.0.372-temp distribution 
+    is not available for you, select any that represents a Java 8 version.
+    
   * If you aren't on a Unix-based system or you don't want to install SDKMan,
     you'll need to install Java 8 and run something like:
 
@@ -53,6 +55,7 @@ git clone https://github.com/spring-projects/spring-petclinic
 7. Check out the last Spring Boot 2.0 commit:
 
 ```shell
+cd spring-petclinic
 git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
 ```
 
@@ -60,7 +63,7 @@ git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
 8. Make sure it runs on your machine:
 
 ```shell
-./gradlew build -x test
+./mvnw package -DskipTests
 ``` 
 
 ## Migrate to Spring Boot 3 using the Moderne CLI
