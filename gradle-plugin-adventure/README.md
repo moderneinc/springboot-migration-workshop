@@ -51,7 +51,7 @@ git clone https://github.com/spring-projects/spring-petclinic
 2. Check out the last Spring Boot 2.0 commit:
 
 ```shell
-git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
+git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ```
 
 3. Make sure it runs on your machine:
