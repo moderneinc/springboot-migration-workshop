@@ -71,7 +71,7 @@ git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
 1. Run the build command to generate the repository LST
 
 ```shell
-mod build --path .
+mod build --path . --mvnPluginVersion=0.41.0
 ```
 
 2. Now, witch to Java 17 to run recipes. This is a requirement of the CLI.
