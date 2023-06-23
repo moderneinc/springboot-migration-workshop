@@ -12,16 +12,16 @@ over.
 ## Prepare your environment
 
 1. Download the Moderne CLI by going to
-   [https://public.moderne.io](https://public.moderne.io), clicking on the `?`
+   [https://app.moderne.io](https://app.moderne.io), clicking on the `?`
    in the top right corner, and selecting `Moderne CLI` from the menu:
 
 ![context menu](assets/cli-download.png)
 
 2. Create a Moderne Access Token by going to
-   [https://public.moderne.io/settings/access-token](https://public.moderne.io/settings/access-token).
+   [https://app.moderne.io/settings/access-token](https://app.moderne.io/settings/access-token).
    Once there, enter a name for the token and press `generate`.
 
-3. Export your token as an envorinment variable
+3. Export your token as an environment variable
 
 ```shell
 export MODERNE_ACCESS_TOKEN="mat-YOUR_TOKEN_HERE"
@@ -74,7 +74,7 @@ git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
 mod build --path . --mvnPluginVersion=0.41.0
 ```
 
-2. Now, witch to Java 17 to run recipes. This is a requirement of the CLI.
+2. Now, switch to Java 17 to run recipes. This is a requirement of the CLI.
 
 ```shell
 export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_17
@@ -86,13 +86,13 @@ export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_17
 mod run --path . --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAV org.openrewrite.recipe:rewrite-spring:4.36.0 --skipBuild
 ```
 
-4. The previous command should have updates your source files. You can then see the changes made by running:
+4. The previous command should have updated your source files. You can then see the changes made by running:
 
 ```shell
 git diff
 ```
 
-## Run a recipe in a remote repositories
+## Run a recipe in remote repositories
 
 Publishing your [Lossless Semantic
 Tree](https://docs.moderne.io/concepts/lossless-semantic-trees) (LST) artifacts
@@ -100,7 +100,7 @@ to the platform allows you to run multiple recipes without having to build the
 repository every time (as LSTs contain all of the information needed to run a
 recipe).
 
-We have already many LST open source repositories in the platform. With the
+We have already many LST open-source repositories in the platform. With the
 Moderne CLI you can run an existing recipe or debug a recipe to see if it
 might work in repositories that have published their LSTs.
 
@@ -112,8 +112,8 @@ mod run --repositories "github.com/Netflix/.+@main" --recipeName org.openrewrite
 org.openrewrite:rewrite-java:7.38.0
 ```
 
-The [CleanUp recipe](https://public.moderne.io/recipes/org.openrewrite.java.cleanup.Cleanup?) 
+The [CleanUp recipe](https://app.moderne.io/recipes/org.openrewrite.staticanalysis.CodeCleanup?) 
 removes unnecessary parenthesis and simplify some expressions.
 
-We invite you to experiment to run [any of our recipes](https://public.moderne.io/marketplace) 
+We invite you to experiment to run [any of our recipes](https://app.moderne.io/marketplace) 
 in the OSS repositories we have from Netflix.  
