@@ -1,6 +1,6 @@
 # Moderne platform Adventure
 
-In this adventure, you will utilize the [Moderne platform](https://public.moderne.io/) to:
+In this adventure, you will utilize the [Moderne platform](https://app.moderne.io/) to:
 
 * Migrate the [Spring
   PetClinic](https://github.com/spring-projects/spring-petclinic) repository
@@ -9,7 +9,7 @@ In this adventure, you will utilize the [Moderne platform](https://public.modern
 
 ## Prepare your environment
 
-Go to [https://public.moderne.io/](https://public.moderne.io/) and register with
+Go to [https://app.moderne.io/](https://app.moderne.io/) and register with
 your GitHub account. Once you've signed in, you'll find more than 30,000
 open-source repositories that can be used to test OpenRewrite recipes without
 you having to configure anything.
@@ -19,7 +19,7 @@ platform, please see the [CLI adventure](/moderne-cli-adventure/README.md)*
 
 ## Migrating to Spring Boot 3 with the Moderne platform
 
-1. Once you're logged in to [Moderne](https://public.moderne.io/), the first
+1. Once you're logged in to [Moderne](https://app.moderne.io/), the first
    thing you'll want to do is to create a repository group with just the Spring
    PetClinic repository in it. To do so, click on the `Default` group in the top
    right-hand corner of your screen and select `Create` from the menu that
@@ -37,9 +37,9 @@ the bottom right corner of your screen:
 ![repository-groups](assets/repository-groups.png)
 
 3. With the repository group created, you can go to the [Moderne
-   Marketplace](https://public.moderne.io/marketplace). From there, click on
+   Marketplace](https://app.moderne.io/marketplace). From there, click on
    `Java`, then `Spring`, then `Spring Boot 3.x`, and finally select [Migrate to
-   Spring Boot 3.0](https://public.moderne.io/recipes/org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0?):
+   Spring Boot 3.0](https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0):
 
 ![recipe](assets/springboot-recipe.png) 
 
@@ -79,7 +79,7 @@ In this part of the adventure, let's use the Moderne platform to get a list of
 vulnerabilities in open-source repositories. 
 
 1. Begin by navigating to the [Check for dependency vulnerabilities
-   recipe](https://public.moderne.io/recipes/org.openrewrite.java.dependencies.DependencyVulnerabilityCheck
+   recipe](https://app.moderne.io/recipes/org.openrewrite.java.dependencies.DependencyVulnerabilityCheck
    ).
   
 2. Select `compile` for the first option (`scope`), `true`, for the second
