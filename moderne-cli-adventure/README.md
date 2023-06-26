@@ -107,9 +107,8 @@ might work in repositories that have published their LSTs.
 With the following command you will run the CleanUp recipe for all the Netflix 
 repositories we have in the Moderne platform. 
 
-````shell
-mod run --repositories "github.com/Netflix/.+@main" --recipeName org.openrewrite.java.cleanup.Cleanup --recipeGAV 
-org.openrewrite:rewrite-java:7.38.0
+```shell
+mod run --repositories "github.com/Netflix/.+@main" --recipeName org.openrewrite.staticanalysis.CodeCleanup --recipeGAV org.openrewrite.recipe:rewrite-static-analysis:1.0.1
 ```
 
 The [CleanUp recipe](https://public.moderne.io/recipes/org.openrewrite.java.cleanup.Cleanup?) 
