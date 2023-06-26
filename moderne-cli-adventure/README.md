@@ -12,13 +12,13 @@ over.
 ## Prepare your environment
 
 1. Download the Moderne CLI by going to
-   [https://public.moderne.io](https://public.moderne.io), clicking on the `?`
+   [https://app.moderne.io](https://app.moderne.io), clicking on the `?`
    in the top right corner, and selecting `Moderne CLI` from the menu:
 
 ![context menu](assets/cli-download.png)
 
 2. Create a Moderne Access Token by going to
-   [https://public.moderne.io/settings/access-token](https://public.moderne.io/settings/access-token).
+   [https://app.moderne.io/settings/access-token](https://app.moderne.io/settings/access-token).
    Once there, enter a name for the token and press `generate`.
 
 3. Export your token as an envorinment variable
@@ -111,8 +111,8 @@ repositories we have in the Moderne platform.
 mod run --repositories "github.com/Netflix/.+@main" --recipeName org.openrewrite.staticanalysis.CodeCleanup --recipeGAV org.openrewrite.recipe:rewrite-static-analysis:1.0.1
 ```
 
-The [CleanUp recipe](https://public.moderne.io/recipes/org.openrewrite.java.cleanup.Cleanup?) 
+The [CodeCleanup recipe](https://app.moderne.io/recipes/org.openrewrite.staticanalysis.CodeCleanup) 
 removes unnecessary parenthesis and simplify some expressions.
 
-We invite you to experiment to run [any of our recipes](https://public.moderne.io/marketplace) 
+We invite you to experiment to run [any of our recipes](https://app.moderne.io/marketplace) 
 in the OSS repositories we have from Netflix.  
