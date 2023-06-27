@@ -71,7 +71,7 @@ git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
 1. Run the build command to generate the repository LST
 
 ```shell
-mod build --path . --mvnPluginVersion=0.41.0
+mod build --path . --mvnPluginVersion=1.2.1
 ```
 
 2. Now, switch to Java 17 to run recipes. This is a requirement of the CLI.
@@ -83,7 +83,7 @@ export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_17
 3. following command from the `spring-petclinic` repository:
 
 ```shell
-mod run --path . --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAV org.openrewrite.recipe:rewrite-spring:4.36.0 --skipBuild
+mod run --path . --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAV org.openrewrite.recipe:rewrite-spring:5.0.1 --skipBuild
 ```
 
 4. The previous command should have updated your source files. You can then see the changes made by running:
@@ -107,9 +107,8 @@ might work in repositories that have published their LSTs.
 With the following command you will run the CleanUp recipe for all the Netflix 
 repositories we have in the Moderne platform. 
 
-````shell
-mod run --repositories "github.com/Netflix/.+@main" --recipeName org.openrewrite.java.cleanup.Cleanup --recipeGAV 
-org.openrewrite:rewrite-java:7.38.0
+```shell
+mod run --repositories "github.com/Netflix/.+@main" --recipeName org.openrewrite.staticanalysis.CodeCleanup --recipeGAV org.openrewrite.recipe:rewrite-static-analysis:1.0.1
 ```
 
 The [CleanUp recipe](https://app.moderne.io/recipes/org.openrewrite.staticanalysis.CodeCleanup?) 

@@ -39,7 +39,7 @@ the bottom right corner of your screen:
 3. With the repository group created, you can go to the [Moderne
    Marketplace](https://app.moderne.io/marketplace). From there, click on
    `Java`, then `Spring`, then `Spring Boot 3.x`, and finally select [Migrate to
-   Spring Boot 3.0](https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0?):
+   Spring Boot 3.0](https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0):
 
 ![recipe](assets/springboot-recipe.png) 
 
