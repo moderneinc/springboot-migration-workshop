@@ -83,7 +83,7 @@ export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_17
 3. following command from the `spring-petclinic` repository:
 
 ```shell
-mod run --path . --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAV org.openrewrite.recipe:rewrite-spring:5.0.1 --skipBuild
+mod run --path . --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAV org.openrewrite.recipe:rewrite-spring:5.0.2 --skipBuild
 ```
 
 4. The previous command should have updated your source files. You can then see the changes made by running:
