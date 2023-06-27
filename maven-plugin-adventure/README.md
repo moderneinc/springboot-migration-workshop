@@ -79,7 +79,7 @@ Modify the `pom.xml` file and add the following information:
             <plugin>
                 <groupId>org.openrewrite.maven</groupId>
                 <artifactId>rewrite-maven-plugin</artifactId>
-                <version>4.45.3</version>
+                <version>5.2.4</version>
                 <configuration>
                     <activeRecipes>
                         <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0</recipe>
@@ -89,7 +89,7 @@ Modify the `pom.xml` file and add the following information:
                     <dependency>
                         <groupId>org.openrewrite.recipe</groupId>
                         <artifactId>rewrite-spring</artifactId>
-                        <version>4.36.0</version>
+                        <version>5.0.2</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -118,7 +118,7 @@ details in the command line. Below is the command for running the
 `UpgradeSpringBoot_3_0` recipe:
 
 ```shell
-./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.36.0
+./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:5.0.2
 ```
 
 You can then compare the results by running:
