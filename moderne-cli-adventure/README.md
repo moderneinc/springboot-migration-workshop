@@ -21,7 +21,7 @@ over.
    [https://app.moderne.io/settings/access-token](https://app.moderne.io/settings/access-token).
    Once there, enter a name for the token and press `generate`.
 
-3. Export your token as an envorinment variable
+3. Export your token as an environment variable
 
 ```shell
 export MODERNE_ACCESS_TOKEN="mat-YOUR_TOKEN_HERE"
@@ -74,7 +74,7 @@ git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
 mod build --path . --mvnPluginVersion=1.2.1
 ```
 
-2. Now, witch to Java 17 to run recipes. This is a requirement of the CLI.
+2. Now, switch to Java 17 to run recipes. This is a requirement of the CLI.
 
 ```shell
 export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_17
@@ -86,13 +86,13 @@ export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_17
 mod run --path . --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAV org.openrewrite.recipe:rewrite-spring:5.0.1 --skipBuild
 ```
 
-4. The previous command should have updates your source files. You can then see the changes made by running:
+4. The previous command should have updated your source files. You can then see the changes made by running:
 
 ```shell
 git diff
 ```
 
-## Run a recipe in a remote repositories
+## Run a recipe in remote repositories
 
 Publishing your [Lossless Semantic
 Tree](https://docs.moderne.io/concepts/lossless-semantic-trees) (LST) artifacts
@@ -100,7 +100,7 @@ to the platform allows you to run multiple recipes without having to build the
 repository every time (as LSTs contain all of the information needed to run a
 recipe).
 
-We have already many LST open source repositories in the platform. With the
+We have already many LST open-source repositories in the platform. With the
 Moderne CLI you can run an existing recipe or debug a recipe to see if it
 might work in repositories that have published their LSTs.
 
@@ -111,7 +111,7 @@ repositories we have in the Moderne platform.
 mod run --repositories "github.com/Netflix/.+@main" --recipeName org.openrewrite.staticanalysis.CodeCleanup --recipeGAV org.openrewrite.recipe:rewrite-static-analysis:1.0.1
 ```
 
-The [CodeCleanup recipe](https://app.moderne.io/recipes/org.openrewrite.staticanalysis.CodeCleanup) 
+The [CleanUp recipe](https://app.moderne.io/recipes/org.openrewrite.staticanalysis.CodeCleanup?) 
 removes unnecessary parenthesis and simplify some expressions.
 
 We invite you to experiment to run [any of our recipes](https://app.moderne.io/marketplace) 
