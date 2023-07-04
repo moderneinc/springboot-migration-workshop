@@ -107,7 +107,7 @@ using the Moderne CLI.
 1. Run the build command to generate the LST for the PetClinic repo:
 
 ```shell
-mod build --path . --mvnPluginVersion=1.2.1
+mod build
 ```
 
 2. Next, switch to Java 17 to run recipes. This is a requirement of the CLI:
@@ -127,7 +127,7 @@ export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_17
    `spring-petclinic` repository:
 
 ```shell
-mod run --path . --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAVs org.openrewrite.recipe:rewrite-spring:5.0.2 --skipBuild
+mod run --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAVs rewrite-spring --skipBuild
 ```
 
 4. The previous command should have updated your source files. Whenever you run
@@ -154,7 +154,7 @@ With the following command, you will run the CleanUp recipe for all the Netflix
 repositories we have in the Moderne platform:
 
 ```shell
-mod run --repositories "github.com/Netflix/.+@main" --recipeName org.openrewrite.staticanalysis.CodeCleanup --recipeGAVs org.openrewrite.recipe:rewrite-static-analysis:1.0.2
+mod run --repositories "github.com/Netflix/.+@main" --recipeName org.openrewrite.staticanalysis.CodeCleanup --recipeGAVs rewrite-static-analysis
 ```
 
 The [CleanUp recipe](https://app.moderne.io/recipes/org.openrewrite.staticanalysis.CodeCleanup?) 
