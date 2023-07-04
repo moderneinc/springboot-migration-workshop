@@ -51,6 +51,7 @@ git clone https://github.com/spring-projects/spring-petclinic
 2. Check out the first Gradle build commit:
 
 ```shell
+cd spring-petclinic
 git checkout 4df621b41ed3013e527d4037d83a6cf756efd784
 ```
 This commit has already some of the potential migrations of the recipe applied, but it's the first one with Gradle support. 
