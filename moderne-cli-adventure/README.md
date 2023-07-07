@@ -140,25 +140,18 @@ git diff
 
 ## Run a recipe on a remote LST
 
-Publishing your [Lossless Semantic
-Tree](https://docs.moderne.io/concepts/lossless-semantic-trees) (LST) artifacts
-to the platform allows you to run multiple recipes without having to build the
-repository every time (as LSTs contain all of the information needed to run a
-recipe).
+In the previous example, we used the Moderne CLI to run a recipe against a repository on your local machine. This is fine when you only have one repository you're working with. However, what if you wanted to run a recipe against many repositories at once? Checking them out locally, building each of them, and then running a separate run command for each would take a considerable amount of time.
 
-We have already many LST open-source repositories in the platform. With the
-Moderne CLI, you can run an existing recipe or debug a recipe to see if it
-might work in repositories that have published their LSTs.
+Fortunately, the run command can be extended so that you can run recipes against multiple repositories that have already published their [Lossless Semantic Tree](https://docs.moderne.io/concepts/lossless-semantic-trees) (LST) artifacts.
 
-With the following command, you will run the CleanUp recipe for all the Netflix 
-repositories we have in the Moderne platform:
+This can be especially helpful when you're working on debugging a new recipe and want to test it against many repositories at once.
+
+For example, if you executed the following command, the [Code Cleanup](https://app.moderne.io/recipes/org.openrewrite.staticanalysis.CodeCleanup) recipe would be run against all of the Netflix repositories that have LST artifacts built in the Moderne platform:
 
 ```shell
 mod run --repositories "github.com/Netflix/.+@main" --recipeName org.openrewrite.staticanalysis.CodeCleanup --recipeGAVs rewrite-static-analysis
 ```
 
-The [CleanUp recipe](https://app.moderne.io/recipes/org.openrewrite.staticanalysis.CodeCleanup?) 
-removes unnecessary parenthesis and simplifies some expressions.
+None of these repositories will be checked out locally and you won't have to wait for these repositories to build as the pre-built artifacts will simply be downloaded to your machine instead.
 
-We invite you to experiment to run [any of our recipes](https://app.moderne.io/marketplace) 
-in the OSS repositories we have from Netflix.  
+Feel free to experiment with the run command by executing [any of our recipes](https://app.moderne.io/marketplace) against any of the open-source Netflix repositories that exist in the Moderne platform.
