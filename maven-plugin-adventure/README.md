@@ -79,7 +79,7 @@ Modify the `pom.xml` file and add the following information:
             <plugin>
                 <groupId>org.openrewrite.maven</groupId>
                 <artifactId>rewrite-maven-plugin</artifactId>
-                <version>5.2.6</version>
+                <version>5.3.1</version>
                 <configuration>
                     <activeRecipes>
                         <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0</recipe>
@@ -102,7 +102,7 @@ Once you've done that, you can run the Upgrade Spring Boot 3.0 recipe by running
 this command:
 
 ```shell
- ./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run
+./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run
 ```
 
 You can then compare the results by running:
