@@ -32,6 +32,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: npm
+      - name: install
+        run: npm install
       - name: build
         run: npx docusaurus build
       - uses: actions/configure-pages@v3
