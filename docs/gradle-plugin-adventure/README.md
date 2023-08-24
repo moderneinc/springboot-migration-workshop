@@ -71,9 +71,9 @@ OpenRewrite can be configured in your `build.gradle` file or as an additional
 ([see how
 here](https://docs.openrewrite.org/running-recipes/running-rewrite-on-a-gradle-project-without-modifying-the-build)). 
 
-1. For simplicity, we've included an [init.gradle](./init.gradle) file in this
+1. For simplicity, we've included an [init.gradle](init.gradle) file in this
    folder that contains the Spring Boot migration recipe as well as the
-   OpenRewrite dependencies. Please copy [this file](./init.gradle) to the
+   OpenRewrite dependencies. Please copy [this file](init.gradle) to the
    Spring PetClinic repository you have checked out locally.
 
 2. With that file copied over, if you run `rewriteRun`, you will apply the
@@ -130,7 +130,7 @@ export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_8
 ./gradlew build -x test
 ```
 
-4. Copy and apply the [patch](./configure-build.patch) that is in this directory
+4. Copy and apply the [patch](configure-build.patch) that is in this directory
    to the `build.gradle` file. This will automatically configure the rewrite
    Gradle plugin in the repository for you. We recommend that you look at the
    differences to understand how it is configured:

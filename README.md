@@ -1,4 +1,4 @@
-# Springboot Migration Workshop
+# Spring Boot Migration Workshop
 
 In this repository, you'll find a variety of "adventures" that demonstrate the
 different ways you can automatically migrate or upgrade an application to Spring
@@ -35,14 +35,14 @@ git clone https://github.com/moderneinc/springboot-migration-workshop
 
 ## Adventures
 
-* [Maven Plugin Adventure](./maven-plugin-adventure)
+* [Maven Plugin Adventure](docs/maven-plugin-adventure)
 
-* [Gradle Plugin Adventure](./gradle-plugin-adventure)
+* [Gradle Plugin Adventure](docs/gradle-plugin-adventure)
 
-* [Spring Boot Migrator Adventure](./spring-boot-migrator-adventure)
+* [Spring Boot Migrator Adventure](docs/spring-boot-migrator-adventure)
  
-* [Spring Tools Adventure](./spring-tools-adventure)
+* [Spring Tools Adventure](docs/spring-tools-adventure)
 
-* [Moderne Platform Adventure](./moderne-platform-adventure)
+* [Moderne Platform Adventure](docs/moderne-platform-adventure)
 
-* [Moderne CLI Adventure](./moderne-cli-adventure)
+* [Moderne CLI Adventure](docs/moderne-cli-adventure)

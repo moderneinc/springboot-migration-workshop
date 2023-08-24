@@ -15,7 +15,7 @@ open-source repositories that can be used to test OpenRewrite recipes without
 you having to configure anything.
 
 *Note: If you're interested in adding your own repository to the Moderne
-platform, please see the [CLI adventure](/moderne-cli-adventure/README.md)*
+platform, please see the [CLI adventure](/docs/moderne-cli-adventure)*
 
 ## Migrating to Spring Boot 3 with the Moderne platform
 
