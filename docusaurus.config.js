@@ -42,7 +42,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/moderneinc/springboot-migration-workshop/edit/docusaurus', // TODO remove tree/docusaurus
+            'https://github.com/moderneinc/springboot-migration-workshop/edit/main',
         },
         blog: false,
         theme: {
