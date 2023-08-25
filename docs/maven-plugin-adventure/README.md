@@ -30,31 +30,34 @@ sdk install java 8.0.372-tem
 sdk use java 8.0.372-tem
 ```
 
-* If you aren't on a Unix-based system or you don't want to install SDKMan, you'll need to install Java 8 and run
-  something like:
+:::note
+If you aren't on a Unix-based system or you don't want to install SDKMan, you'll need to install Java 8 and run
+something like:
 
 ```shell
 export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_8
 ```
 
+:::
+
 1. Clone the [Spring PetClinic
    repository](https://github.com/spring-projects/spring-petclinic):
 
-```shell
-git clone https://github.com/spring-projects/spring-petclinic
-```
+    ```shell
+    git clone https://github.com/spring-projects/spring-petclinic
+    ```
 
 2. Check out the last Spring Boot 2.0 commit:
 
-```shell
-git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
-```
+    ```shell
+    git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
+    ```
 
 3. Make sure it runs on your machine:
 
-```shell
-./mvnw package -DskipTests
-``` 
+   ```shell
+   ./mvnw package -DskipTests
+   ``` 
 
 ## Migrate to SpringBoot 3 with OpenRewrite
 
@@ -138,26 +141,26 @@ To demonstrate this recipe, we'll use a different Maven repository that has a va
 
 1. Clone the [Spring WS](https://github.com/spring-projects/spring-ws) repository:
 
-```shell
-git clone https://github.com/spring-projects/spring-ws
-```
+   ```shell
+   git clone https://github.com/spring-projects/spring-ws
+   ```
 
 2. Test that you can build it:
 
-```shell
-cd spring-ws
-./mvnw package -DskipTests
-```
+   ```shell
+   cd spring-ws
+   ./mvnw package -DskipTests
+   ```
 
 3. Run the common static analysis recipe:
 
-```shell
-./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.activeRecipes=org.openrewrite.java.cleanup.CommonStaticAnalysis
-```
+   ```shell
+   ./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run \
+     -Drewrite.activeRecipes=org.openrewrite.java.cleanup.CommonStaticAnalysis
+   ```
 
 4. Check out all of the changes that were made by running:
 
-```shell
-git diff
-```
+   ```shell
+   git diff
+   ```

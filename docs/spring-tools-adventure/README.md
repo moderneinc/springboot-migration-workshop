@@ -18,12 +18,14 @@ sdk install java 8.0.372-tem
 sdk use java 8.0.372-tem
 ```
 
-* If you aren't on a Unix-based system or you don't want to install SDKMan, you'll need to install Java 8 and run
+:::note
+If you aren't on a Unix-based system or you don't want to install SDKMan, you'll need to install Java 8 and run
   something like:
 
 ```shell
 export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_8
 ```
+:::
 
 4. Clone the [Spring PetClinic repository](https://github.com/spring-projects/spring-petclinic):
 

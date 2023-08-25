@@ -37,9 +37,9 @@ it without having to build it over and over.
 7. Once created, you should see a command that you can run to install the token on your system. Either run that command
    or export your token directly as an environment variable:
 
-```shell
-export MODERNE_ACCESS_TOKEN="mat-YOUR_TOKEN_HERE"
-```
+   ```shell
+   export MODERNE_ACCESS_TOKEN="mat-YOUR_TOKEN_HERE"
+   ```
 
 ### Configure the Spring PetClinic repository
 
@@ -48,42 +48,48 @@ With the CLI downloaded and configured, you're now ready to set up the repositor
 1. Clone the [Spring PetClinic
    repository](https://github.com/spring-projects/spring-petclinic):
 
-```shell
-git clone https://github.com/spring-projects/spring-petclinic
-```
+   ```shell
+   git clone https://github.com/spring-projects/spring-petclinic
+   ```
 
 2. Check out the last Spring Boot 2.0 commit:
 
-```shell
-cd spring-petclinic
-git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
-```
+   ```shell
+   cd spring-petclinic
+   git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
+   ```
 
 3. If you tried building this repository right now, you would more than likely run into errors. This is because this
    version of the Spring PetClinic repo requires Java 8. To ensure that everything builds correctly, you may need to
    download Java 8 and update your `JAVA_HOME` environment variable. If you are on a Unix-based system, we recommend
    using [SDKMan](https://sdkman.io/):
 
-      ```shell
-      sdk install java 8.0.372-tem
-      sdk use java 8.0.372-tem
-      ```
+   ```shell
+   sdk install java 8.0.372-tem
+   sdk use java 8.0.372-tem
+   ```
+
+:::note
 
 * If you want to use `sdk` and the `java 8.0.372-tem` distribution is not available for you, select any distribution
   that represents a Java 8 version.
+  :::
 
-* If you aren't on a Unix-based system or you don't want to install SDKMan, you'll need to install Java 8 and run
-  something like:
+:::note
+If you aren't on a Unix-based system or you don't want to install SDKMan, you'll need to install Java 8 and run
+something like:
 
     ```shell
     export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_8
     ```
 
+:::
+
 4. With Java 8 configured, make sure that the Spring PetClinic repository builds on your machine:
 
-```shell
-./mvnw package -DskipTests
-```
+   ```shell
+   ./mvnw package -DskipTests
+   ```
 
 5. If everything has been set up correctly, you should see a `BUILD SUCCESS` message after the project is built and the
    tests passed.
@@ -94,36 +100,36 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
 
 1. Run the build command to generate the LST for the PetClinic repo:
 
-```shell
-mod build
-```
+   ```shell
+   mod build
+   ```
 
 2. Next, switch to Java 17 to run recipes. This is a requirement of the CLI:
 
-```shell
-sdk install java 17.0.7-tem
-sdk use java 17.0.7-tem
-```
+   ```shell
+   sdk install java 17.0.7-tem
+   sdk use java 17.0.7-tem
+   ```
 
-OR
+   OR
 
-```shell
-export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_17
-```
+   ```shell
+   export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_17
+   ```
 
 3. Kick off the recipe by running the following command from the
    `spring-petclinic` repository:
 
-```shell
-mod run --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAVs rewrite-spring --skipBuild
-```
+   ```shell
+   mod run --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAVs rewrite-spring --skipBuild
+   ```
 
 4. The previous command should have updated your source files. Whenever you run a recipe, you should always double-check
    that the changes made match your expectations by running:
 
-```shell
-git diff
-```
+   ```shell
+   git diff
+   ```
 
 ## Run a recipe on a remote LST
 
