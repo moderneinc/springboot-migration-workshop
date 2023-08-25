@@ -53,7 +53,7 @@ Open the `spring-petclinic` repository with VS Code. You might see a pop-up in
 the bottom right saying that build tool conflicts are detected. Make sure you
 select `Use Maven` or the next steps won't work:
 
-![](./maven-popup.png)
+![](maven-popup.png)
 
 Once the project builds and `Maven` is selected, you can open the
 `pom.xml` file and right-click anywhere in the file. You should see two
