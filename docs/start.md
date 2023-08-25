@@ -1,18 +1,18 @@
 ---
 sidebar_position: 1
 ---
+
 # Start
 
-In this repository, you'll find a variety of "adventures" that demonstrate the
-different ways you can automatically migrate or upgrade an application to Spring
-Boot 3. The core technology behind each of these adventures is
-[OpenRewrite](https://github.com/openrewrite/rewrite).
+In this repository, you'll find a variety of "adventures" that demonstrate the different ways you can automatically
+migrate or upgrade an application to Spring Boot 3. The core technology behind each of these adventures
+is [OpenRewrite](https://github.com/openrewrite/rewrite).
 
-You do not need to complete all of these adventures. Instead, please pick the
-ones that are more interesting or relevant to your needs.
+You do not need to complete all of these adventures. Instead, please pick the ones that are more interesting or relevant
+to your needs.
 
-Regardless of which adventure you pick, you will migrate an old version of the
-[Spring PetClinic](https://github.com/spring-projects/spring-petclinic/)
+Regardless of which adventure you pick, you will migrate an old version of
+the [Spring PetClinic](https://github.com/spring-projects/spring-petclinic/)
 repository to Spring Boot 3.
 
 ## Introduction
@@ -26,7 +26,8 @@ To complete our adventures, you will need:
 * Some basic Spring and Git knowledge
 * To have Java 8 and Java 17 installed
 * A GitHub account
-* An IDE of your choice (although we recommend using [Visual Studio Code](https://code.visualstudio.com/) for the Spring Tools Adventure)
+* An IDE of your choice (although we recommend using [Visual Studio Code](https://code.visualstudio.com/) for the Spring
+  Tools Adventure)
 
 ## Getting started
 
@@ -43,7 +44,7 @@ git clone https://github.com/moderneinc/springboot-migration-workshop
 * [Gradle Plugin Adventure](gradle-plugin-adventure)
 
 * [Spring Boot Migrator Adventure](spring-boot-migrator-adventure)
- 
+
 * [Spring Tools Adventure](spring-tools-adventure)
 
 * [Moderne Platform Adventure](moderne-platform-adventure)
