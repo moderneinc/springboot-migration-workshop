@@ -6,18 +6,15 @@ that is compatible with OpenRewrite recipes as well as a specialized resource re
 development for Spring Boot.
 
 :::caution
-This is a very experimental project and not our recommended way of
-migrating to Spring Boot 3. The project has not created any more releases since
-2022 and there are substantial bugs that need to be fixed for it to run properly
-in any repository. With that being said, we wanted to show what alternatives
-exist so that you can make the decision that best meets your own needs.
+This is a very experimental project and not our recommended way of migrating to Spring Boot 3.
+With that being said, we wanted to show what alternatives exist so that you can make the decision that best meets your
+own needs.
 :::
 
 ## Prepare your environment
 
-1. Switch to Java 17 so you can properly build this repository. You might need to
-   download Java 17 and update your `JAVA_HOME` environment variable. If you are
-   on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
+1. Switch to Java 17 so you can properly build this repository. You might need to download Java 17 and update your
+   `JAVA_HOME` environment variable. If you are on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
 
 ```shell
 sdk install java 17.0.4.1-tem
@@ -74,14 +71,12 @@ java -jar ../spring-boot-upgrade.jar .
 
 2. Open
    [http://localhost:8080/spring-boot-upgrade](http://localhost:8080/spring-boot-upgrade)
-   with your browser and follow the instructions on that page. You will find a
-   list of mandatory recipes and other optional ones that you can select
-   depending on your preferences.
+   with your browser and follow the instructions on that page. You will find a list of mandatory recipes and other
+   optional ones that you can select depending on your preferences.
 
-3. Note that there are GitHub issues listed in some of the recipes. To see what
-   has changed for each recipe, you need to check what commits have been
-   introduced from your Git user in the repository. To do so, run `git log` and
-   look for commits starting with `SBM: `.
+3. Note that there are GitHub issues listed in some of the recipes. To see what has changed for each recipe, you need to
+   check what commits have been introduced from your Git user in the repository. To do so, run `git log` and look for
+   commits starting with `SBM: `.
 
 4. This should print you a list of commits like:
 
@@ -123,10 +118,9 @@ Date:   Fri May 12 12:30:37 2023 +0200
     SBM: applied recipe 'sbu30-upgrade-dependencies'
 ```
 
-5. To understand the code changes for each commit, you can use the `git show $SHA`
-   command. Please note that these code changes will be different than what you'd
-   get from the other adventures in this workshop. For instance, this patch is not
-   included with SBM:
+5. To understand the code changes for each commit, you can use the `git show $SHA` command. Please note that these code
+   changes will be different than what you'd get from the other adventures in this workshop. For instance, this patch is
+   not included with SBM:
 
 ```shell
 --- a/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java
@@ -145,6 +139,6 @@ Date:   Fri May 12 12:30:37 2023 +0200
 +import jakarta.persistence.MappedSuperclass;
 ```
 
-The reason for these differences is largely due to the fact that this project
-has not been recently updated, whereas the Spring Boot 3 recipe has evolved over
+The reason for these differences is largely due to the fact that this project has not been recently updated, whereas the
+Spring Boot 3 recipe has evolved over
 time.
