@@ -69,21 +69,20 @@ With the CLI downloaded and configured, you're now ready to set up the repositor
    sdk use java 8.0.372-tem
    ```
 
-:::note
+   :::note
+   If you want to use `sdk` and the `java 8.0.372-tem` distribution is not available for you, select any distribution
+   that represents a Java 8 version.
+   :::
 
-* If you want to use `sdk` and the `java 8.0.372-tem` distribution is not available for you, select any distribution
-  that represents a Java 8 version.
-  :::
+   :::note
+   If you aren't on a Unix-based system or you don't want to install SDKMan, you'll need to install Java 8 and run
+   something like:
 
-:::note
-If you aren't on a Unix-based system or you don't want to install SDKMan, you'll need to install Java 8 and run
-something like:
+       ```shell
+       export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_8
+       ```
 
-    ```shell
-    export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_8
-    ```
-
-:::
+   :::
 
 4. With Java 8 configured, make sure that the Spring PetClinic repository builds on your machine:
 
