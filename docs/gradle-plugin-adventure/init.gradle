@@ -23,7 +23,7 @@ allprojects {
     }
     rewrite {
       configFile = project.getRootProject().file("rewrite.yml")
-      activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0")
+      activeRecipe("org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT")
     }
 }
 

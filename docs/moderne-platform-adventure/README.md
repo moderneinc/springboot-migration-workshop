@@ -33,7 +33,7 @@ the [CLI adventure](/docs/moderne-cli-adventure)
 
 3. With the repository group created, you can go to the [Moderne Marketplace](https://app.moderne.io/marketplace). From
    there, click on `Java`, then `Spring`, then `Spring Boot 3.x`, and finally select
-   [Migrate to Spring Boot 3.0](https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0):
+   [VERSION_MIGRATE_SPRING_BOOT](https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT):
 
 ![recipe](assets/springboot-recipe.png)
 

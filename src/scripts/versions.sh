@@ -1,0 +1,19 @@
+#!/bin/bash
+set -ex
+
+# Replace the version place holders in each doc file with their corresponding value
+function replace() {
+  #grep --recursive --files-with-matches "$2" docs | xargs --no-run-if-empty sed --in-place "s/$2/$1/g"
+  grep --recursive --files-with-matches "$1" docs | xargs --no-run-if-empty sed --in-place "s/$1/$2/g"
+}
+replace 'VERSION_SDKMAN_JAVA8'            '8.0.382-tem'
+replace 'VERSION_SDKMAN_JAVA11'           '11.0.20-tem'
+replace 'VERSION_SDKMAN_JAVA17'           '17.0.8-tem'
+replace 'VERSION_SPRING_BOOT27'           '2.7.15'
+replace 'VERSION_SPRING_BOOT31'           '3.1.3'
+replace 'VERSION_REWRITE_GRADLE_PLUGIN'   '6.2.2'
+replace 'VERSION_REWRITE_MAVEN_PLUGIN'    '5.4.2'
+replace 'VERSION_REWRITE_SPRING'          '5.0.8'
+replace 'VERSION_RECIPE_SPRING_BOOT'      'UpgradeSpringBoot_3_1'
+replace 'VERSION_MIGRATE_SPRING_BOOT'     'Migrate to Spring Boot 3.1'
+replace 'VERSION_LINK_SPRING_BOOT'        'upgradespringboot_3_1'

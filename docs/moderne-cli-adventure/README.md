@@ -65,12 +65,12 @@ With the CLI downloaded and configured, you're now ready to set up the repositor
    using [SDKMan](https://sdkman.io/):
 
    ```shell
-   sdk install java 8.0.372-tem
-   sdk use java 8.0.372-tem
+   sdk install java VERSION_SDKMAN_JAVA8
+   sdk use java VERSION_SDKMAN_JAVA8
    ```
 
    :::note
-   If you want to use `sdk` and the `java 8.0.372-tem` distribution is not available for you, select any distribution
+   If you want to use `sdk` and the `java VERSION_SDKMAN_JAVA8` distribution is not available for you, select any distribution
    that represents a Java 8 version.
    :::
 
@@ -106,8 +106,8 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
 2. Next, switch to Java 17 to run recipes. This is a requirement of the CLI:
 
    ```shell
-   sdk install java 17.0.7-tem
-   sdk use java 17.0.7-tem
+   sdk install java VERSION_SDKMAN_JAVA17
+   sdk use java VERSION_SDKMAN_JAVA17
    ```
 
    OR
@@ -120,7 +120,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
    `spring-petclinic` repository:
 
    ```shell
-   mod run --recipeName org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 --recipeGAVs rewrite-spring --skipBuild
+   mod run --recipeName org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT --recipeGAVs rewrite-spring --skipBuild
    ```
 
 4. The previous command should have updated your source files. Whenever you run a recipe, you should always double-check

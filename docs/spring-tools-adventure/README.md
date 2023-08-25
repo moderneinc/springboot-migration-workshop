@@ -14,8 +14,8 @@ Studio.
    using [SDKMan](https://sdkman.io/):
 
 ```shell
-sdk install java 8.0.372-tem
-sdk use java 8.0.372-tem
+sdk install java VERSION_SDKMAN_JAVA8
+sdk use java VERSION_SDKMAN_JAVA8
 ```
 
 :::note
@@ -71,7 +71,7 @@ If you don't see the above window and you get an error about `No Spring Boot` pr
 VS Code and select `Use Maven` in the popup that appears when VS Code loads.
 :::
 
-Select `Migrate to Spring Boot 3.0`. A progress message should appear at the bottom of VS Code. After the process
+Select `VERSION_MIGRATE_SPRING_BOOT`. A progress message should appear at the bottom of VS Code. After the process
 finishes, the changes won't be saved yet. You'll need to click on `File` > `Save All` to save all of the files and
 preview the changes in Git:
 

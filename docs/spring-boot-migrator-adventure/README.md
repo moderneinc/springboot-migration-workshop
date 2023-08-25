@@ -17,8 +17,8 @@ own needs.
    `JAVA_HOME` environment variable. If you are on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
 
    ```shell
-   sdk install java 17.0.4.1-tem
-   sdk use java 17.0.4.1-tem
+   sdk install java VERSION_SDKMAN_JAVA17
+   sdk use java VERSION_SDKMAN_JAVA17
    ```
 
    :::note
@@ -85,7 +85,7 @@ own needs.
    ```shell
    commit dd308045cff42f384a51c42428030eaeaa5185f3 (HEAD -> boot-3-upgrade-demo)
    Author: rpau <raquel@moderne.io>
-   Date:   Fri May 12 12:32:26 2023 +0200
+   Date:   Fri May 12 12:32:2VERSION_REWRITE_GRADLE_PLUGIN3 +0200
    
        SBM: applied recipe 'sbu30-paging-and-sorting-repository'
    
