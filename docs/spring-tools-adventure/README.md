@@ -69,9 +69,11 @@ dialog window should then appear:
 
 ![Migration options](migration-options.png)
 
-*Note: If you don't see the above window and you get an error about `No Spring Boot`
+:::note
+If you don't see the above window and you get an error about `No Spring Boot`
 project being found, please try restarting VS Code and select `Use Maven` in the
-popup that appears when VS Code loads.*
+popup that appears when VS Code loads.
+:::
 
 Select `Migrate to Spring Boot 3.0`. A progress message should appear at the
 bottom of VS Code. After the process finishes, the changes won't be saved yet.
@@ -82,9 +84,11 @@ the changes in Git:
 git diff
 ```
 
-**Note:** This is a very recent feature that is only available for Maven
+:::note
+This is a very recent feature that is only available for Maven
 projects and takes several minutes to execute. 
 Only some of the OpenRewrite migrations can be applied with this feature.
+:::
 
 However, if you look at the results you should see that:
 

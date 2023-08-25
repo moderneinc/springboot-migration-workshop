@@ -1,35 +1,37 @@
 # Spring Boot Migrator Adventure
 
-The Spring Boot Migrator (SBM) is a CLI tool that automates code migrations to
-upgrade or migrate to Spring Boot 3. It offers an opinionated API that is compatible
-with OpenRewrite recipes as well as a specialized resource representation to
-simplify recipe development for Spring Boot.
+The [Spring Boot Migrator](https://github.com/spring-projects-experimental/spring-boot-migrator/)
+(SBM) is a CLI tool that automates code migrations to upgrade or migrate to Spring Boot 3. It offers an opinionated API
+that is compatible with OpenRewrite recipes as well as a specialized resource representation to simplify recipe
+development for Spring Boot.
 
-**Warning**: This is a very experimental project and not our recommended way of
+:::caution
+This is a very experimental project and not our recommended way of
 migrating to Spring Boot 3. The project has not created any more releases since
 2022 and there are substantial bugs that need to be fixed for it to run properly
 in any repository. With that being said, we wanted to show what alternatives
 exist so that you can make the decision that best meets your own needs.
+:::
 
 ## Prepare your environment
 
 1. Switch to Java 17 so you can properly build this repository. You might need to
-download Java 17 and update your `JAVA_HOME` environment variable. If you are
-on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
+   download Java 17 and update your `JAVA_HOME` environment variable. If you are
+   on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
 
 ```shell
 sdk install java 17.0.4.1-tem
 sdk use java 17.0.4.1-tem
 ```
 
-  * If you aren't on a Unix-based system or you don't want to install SDKMan,
-    you'll need to install Java 17 and run something like:
+* If you aren't on a Unix-based system or you don't want to install SDKMan,
+  you'll need to install Java 17 and run something like:
 
 ```shell
 export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_17
 ```
 
-2.  Download the `spring-boot-upgrade.jar`:
+2. Download the `spring-boot-upgrade.jar`:
 
 ```shell
 wget https://github.com/spring-projects-experimental/spring-boot-migrator/releases/latest/download/spring-boot-upgrade.jar
@@ -41,8 +43,8 @@ wget https://github.com/spring-projects-experimental/spring-boot-migrator/releas
 git clone https://github.com/spring-projects/spring-petclinic
 ```
 
-4. Check out the last Spring Boot 2.0 commit. **In this case it is a different commit, 
-because we need a solution that builds with Java 17**:
+4. Check out the last Spring Boot 2.0 commit. **In this case it is a different commit,
+   because we need a solution that builds with Java 17**:
 
 ```shell
 git checkout 9ecdc1111e3da388a750ace41a125287d9620534
@@ -55,7 +57,7 @@ git checkout 9ecdc1111e3da388a750ace41a125287d9620534
 ``` 
 
 6. Make sure that you are using Java 17. We've found that SBM does not work with
-  Java 19.
+   Java 19.
 
 ```shell
 java -version
@@ -74,12 +76,12 @@ java -jar ../spring-boot-upgrade.jar .
    [http://localhost:8080/spring-boot-upgrade](http://localhost:8080/spring-boot-upgrade)
    with your browser and follow the instructions on that page. You will find a
    list of mandatory recipes and other optional ones that you can select
-   depending on your preferences. 
+   depending on your preferences.
 
 3. Note that there are GitHub issues listed in some of the recipes. To see what
-  has changed for each recipe, you need to check what commits have been
-  introduced from your Git user in the repository. To do so, run `git log` and
-  look for commits starting with `SBM: `.
+   has changed for each recipe, you need to check what commits have been
+   introduced from your Git user in the repository. To do so, run `git log` and
+   look for commits starting with `SBM: `.
 
 4. This should print you a list of commits like:
 
@@ -120,11 +122,11 @@ Date:   Fri May 12 12:30:37 2023 +0200
 
     SBM: applied recipe 'sbu30-upgrade-dependencies'
 ```
- 
+
 5. To understand the code changes for each commit, you can use the `git show $SHA`
-command. Please note that these code changes will be different than what you'd
-get from the other adventures in this workshop. For instance, this patch is not
-included with SBM: 
+   command. Please note that these code changes will be different than what you'd
+   get from the other adventures in this workshop. For instance, this patch is not
+   included with SBM:
 
 ```shell
 --- a/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java
