@@ -6,11 +6,11 @@ Go to https://moderneinc.github.io/springboot-migration-workshop/ or  [docs](doc
 
 ## Develop
 
-### Replace variables with versions
+### Replace placeholders with versions
 ```bash
 ./src/scripts/versions.sh
 ```
-### Restore version variables
+### Restore version placeholders
 ```bash
 ./src/scripts/versions.sh --inverse
 ```
