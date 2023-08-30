@@ -1,10 +1,15 @@
 #!/bin/bash
-set -ex
+set -e
+
+inverse="$1"
 
 # Replace the version place holders in each doc file with their corresponding value
 function replace() {
-  #grep --recursive --files-with-matches "$2" docs | xargs --no-run-if-empty sed --in-place "s/$2/$1/g"
-  grep --recursive --files-with-matches "$1" docs | xargs --no-run-if-empty sed --in-place "s/$1/$2/g"
+  if [ -n "$inverse" ]; then
+    grep --recursive --files-with-matches "$2" docs | xargs --no-run-if-empty sed --in-place "s/$2/$1/g"
+  else
+    grep --recursive --files-with-matches "$1" docs | xargs --no-run-if-empty sed --in-place "s/$1/$2/g"
+  fi
 }
 replace 'VERSION_SDKMAN_JAVA8'            '8.0.382-tem'
 replace 'VERSION_SDKMAN_JAVA11'           '11.0.20-tem'
