@@ -1,6 +1,9 @@
-# Spring Tools Adventure
+---
+sidebar_position: 6
+---
+# Spring Tools 4 exercise
 
-In this adventure, we are going to migrate an old version of a Spring (Maven) application to Spring Boot 3 using Visual
+In this exercise, we are going to migrate an old version of a Spring (Maven) application to Spring Boot 3 using Visual
 Studio.
 
 ## Prepare your environment
@@ -62,7 +65,7 @@ You should see two important options appear:
 
 ![Visual Studio Dialog](context-menu-options.png)
 
-For this adventure, let's click on `Upgrade Spring Boot Version`. The following dialog window should then appear:
+For this exercise, let's click on `Upgrade Spring Boot Version`. The following dialog window should then appear:
 
 ![Migration options](migration-options.png)
 

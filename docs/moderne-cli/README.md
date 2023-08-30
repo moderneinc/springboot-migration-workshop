@@ -1,6 +1,9 @@
-# Moderne CLI Adventure
+---
+sidebar_position: 4
+---
+# Moderne CLI exercise
 
-In this adventure, you will use the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro), a free tool that
+In this exercise, you will use the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro), a free tool that
 allows developers to run OpenRewrite recipes without configuring any build plugin, to migrate a repository from Spring
 Boot 2 to Spring Boot 3.
 

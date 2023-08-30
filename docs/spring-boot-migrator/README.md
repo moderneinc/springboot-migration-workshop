@@ -1,4 +1,7 @@
-# Spring Boot Migrator Adventure
+---
+sidebar_position: 7
+---
+# Spring Boot Migrator exercise
 
 The [Spring Boot Migrator](https://github.com/spring-projects-experimental/spring-boot-migrator/)
 (SBM) is a CLI tool that automates code migrations to upgrade or migrate to Spring Boot 3. It offers an opinionated API
@@ -121,7 +124,7 @@ own needs.
    ```
 
 5. To understand the code changes for each commit, you can use the `git show $SHA` command. Please note that these code
-   changes will be different than what you'd get from the other adventures in this workshop. For instance, this patch is
+   changes will be different than what you'd get from the other exercises in this workshop. For instance, this patch is
    not included with SBM:
 
    ```shell

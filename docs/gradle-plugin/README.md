@@ -1,6 +1,9 @@
-# Gradle Plugin Adventure
+---
+sidebar_position: 3
+---
+# Gradle Plugin exercise
 
-In this adventure, you will migrate an old version of the
+In this exercise, you will migrate an old version of the
 [Spring PetClinic](https://github.com/spring-projects/spring-petclinic/)
 repository (that uses Spring Boot 2) to Spring Boot 3.
 
@@ -26,7 +29,7 @@ Let's walk through how to do that.
 ## Prepare your environment
 
 Switch to Java 11 so you can properly build this repository. Please, notice that we need Java 11 and not
-Java 8 like in the [Maven Plugin Adventure](../maven-plugin-adventure). This is because the first commit that supports
+Java 8 like in the [Maven Plugin exercise](../maven-plugin). This is because the first commit that supports
 Gradle build, already uses Java 11. You might need to download Java 11 and update your `JAVA_HOME` environment variable.
 If you are on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
 
@@ -60,7 +63,7 @@ export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_11
    This commit has already some of the potential migrations of the recipe applied, but it's the first one with Gradle
    support.
    So, when running the recipe afterwards, we will see less changes being made than in
-   the [Maven Plugin Adventure](../maven-plugin-adventure).
+   the [Maven Plugin exercise](../maven-plugin).
    For example, JUnit has already been migrated to version 5, and we have Java 11 instead of 8.
 
 3. Make sure it runs on your machine:

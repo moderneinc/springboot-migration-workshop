@@ -1,6 +1,9 @@
-# Moderne platform Adventure
+---
+sidebar_position: 5
+---
+# Moderne platform exercise
 
-In this adventure, you will utilize the [Moderne platform](https://app.moderne.io/) to:
+In this exercise, you will utilize the [Moderne platform](https://app.moderne.io/) to:
 
 * Migrate the [Spring PetClinic](https://github.com/spring-projects/spring-petclinic) repository from Spring Boot 2 to 3
 * Fix security vulnerabilities across hundreds of open-source projects
@@ -13,7 +16,7 @@ configure anything.
 
 :::note
 If you're interested in adding your own repository to the Moderne platform, please see
-the [CLI adventure](/docs/moderne-cli-adventure)
+the [CLI exercise](/docs/moderne-cli)
 :::
 
 ## Migrating to Spring Boot 3 with the Moderne platform
@@ -25,7 +28,7 @@ the [CLI adventure](/docs/moderne-cli-adventure)
 ![context menu](assets/menu.png)
 
 2. A repository group is a list of repositories that are grouped under a name that is only visible to you. You can use
-   any name for the repository group. For this adventure, let's call it `petclinic`. After giving it a name, select
+   any name for the repository group. For this exercise, let's call it `petclinic`. After giving it a name, select
    `github.com/moderneinc/spring-petclinic@2.0.0` from the list of available repositories. To save this repository
    group, please press the `Save` button in the bottom right corner of your screen:
 
@@ -65,7 +68,7 @@ their dependencies. Since the Moderne platform supports complex refactoring reci
 migration), the community can contribute and provide recipes for other major migrations that do more than bump a
 dependency version.
 
-In this part of the adventure, let's use the Moderne platform to get a list of vulnerabilities in open-source
+In this part of the exercise, let's use the Moderne platform to get a list of vulnerabilities in open-source
 repositories.
 
 1. Begin by navigating to

@@ -1,6 +1,10 @@
-# Maven Plugin Adventure
+---
+sidebar_position: 2
+---
 
-In this adventure, you will migrate an old version of the
+# Maven Plugin exercise
+
+In this exercise, you will migrate an old version of the
 [Spring PetClinic](https://github.com/spring-projects/spring-petclinic/) repository (that uses Spring Boot 2) to
 Spring Boot 3 using Maven.
 
@@ -50,6 +54,7 @@ export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_8
 2. Check out the last Spring Boot 2.0 commit:
 
     ```shell
+    cd spring-petclinic
     git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
     ```
 
