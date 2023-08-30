@@ -13,7 +13,7 @@ function replace() {
 }
 replace 'VERSION_SDKMAN_JAVA8'            '8.0.382-tem'
 replace 'VERSION_SDKMAN_JAVA11'           '11.0.20-tem'
-replace 'VERSION_SDKMAN_JAVA17'           '17.0.8-tem'
+replace 'VERSION_SDKMAN_JAVA17'           '17.0.8.1-tem'
 replace 'VERSION_SPRING_BOOT27'           '2.7.15'
 replace 'VERSION_SPRING_BOOT31'           '3.1.3'
 replace 'VERSION_REWRITE_GRADLE_PLUGIN'   '6.2.2'

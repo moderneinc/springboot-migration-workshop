@@ -45,7 +45,7 @@ git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
 6. Make sure it runs on your machine:
 
 ```shell
-./mvnw package -DskipTests
+./mvnw verify -DskipTests
 ``` 
 
 ## Migrate to Spring Boot 3 using Spring Tools 4

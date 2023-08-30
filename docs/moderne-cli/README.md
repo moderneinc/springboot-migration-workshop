@@ -90,7 +90,7 @@ With the CLI downloaded and configured, you're now ready to set up the repositor
 4. With Java 8 configured, make sure that the Spring PetClinic repository builds on your machine:
 
    ```shell
-   ./mvnw package -DskipTests
+   ./mvnw verify -DskipTests
    ```
 
 5. If everything has been set up correctly, you should see a `BUILD SUCCESS` message after the project is built and the

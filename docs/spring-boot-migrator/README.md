@@ -55,7 +55,7 @@ own needs.
 5. Make sure it runs on your machine:
 
    ```shell
-   ./mvnw package -DskipTests
+   ./mvnw verify -DskipTests
    ``` 
 
 6. Make sure that you are using Java 17. We've found that SBM does not work with

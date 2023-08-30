@@ -91,11 +91,26 @@ here](https://docs.openrewrite.org/running-recipes/running-rewrite-on-a-gradle-p
    ./gradlew --info --init-script init.gradle rewriteRun
    ```
 
-3. You can then review the changes by running `git diff`. If you look at the results you should see that:
-    * The `@Autowired` annotation was removed
-    * `javax` has been replaced with `jakarta`
-    * The code has been migrated to Java 17 and text blocks are used
-    * Some best practices are applied (such as using Set.of(..) instead of Collections.singleton(..))
+   :::info
+   Running OpenRewrite [can take a while](https://docs.openrewrite.org/reference/faq#my-recipe-appears-to-hang-when-running.-whats-happening-is-there-a-progress-report),
+   as we analyze the project and run recipes to make code changes.
+   You should see results within a couple of minutes, depending on the size of your project and your machine.
+   :::
+
+
+3. You can then compare the results by running:
+
+   ```shell
+   git diff
+   ```
+
+## Explore the results
+
+If you look at the results you should see that:
+ * The `@Autowired` annotation was removed
+ * `javax` has been replaced with `jakarta`
+ * The code has been migrated to Java 17 and text blocks are used
+ * Some best practices are applied (such as using Set.of(..) instead of Collections.singleton(..))
 
 ## (Optional) Fix Static Code Analysis Issues
 

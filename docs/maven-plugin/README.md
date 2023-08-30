@@ -31,6 +31,7 @@ Switch to Java 8 so you can properly build this repository. You might need to do
 
 ```shell
 sdk install java VERSION_SDKMAN_JAVA8
+sdk install java VERSION_SDKMAN_JAVA17
 sdk use java VERSION_SDKMAN_JAVA8
 ```
 
@@ -61,7 +62,7 @@ export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_8
 3. Make sure it runs on your machine:
 
    ```shell
-   ./mvnw package -DskipTests
+   ./mvnw verify -DskipTests
    ``` 
 
 ## Migrate to SpringBoot 3 with OpenRewrite
@@ -76,36 +77,42 @@ Modify the `pom.xml` file and add the following information:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-    ...
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.openrewrite.maven</groupId>
-                <artifactId>rewrite-maven-plugin</artifactId>
-                <version>VERSION_REWRITE_MAVEN_PLUGIN</version>
-                <configuration>
-                    <activeRecipes>
-                        <recipe>org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT</recipe>
-                    </activeRecipes>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.openrewrite.recipe</groupId>
-                        <artifactId>rewrite-spring</artifactId>
-                        <version>VERSION_REWRITE_SPRING</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-        </plugins>
-    </build>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>VERSION_REWRITE_MAVEN_PLUGIN</version>
+        <configuration>
+          <activeRecipes>
+            <recipe>org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-spring</artifactId>
+            <version>VERSION_REWRITE_SPRING</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
 </project>
 ```
 
-Once you've done that, you can run the Upgrade Spring Boot 3.0 recipe by running this command:
+Once you've done that, you can run the VERSION_MIGRATE_SPRING_BOOT recipe by running this command:
 
 ```shell
 ./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run
 ```
+
+:::info
+Running OpenRewrite [can take a while](https://docs.openrewrite.org/reference/faq#my-recipe-appears-to-hang-when-running.-whats-happening-is-there-a-progress-report),
+as we analyze the project and run recipes to make code changes.
+You should see results within a couple of minutes, depending on the size of your project and your machine.
+:::
 
 You can then compare the results by running:
 
@@ -119,7 +126,7 @@ You can run a recipe without editing the `pom.xml` file by including all of the 
 the command for running the `VERSION_RECIPE_SPRING_BOOT` recipe:
 
 ```shell
-./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:VERSION_REWRITE_SPRING
+./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE
 ```
 
 You can then compare the results by running:
@@ -127,6 +134,8 @@ You can then compare the results by running:
 ```shell
 git diff
 ```
+
+## Explore the results
 
 If you look at the results you should see that:
 
@@ -144,28 +153,41 @@ This recipe is composed of 50+ recipes that find and fix common mistakes people 
 
 To demonstrate this recipe, we'll use a different Maven repository that has a variety of errors that need to be fixed.
 
-1. Clone the [Spring WS](https://github.com/spring-projects/spring-ws) repository:
+1. Switch to Java 17
+
+   ```shell
+    sdk use java VERSION_SDKMAN_JAVA17
+    ```
+
+2. Clone the [Spring WS](https://github.com/spring-projects/spring-ws) repository:
 
    ```shell
    git clone https://github.com/spring-projects/spring-ws
    ```
 
-2. Test that you can build it:
+3. Test that you can build it:
 
    ```shell
    cd spring-ws
-   ./mvnw package -DskipTests
+   ./mvnw verify -DskipTests
    ```
 
-3. Run the common static analysis recipe:
+4. Run the common static analysis recipe:
 
    ```shell
-   ./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run \
-     -Drewrite.activeRecipes=org.openrewrite.java.cleanup.CommonStaticAnalysis
+   mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
+     -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE \
+     -Drewrite.activeRecipes=org.openrewrite.staticanalysis.CommonStaticAnalysis
    ```
 
-4. Check out all of the changes that were made by running:
+5. Check out all of the changes that were made by running:
 
    ```shell
    git diff
    ```
+
+6. Verify the project after the changes were made:
+
+   ```shell
+   ./mvnw verify
+   ``` 
