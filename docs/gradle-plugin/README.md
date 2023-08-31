@@ -132,69 +132,65 @@ as [Spring Petclinic has dropped Wro4J](https://github.com/spring-projects/sprin
 
 ## (Optional) Fix Static Code Analysis Issues
 
-:::caution
-Below needs work, as there's runtime failures with Java 8 vs 11.
-:::
-
 If you have time, we recommend trying out one of the showcase recipes in
 OpenRewrite: [common static
 analysis](https://docs.openrewrite.org/recipes/staticanalysis/commonstaticanalysis).
 This recipe is composed of 50+ recipes that find and fix common mistakes people
 make.
 
-To demonstrate this recipe, we'll use a different Gradle repository that has a
-variety of errors that need to be fixed.
+To demonstrate this recipe, we'll revert the Spring Boot migration changes to show a variety of errors that need to be
+fixed.
 
-1. Clone the [Netflix Testing Framework](https://github.com/Netflix/q)
-   repository:
-
-   ```shell
-   git clone https://github.com/Netflix/q
-   ```
-
-2. Switch to Java 8 so you can properly build this repository. You might need to
-   download Java 8 and update your `JAVA_HOME` environment variable. If you are
-   on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
+1. Revert the Spring Boot migration changes:
 
    ```shell
-   sdk install java VERSION_SDKMAN_JAVA8
-   sdk use java VERSION_SDKMAN_JAVA8
+   cd spring-petclinic
+   git reset --hard
+   git checkout 4df621b41ed3013e527d4037d83a6cf756efd784
    ```
 
-   :::note
-   If you aren't on a Unix-based system or you don't want to install SDKMan, you'll need to install Java 8 and run
-   something like:
+2. We'll change things up a bit by changing the build file rather than using an `init.gradle` file.
+   Download the [`configure-build.patch`](configure-build.patch) file to the root of the Spring PetClinic repository.
 
-      ```shell
-      export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_8
-      ```
-   :::
-
-3. With the right version of Java installed, test that you can build it:
-
-   ```shell
-   ./gradlew build -x test
-   ```
-
-4. Copy and apply the [patch](configure-build.patch) that is in this directory
-   to the `build.gradle` file. This will automatically configure the rewrite
-   Gradle plugin in the repository for you. We recommend that you look at the
+3. Apply the patch file to automatically configure the rewrite Gradle plugin. We recommend that you look at the
    differences to understand how it is configured:
 
    ```shell
-   // Copy the file to the q repository first
-   
    git apply configure-build.patch
    ```
 
-5. With the patch applied, you can now run OpenRewrite:
+   You'll notice that we both upgrade Gradle and disable Wro4j, again due to the issue we mentioned above.
+
+4. With the patch applied, you can now run OpenRewrite:
 
    ```shell
    ./gradlew rewriteRun
    ```
 
-6. Check out all of the changes that were made by running:
+   You should see output similar to the following:
+
+   ```
+   > Task :rewriteRun
+   Validating active recipes
+   Scanning sources in project spring-petclinic
+   All sources parsed, running active recipes: org.openrewrite.staticanalysis.CommonStaticAnalysis
+   Changes have been made to src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java by:
+       org.openrewrite.staticanalysis.CommonStaticAnalysis
+           org.openrewrite.staticanalysis.UseDiamondOperator
+   Changes have been made to src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java by:
+       org.openrewrite.staticanalysis.CommonStaticAnalysis
+           org.openrewrite.staticanalysis.SimplifyBooleanReturn
+           org.openrewrite.staticanalysis.UseDiamondOperator
+   Please review and commit the results.
+   ```
+
+5. Check out all of the changes that were made by running:
 
    ```shell
+   git checkout build.gradle
+   git checkout gradle/wrapper/gradle-wrapper.properties
    git diff
    ```
+
+   While this recipe only shows limited results for the Spring Petclinic, at scale this immediately resolves a lot of
+   technical debt. 

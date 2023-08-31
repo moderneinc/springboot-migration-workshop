@@ -197,3 +197,6 @@ To demonstrate this recipe, we'll use a different Maven repository that has a va
    ```shell
    ./mvnw verify
    ``` 
+
+   You can probably imagine that this recipe resolves a lot of technical debt when run at scale throughout an
+   organization.
