@@ -58,7 +58,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/moderne-poster-logo.svg',
       navbar: {
-        title: 'Welcome',
+        title: 'Start',
         logo: {
           alt: 'Moderne Logo',
           src: 'img/moderne-logo.svg',
@@ -102,7 +102,7 @@ const config = {
             ],
           },
           {
-            title: 'Community',
+            title: 'OpenRewrite Community',
             items: [
               {
                 label: 'Stack Overflow',
@@ -119,6 +119,23 @@ const config = {
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/OpenRewrite',
+              },
+            ],
+          },
+          {
+            title: 'Moderne',
+            items: [
+              {
+                label: 'Moderne.io',
+                href: 'https://moderne.io',
+              },
+              {
+                label: 'Marketplace',
+                href: 'https://app.moderne.io/marketplace',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/ModerneInc',
               },
             ],
           },
