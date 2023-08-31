@@ -121,7 +121,7 @@ If you look at the results you should see that:
 
 If you have time, we recommend trying out one of the most important recipes in
 OpenRewrite: [common static
-analysis](https://docs.openrewrite.org/recipes/java/cleanup/commonstaticanalysis).
+analysis](https://docs.openrewrite.org/recipes/staticanalysis/commonstaticanalysis).
 This recipe is composed of 50+ recipes that find and fix common mistakes people
 make.
 

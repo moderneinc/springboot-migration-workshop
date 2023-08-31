@@ -17,7 +17,7 @@ index 4d446da..e6ce780 100644
 +
 +rewrite {
 +    activeRecipe(
-+        'org.openrewrite.java.cleanup.CommonStaticAnalysis',
++        'org.openrewrite.staticanalysis.CommonStaticAnalysis',
 +    )
 +}
    
