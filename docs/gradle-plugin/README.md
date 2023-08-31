@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 ---
+
 # Gradle Plugin exercise
 
 In this exercise, you will migrate an old version of the
@@ -39,12 +40,14 @@ sdk use java VERSION_SDKMAN_JAVA11
 ```
 
 :::note
+
 If you aren't on a Unix-based system or you don't want to install SDKMan, you'll need to install Java 11 and run
 something like:
 
 ```shell
 export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_11
 ```
+
 :::
 
 1. Clone the [Spring PetClinic repository](https://github.com/spring-projects/spring-petclinic):
@@ -92,25 +95,27 @@ here](https://docs.openrewrite.org/running-recipes/running-rewrite-on-a-gradle-p
    ```
 
    :::info
-   Running OpenRewrite [can take a while](https://docs.openrewrite.org/reference/faq#my-recipe-appears-to-hang-when-running.-whats-happening-is-there-a-progress-report),
+   Running
+   OpenRewrite [can take a while](https://docs.openrewrite.org/reference/faq#my-recipe-appears-to-hang-when-running.-whats-happening-is-there-a-progress-report),
    as we analyze the project and run recipes to make code changes.
    You should see results within a couple of minutes, depending on the size of your project and your machine.
    :::
 
-
-3. You can then compare the results by running:
-
-   ```shell
-   git diff
-   ```
-
 ## Explore the results
 
+You can compare the changes made through OpenRewrite in your favorite IDE, or by running:
+
+```shell
+git diff
+```
+
 If you look at the results you should see that:
- * The `@Autowired` annotation was removed
- * `javax` has been replaced with `jakarta`
- * The code has been migrated to Java 17 and text blocks are used
- * Some best practices are applied (such as using Set.of(..) instead of Collections.singleton(..))
+
+* The `@Autowired` annotation was removed
+* JUnit 4 has been replaced with JUnit 5
+* `javax` has been replaced with `jakarta`
+* The code has been migrated to Java 17 and text blocks are used
+* Some best practices are applied (such as adding the `public` test method modifier)
 
 ## (Optional) Fix Static Code Analysis Issues
 
