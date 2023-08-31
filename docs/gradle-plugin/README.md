@@ -22,7 +22,7 @@ Fortunately, [OpenRewrite](https://docs.openrewrite.org/) has a
 [recipe](https://docs.openrewrite.org/concepts-explanations/recipes) that takes
 care of all of these pieces for you. Because of that, you only need to add the
 OpenRewrite plugin to your project and run a single [Migrate to Spring Boot
-3.0](https://docs.openrewrite.org/recipes/java/spring/boot3/VERSION_LINK_SPRING_BOOT)
+3.1](https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot_3_1)
 recipe.
 
 Let's walk through how to do that.
@@ -35,8 +35,8 @@ Gradle build, already uses Java 11. You might need to download Java 11 and updat
 If you are on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
 
 ```shell
-sdk install java VERSION_SDKMAN_JAVA11 
-sdk use java VERSION_SDKMAN_JAVA11 
+sdk install java 11.0.20-tem 
+sdk use java 11.0.20-tem 
 ```
 
 :::note
@@ -87,8 +87,16 @@ here](https://docs.openrewrite.org/running-recipes/running-rewrite-on-a-gradle-p
    OpenRewrite dependencies. Please copy [this file](init.gradle) to the
    Spring PetClinic repository you have checked out locally.
 
-2. With that file copied over, if you run `rewriteRun`, you will apply the
-   migration recipe:
+2. Now due to some [Guava incompatibility issues with Gradle 6](https://github.com/google/guava/releases/tag/v32.1.0)
+   specifically, and Wro4j being incompatible with Gradle 7, we have to first awkwardly downgrade to Gradle 5.
+
+   ```shell
+   ./gradlew wrapper --gradle-version 5.6.4
+   ```
+
+   Don't worry; we will upgrade Gradle automatically as part of the recipe run, to be compatible with Java 17.
+
+3. With `init.gradle` copied over, if you run `rewriteRun`, you will apply the migration recipe:
 
    ```shell
    ./gradlew --info --init-script init.gradle rewriteRun
@@ -140,8 +148,8 @@ variety of errors that need to be fixed.
    on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
 
    ```shell
-   sdk install java VERSION_SDKMAN_JAVA8
-   sdk use java VERSION_SDKMAN_JAVA8
+   sdk install java 8.0.382-tem
+   sdk use java 8.0.382-tem
    ```
 
    :::note

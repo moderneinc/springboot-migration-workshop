@@ -8,34 +8,18 @@ initscript {
     }
 }
 
-addListener(new BuildInfoPluginListener())
-
-allprojects {
-    project.afterEvaluate {
-        if (!project.plugins.hasPlugin(org.openrewrite.gradle.RewritePlugin)) {
-            project.plugins.apply(org.openrewrite.gradle.RewritePlugin)
-        }
-    }
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-      rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
-      rewrite("org.openrewrite.recipe:rewrite-spring")
-
+        rewrite("org.openrewrite.recipe:rewrite-spring:latest.release")
     }
     rewrite {
-      configFile = project.getRootProject().file("rewrite.yml")
-      activeRecipe("org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT")
+        activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1")
     }
-}
-
-class BuildInfoPluginListener extends BuildAdapter {
-
-    def void projectsLoaded(Gradle gradle) {
-        Project root = gradle.getRootProject()
-        if (!"buildSrc".equals(root.name)) {
-            root.allprojects {
-                apply {
-                    apply plugin: org.openrewrite.gradle.RewritePlugin
-                }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
             }
         }
     }
