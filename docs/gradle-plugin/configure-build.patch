@@ -1,14 +1,14 @@
 diff --git a/build.gradle b/build.gradle
-index 4d446da..e6ce780 100644
+index 4d446da..2677f5a 100644
 --- a/build.gradle
 +++ b/build.gradle
 @@ -5,6 +5,7 @@ buildscript {
  plugins {
      id 'nebula.netflixoss' version '9.1.0'
      id 'nebula.dependency-lock' version '11.1.2'
-+    id 'org.openrewrite.rewrite' version '5.40.0'
++    id 'org.openrewrite.rewrite' version '6.3.0'
  }
- 
+
  apply plugin: 'java'
 @@ -18,6 +19,12 @@ mainClassName = 'com.netflix.search.query.QueryTests'
  repositories {
@@ -20,6 +20,18 @@ index 4d446da..e6ce780 100644
 +        'org.openrewrite.staticanalysis.CommonStaticAnalysis',
 +    )
 +}
-   
+
  dependencies {
      compile 'com.google.apis:google-api-services-sheets:v4-rev531-1.23.0'
+@@ -29,8 +36,10 @@ dependencies {
+     compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.21'
+ 	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.4.3'
+
+-    testCompile 'org.testng:testng:7.+'
++    testCompile 'org.testng:testng:7.5.+'
+     testCompile group: 'org.mockito', name: 'mockito-core', version: '3.3.3'
++
++    rewrite("org.openrewrite.recipe:rewrite-static-analysis:latest.release")
+ }
+
+ run {

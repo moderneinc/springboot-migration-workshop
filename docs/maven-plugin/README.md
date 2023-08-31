@@ -152,7 +152,7 @@ as [Spring Petclinic has dropped Wro4J](https://github.com/spring-projects/sprin
 
 ## (Optional) Fix Static Code Analysis Issues
 
-If you have time, we recommend trying out one of the most important recipes in
+If you have time, we recommend trying out one of the showcase recipes in
 OpenRewrite: [common static analysis](https://docs.openrewrite.org/recipes/staticanalysis/commonstaticanalysis).
 This recipe is composed of 50+ recipes that find and fix common mistakes people make.
 

@@ -125,9 +125,18 @@ If you look at the results you should see that:
 * The code has been migrated to Java 17 and text blocks are used
 * Some best practices are applied (such as adding the `public` test method modifier)
 
+Now unfortunately, the build is broken, as the commit we started from is using Wro4j, which does not work on Java 17 or
+Gradle 7.
+We've decided not to cover Wro4j with recipes for now,
+as [Spring Petclinic has dropped Wro4J](https://github.com/spring-projects/spring-petclinic/pull/868) as well.
+
 ## (Optional) Fix Static Code Analysis Issues
 
-If you have time, we recommend trying out one of the most important recipes in
+:::caution
+Below needs work, as there's runtime failures with Java 8 vs 11.
+:::
+
+If you have time, we recommend trying out one of the showcase recipes in
 OpenRewrite: [common static
 analysis](https://docs.openrewrite.org/recipes/staticanalysis/commonstaticanalysis).
 This recipe is composed of 50+ recipes that find and fix common mistakes people
