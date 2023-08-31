@@ -14,7 +14,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-spring:latest.release")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1")
+        activeRecipe("org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {

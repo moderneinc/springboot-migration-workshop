@@ -22,7 +22,7 @@ Fortunately, [OpenRewrite](https://docs.openrewrite.org/) has a
 [recipe](https://docs.openrewrite.org/concepts-explanations/recipes) that takes
 care of all of these pieces for you. Because of that, you only need to add the
 OpenRewrite plugin to your project and run a single [Migrate to Spring Boot
-3.1](https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot_3_1)
+3.1](https://docs.openrewrite.org/recipes/java/spring/boot3/VERSION_LINK_SPRING_BOOT)
 recipe.
 
 Let's walk through how to do that.
@@ -35,8 +35,8 @@ Gradle build, already uses Java 11. You might need to download Java 11 and updat
 If you are on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
 
 ```shell
-sdk install java 11.0.20-tem 
-sdk use java 11.0.20-tem 
+sdk install java VERSION_SDKMAN_JAVA11 
+sdk use java VERSION_SDKMAN_JAVA11 
 ```
 
 :::note
@@ -148,8 +148,8 @@ variety of errors that need to be fixed.
    on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
 
    ```shell
-   sdk install java 8.0.382-tem
-   sdk use java 8.0.382-tem
+   sdk install java VERSION_SDKMAN_JAVA8
+   sdk use java VERSION_SDKMAN_JAVA8
    ```
 
    :::note
