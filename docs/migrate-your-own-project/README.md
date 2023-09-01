@@ -21,9 +21,12 @@ For a recap and detailed instructions see each of the indivual exercises:
 - [Spring Tools](../spring-tools)
 - [Spring Boot Migrator](../spring-boot-migrator)
 
-You will want to [run the Migrate to Spring Boot 3.1 recipe](https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot_3_1).
+You will want to [run the VERSION_MIGRATE_SPRING_BOOT recipe](https://docs.openrewrite.org/recipes/java/spring/boot3/VERSION_LINK_SPRING_BOOT).
 
+## Helpful resources
+
+Here's a number of links that might be helpful in case you encounter edge cases not yet covered:
 - https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide
 - https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.7-Release-Notes
 - https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Release-Notes
-- https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.1-Release-Notes
+- https://github.com/spring-projects/spring-boot/wik
