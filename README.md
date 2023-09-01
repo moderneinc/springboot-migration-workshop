@@ -2,7 +2,7 @@
 
 ## Participate
 
-Go to https://moderneinc.github.io/springboot-migration-workshop/ or  [docs](docs/start.md).
+Go to https://moderneinc.github.io/springboot-migration-workshop/ or [docs](docs/).
 
 ## Develop
 
