@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 ---
+
 # Moderne platform exercise
 
 In this exercise, you will utilize the [Moderne platform](https://app.moderne.io/) to:
@@ -86,18 +87,13 @@ repositories.
 4. Click on the `DRY RUN` button to begin executing this recipe. It should take a few minutes to run.
 
 5. Once the recipe is done running, you can click on the individual repositories to see suggested changes that fix some
-   vulnerabilities. You can also click on the `Data Tables` button to get taken to a page that allows you to download a
-   CSV that contains a list of CVEs that the repositories are vulnerable to. Download the CSV vulnerability report.
+   vulnerabilities.
 
-6. Open the CSV with your preferred CSV reader. You will see that the CSV contains an entry per vulnerability,
-   dependency, and repository. Take special note of the column called `fixedVersion`. That tells you what version fixes
-   that vulnerability. Also take note of the `depth` column, which lets you see how many dependencies away it is from
-   your original dependency.
+6. You can also click on the `Data Tables` tab to get taken to a page that allows you to download a CSV that contains a
+   list of CVEs that the repositories are vulnerable to. Download the CSV vulnerability report and open the CSV with
+   your preferred CSV reader. You will see that the CSV contains an entry per vulnerability, dependency, and repository.
+   Take special note of the column called `fixedVersion`. That tells you what version fixes that vulnerability. Also
+   take note of the `depth` column, which lets you see how many dependencies away it is from your original dependency.
 
-## Relevant links
-
-* [Moderne platform documentation](https://docs.moderne.io/)
-* [OpenRewrite documentation](https://docs.openrewrite.org/)
-
-
-
+7. You can also click on the `Visualizations` tab to get a quick high over insight into the number of known
+   vulnerabilities associated with dependencies in the projects.
