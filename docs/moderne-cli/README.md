@@ -7,8 +7,10 @@ In this exercise, you will use the [Moderne CLI](https://docs.moderne.io/moderne
 allows developers to run OpenRewrite recipes without configuring any build plugin, to migrate a repository from Spring
 Boot 2 to Spring Boot 3.
 
+<!--
 Afterwards, you'll use the CLI to publish your own OSS repository to the Moderne platform so that you can run recipes on
 it without having to build it over and over.
+-->
 
 ## Prepare your environment
 
