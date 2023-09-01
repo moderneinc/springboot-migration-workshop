@@ -69,6 +69,7 @@ You might even want to run some of these recipes periodically, to keep your proj
 Here's a number of links that might be helpful in case you encounter edge cases not yet covered:
 
 - https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide
+- https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.1-Release-Notes
 - https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Release-Notes
 - https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.7-Release-Notes
 
