@@ -41,3 +41,4 @@ git clone https://github.com/moderneinc/springboot-migration-workshop
 * [Moderne Platform exercise](docs/moderne-platform)
 * [Spring Tools exercise](docs/spring-tools)
 * [Spring Boot Migrator exercise](docs/spring-boot-migrator)
+* [Migrate your own project](docs/migrate-your-own-project)
