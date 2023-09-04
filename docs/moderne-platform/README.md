@@ -15,14 +15,7 @@ Go to [https://app.moderne.io/](https://app.moderne.io/) and register with your 
 you'll find more than 25,000 open-source repositories that can be used to test OpenRewrite recipes without you having to
 configure anything.
 
-<!--
-:::note
-If you're interested in adding your own repository to the Moderne platform, please see
-the [CLI exercise](/docs/moderne-cli)
-:::
--->
-
-## Migrating to Spring Boot 3 with the Moderne platform
+## Running recipes with the Moderne platform
 
 1. Once you're logged in to [Moderne](https://app.moderne.io/), the first thing you'll want to do is to create a
    repository group with just the Spring PetClinic repository in it. To do so, click on the `Default` group in the top
