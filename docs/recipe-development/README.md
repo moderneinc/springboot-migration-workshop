@@ -59,3 +59,7 @@ them as a dependency.
 If you'd like
 to [contribute your recipe to OpenRewrite](https://github.com/openrewrite/.github/blob/main/CONTRIBUTING.md), we'd love
 to have it! We'll help review, develop, and distribute your recipe, and note you as the author in the recipe catalog.
+
+If you don't particularly have one of your own recipes to contribute, but would like to help out, then you can also have
+a look
+at [issues labeled Good-First-Issue](https://github.com/orgs/openrewrite/projects/4/views/10?filterQuery=label%3A%22good+first+issue%22).
