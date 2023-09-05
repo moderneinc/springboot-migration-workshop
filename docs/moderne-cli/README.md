@@ -135,11 +135,11 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
    ```
    </details>
 
-2Kick off the recipe by running the following command from the
+2. Kick off the recipe by running the following command from the
 `spring-petclinic` repository:
 
    ```shell
-   mod run --recipeName org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT --recipeGAVs rewrite-spring --skipBuild
+   mod run . --recipe org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1
    ```
 
    <details>
