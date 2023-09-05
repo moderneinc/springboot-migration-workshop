@@ -1,6 +1,6 @@
 # Start
 
-In this repository, you'll find a variety of "exercises" that demonstrate the different ways you can automatically
+In this repository, you'll find a variety of exercises that demonstrate the different ways you can automatically
 migrate or upgrade an application to Spring Boot 3. The core technology behind each of these exercises
 is [OpenRewrite](https://github.com/openrewrite/rewrite).
 
@@ -13,7 +13,8 @@ repository to Spring Boot 3.
 
 ## Introduction
 
-[Spring Boot 3 is here; Where are you?](https://docs.google.com/presentation/d/1onKVe3tsCm9wPWMQ0i4fLDfM8vpQHyXH/edit?usp=sharing&ouid=106870370074198362402&rtpof=true&sd=true)
+There's a small introductory presentation that you can find here:
+[Spring Boot 3 is here; Where are you?](https://docs.google.com/presentation/d/1JZYjOfnmFX3l2q1wrOPpcGLba-kwmA_gbuX5V_2lZNg/edit?usp=sharing)
 
 ## Requirements
 
@@ -25,15 +26,9 @@ To complete our exercises, you will need:
 * An IDE of your choice (although we recommend using [Visual Studio Code](https://code.visualstudio.com/) for the Spring
   Tools 4 exercise)
 
-## Getting started
-
-Clone this Git repository and follow the desired exercises.
-
-```shell
-git clone https://github.com/moderneinc/springboot-migration-workshop
-```
-
 ## Exercises
+
+Get started with any of the following exercises:
 
 * [Maven Plugin exercise](docs/maven-plugin)
 * [Gradle Plugin exercise](docs/gradle-plugin)
