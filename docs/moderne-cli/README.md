@@ -1037,7 +1037,7 @@ MOD SUCCEEDED in (9s)
 Now you can migrate all these repositories to Spring Boot 3 at once with the following command:
 
 ```shell
-mod run $HOME/workshop --recipe org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1
+mod run $HOME/workshop --recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT
 ```
 
 <details>
@@ -1058,7 +1058,7 @@ Moderne CLI v0.1.1-SNAPSHOT
 > spring-projects/spring-session-data-mongodb-examples@main/spring-hateoas-examples
 Selected 3 repositories (0.52s)
 
-> Running recipe org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1
+> Running recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT
 
 > spring-projects/spring-data-release@main
 Fix results at file:///Users/raquel/workshop/spring-projects/spring-data-release/.moderne/run/20230905113712-JvUVv/fix.patch
