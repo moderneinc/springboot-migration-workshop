@@ -41,6 +41,8 @@ Boot 2 to Spring Boot 3.
   mod config recipes install --from-moderne
 ```
 
+If this steps fails, download [this file](https://gist.github.com/rpau/e848744e3ece1fabbe4fb9451843e371) and store it at $HOME/.moderne/cli/recipes.properties 
+
 ### Configure the Spring PetClinic repository
 
 With the CLI downloaded and configured, you're now ready to set up the repository.
