@@ -51,17 +51,17 @@ If this steps fails:
 With the CLI downloaded and configured, you're now ready to set up the repository.
 
 1. Clone the [Spring PetClinic
-   repository](https://github.com/spring-projects/spring-petclinic):
+   repository](https://github.com/moderneinc/spring-petclinic):
 
    ```shell
-   git clone https://github.com/spring-projects/spring-petclinic
+   git clone https://github.com/moderneinc/spring-petclinic
    ```
 
 2. Check out the last Spring Boot 2.0 commit:
 
    ```shell
    cd spring-petclinic
-   git checkout b527de52f5fd19f9fe550372c017d145a3b2a809
+   git checkout 2.0.0
    ```
 
 3. If you tried building this repository right now, you would more than likely run into errors. This is because this
@@ -113,30 +113,28 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
 
    ```
        ▛▀▀▚▖  ▗▄▟▜
-       ▌   ▜▄▟▀  ▐
-       ▛▀▀█▀▛▀▀▀▀▜
-       ▌▟▀  ▛▀▀▀▀▜
-       ▀▀▀▀▀▀▀▀▀▀▀
-   Moderne CLI v0.3.0
+        ▌   ▜▄▟▀  ▐
+        ▛▀▀█▀▛▀▀▀▀▜
+        ▌▟▀  ▛▀▀▀▀▜
+        ▀▀▀▀▀▀▀▀▀▀▀
+Moderne CLI v0.1.1-SNAPSHOT
 
-   > Selecting repositories
+> Selecting repositories
 
-   > spring-projects/spring-petclinic@mainnic
-   Selected 1 repositories (0.02s)
-   
-   > Building LST(s)
-   
-   > spring-projects/spring-petclinic@main
-   Build output will be written to file://./.moderne/build/20230904223334-5kM1v/build.log
-   
-   🏗 Step 1 - build with Maven
-   Selected a Java 8 JDK.
-   
-   🏗 Step 2 - build with Native
-   ✅ Built LST file://./.moderne/build/20230904223334-5kM1v/spring-petclinic-20230904223403-ast.jar (28s)
-   
-   
-   MOD SUCCEEDED in (28s)             .
+> moderneinc/spring-petclinic@2.0.0aquel/javazone-test/spring-petclinic
+Selected 1 repositories (0.71s)                                         
+
+> Building LST(s)
+
+> moderneinc/spring-petclinic@2.0.0
+Build output will be written to file:///Users/raquel/javazone-test/spring-petclinic/.moderne/build/20230905151011-l1d1t/build.log
+
+🏗 Step 1 - download from Moderne         
+✅ Downloaded LST file:///Users/raquel/javazone-test/spring-petclinic/.moderne/build/20230905151011-l1d1t/0-spring-petclinic-20230904080820-ast.jar
+                                          
+Built 1 repositories (3s)                 
+
+MOD SUCCEEDED in (4s)             .
    ```
    </details>
 
@@ -152,24 +150,26 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
 
    ```
        ▛▀▀▚▖  ▗▄▟▜
-       ▌   ▜▄▟▀  ▐
-       ▛▀▀█▀▛▀▀▀▀▜
-       ▌▟▀  ▛▀▀▀▀▜
-       ▀▀▀▀▀▀▀▀▀▀▀
-   Moderne CLI v0.3.0
+        ▌   ▜▄▟▀  ▐
+        ▛▀▀█▀▛▀▀▀▀▜
+        ▌▟▀  ▛▀▀▀▀▜
+        ▀▀▀▀▀▀▀▀▀▀▀
+Moderne CLI v0.1.1-SNAPSHOT
 
-   > Selecting repositories
-   
-   > spring-projects/spring-petclinic@main
-   Selected 1 repositories (0.03s)
-   
-   > Running recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT
-   
-   > spring-projects/spring-petclinic@main
-   No changes.
-   Found results on 0 repositories (14m 56s)
-   
-   MOD SUCCEEDED in (14m 56s)   
+> Selecting repositories
+
+|---==>----------| (0.37s) /Users/raquel/javazone-test/spring-petclinic|---==>----------|> moderneinc/spring-petclinic@2.0.0
+Selected 1 repositories (0.56s)                                         
+
+> Running recipe org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1
+
+> moderneinc/spring-petclinic@2.0.0
+Fix results at file:///Users/raquel/javazone-test/spring-petclinic/.moderne/run/20230905151147-40gci/fix.patch
+Search results at file:///Users/raquel/javazone-test/spring-petclinic/.moderne/run/20230905151147-40gci/search.patch
+Found results on 1 repositories (1m 27s)                                               
+Run mod apply /Users/raquel/javazone-test/spring-petclinic --recipe-run 20230905151147-40gci to apply the changes.
+
+MOD SUCCEEDED in (1m 28s)   
    ```
 
    </details>
