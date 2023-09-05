@@ -72,4 +72,7 @@ Here's a number of links that might be helpful in case you encounter edge cases 
 - https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.1-Release-Notes
 - https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Release-Notes
 - https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.7-Release-Notes
+- https://docs.spring.io/spring-security/reference/migration/index.html
+- https://github.com/spring-projects/spring-data-commons/wiki/
+- https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2022.0-Release-Notes
 
