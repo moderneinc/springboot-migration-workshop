@@ -1605,7 +1605,7 @@ To demonstrate this recipe, we'll use a different Maven repository that has a va
 4. Run the common static analysis recipe:
 
    ```shell
-   mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
+   ./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run \
      -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE \
      -Drewrite.activeRecipes=org.openrewrite.staticanalysis.CommonStaticAnalysis
    ```
