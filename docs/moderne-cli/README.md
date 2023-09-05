@@ -973,6 +973,7 @@ ls -ltr $HOME/workshop/spring-projects/
 
 <details>
 <summary>You should see output similar to the following.</summary>
+
 ```
 total 0
 drwxr-xr-x  22 raquel  staff  704  5 sep 01:44 spring-hateoas-examples
@@ -991,6 +992,7 @@ mod build $HOME/workshop
 
 <details>
 <summary>You should see output similar to the following.</summary>
+
 ```
         ▛▀▀▚▖  ▗▄▟▜
         ▌   ▜▄▟▀  ▐
@@ -1040,8 +1042,9 @@ mod run $HOME/workshop --recipe org.openrewrite.java.spring.boot3.UpgradeSpringB
 
 <details>
 <summary>You should see output similar to the following.</summary>
+
 ```
-         ▛▀▀▚▖  ▗▄▟▜
+        ▛▀▀▚▖  ▗▄▟▜
         ▌   ▜▄▟▀  ▐
         ▛▀▀█▀▛▀▀▀▀▜
         ▌▟▀  ▛▀▀▀▀▜
