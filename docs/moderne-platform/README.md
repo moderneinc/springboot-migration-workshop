@@ -30,9 +30,9 @@ configure anything.
 3. With the repository group selected, you can go to the [Moderne Marketplace](https://app.moderne.io/marketplace). From there, click on
    `Static analysis and remediation`, and finally select `Common static analysis issues`.
 
-4. Click on the `Mode Details` link. From there, you can find what are the different sonarqube rules under the recipe list. This is because
+4. Click on the `More Details` link. From there, you can find what are the different sonarqube rules under the recipe list. This is because
    Common static analysis issues is a composition of other recipes. You can restrict the ones you want to apply to see the results
-   of a particular recipe.
+   of a particular recipe, by using [the recipe builder](https://app.moderne.io/recipes/builder).
 
    ![recipe](assets/sonarqube-recipes.png)
 5. To begin running the recipe, click on the `DRY RUN` button.
