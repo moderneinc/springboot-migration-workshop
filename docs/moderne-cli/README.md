@@ -1,16 +1,14 @@
 ---
 sidebar_position: 4
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Moderne CLI exercise
 
 In this exercise, you will use the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro), a free tool that
 allows developers to run OpenRewrite recipes without configuring any build plugin, to migrate a repository from Spring
 Boot 2 to Spring Boot 3.
-
-<!--
-Afterwards, you'll use the CLI to publish your own OSS repository to the Moderne platform so that you can run recipes on
-it without having to build it over and over.
--->
 
 ## Prepare your environment
 
@@ -18,6 +16,7 @@ it without having to build it over and over.
 
 1. Go to the [Moderne platform](https://app.moderne.io) and sign in.
 
+<!--
 2. Click on the `?` in the top right corner and then select `Moderne CLI` from the `Tools` menu:
 
    ![CLI download](assets/cli-download.png)
@@ -26,6 +25,32 @@ it without having to build it over and over.
    the `curl` command at the bottom of the modal:
 
    ![](assets/cli-download2.png)
+-->
+
+2. Download the CLI for your operating system:
+   <Tabs
+   defaultValue="mac"
+   values={[
+   {label: 'Mac', value: 'mac'},
+   {label: 'Linux', value: 'linux'},
+   {label: 'Windows', value: 'windows'},
+   ]}>
+   <TabItem value="mac">
+   
+   [moderne-cli-0.3.0.zip](https://drive.google.com/TODO)
+   
+   </TabItem>
+   <TabItem value="linux">
+   
+   [moderne-cli-0.3.0.zip](https://drive.google.com/TODO)
+   
+   </TabItem>
+   <TabItem value="windows">
+   
+   [moderne-cli-0.3.0.zip](https://drive.google.com/TODO)
+   
+   </TabItem>
+   </Tabs>
 
 4. Regardless of how you downloaded the CLI, you'll need to save it somewhere that your terminal can access. This could
    involve updating your `PATH` to point to a specific location or this could involve putting it in a directory that's
@@ -46,8 +71,6 @@ it without having to build it over and over.
    ```
 
 8. Install recipes
-
-
 
 ### Configure the Spring PetClinic repository
 
@@ -144,7 +167,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
    </details>
 
 2Kick off the recipe by running the following command from the
-   `spring-petclinic` repository:
+`spring-petclinic` repository:
 
    ```shell
    mod run --recipeName org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT --recipeGAVs rewrite-spring --skipBuild
@@ -166,7 +189,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
    > spring-projects/spring-petclinic@main
    Selected 1 repositories (0.03s)
    
-   > Running recipe org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1
+   > Running recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT
    
    > spring-projects/spring-petclinic@main
    No changes.
@@ -174,6 +197,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
    
    MOD SUCCEEDED in (14m 56s)   
    ```
+
    </details>
 
 4. The previous command should have updated your source files. Whenever you run a recipe, you should always double-check
@@ -938,18 +962,17 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
    </details>
 
    If you look at the results you should see that:
-   
-   * The `@Autowired` annotation was removed
-   * JUnit 4 has been replaced with JUnit 5
-   * `javax` has been replaced with `jakarta`
-   * The code has been migrated to Java 17 and text blocks are used
-   * Some best practices are applied (such as adding the `public` test method modifier)
-   
+
+    * The `@Autowired` annotation was removed
+    * JUnit 4 has been replaced with JUnit 5
+    * `javax` has been replaced with `jakarta`
+    * The code has been migrated to Java 17 and text blocks are used
+    * Some best practices are applied (such as adding the `public` test method modifier)
+
    Now unfortunately, the build is broken, as the commit we started from is using Wro4j, which has
    some [slight dependency conflicts](https://github.com/wro4j/wro4j/issues/1129).
    We've decided not to cover Wro4j with recipes for now,
    as [Spring Petclinic has dropped Wro4J](https://github.com/spring-projects/spring-petclinic/pull/868) as well.
-
 
 ## Run a recipe on a remote LST
 
