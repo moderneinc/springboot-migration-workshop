@@ -17,7 +17,7 @@ Boot 2 to Spring Boot 3.
 
 2. Download the CLI by clicking on this [link](https://drive.google.com/file/d/1kFvtV_13UPnsW1VtzUTDzd6R-Q6Um-vf/view?usp=drive_link)
 
-3. Regardless of how you downloaded the CLI, you'll need to save it somewhere that your terminal can access. This could
+3. Now, you'll need to save it somewhere that your terminal can access. This could
    involve updating your `PATH` to point to a specific location or this could involve putting it in a directory that's
    already on your `PATH` such as a `/usr/bin` directory.
 
