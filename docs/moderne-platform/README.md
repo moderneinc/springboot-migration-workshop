@@ -6,7 +6,7 @@ sidebar_position: 5
 
 In this exercise, you will utilize the [Moderne platform](https://app.moderne.io/) to:
 
-* Migrate the [Spring PetClinic](https://github.com/spring-projects/spring-petclinic) repository from Spring Boot 2 to 3
+* Run static code analysis recipes across repositories from different GitHub organizations
 * Fix security vulnerabilities across hundreds of open-source projects
 
 ## Prepare your environment
@@ -17,45 +17,37 @@ configure anything.
 
 ## Running recipes with the Moderne platform
 
-1. Once you're logged in to [Moderne](https://app.moderne.io/), the first thing you'll want to do is to create a
-   repository group with just the Spring PetClinic repository in it. To do so, click on the `Default` group in the top
-   right-hand corner of your screen and select `Create` from the menu that appears:
+1. Once you're logged in to [Moderne](https://app.moderne.io/), you will see a `Default` group in the top
+   right-hand corner of your screen.
 
-![context menu](assets/menu.png)
+   ![context menu](assets/menu.png)
 
-2. A repository group is a list of repositories that are grouped under a name that is only visible to you. You can use
-   any name for the repository group. For this exercise, let's call it `petclinic`. After giving it a name, select
-   `github.com/moderneinc/spring-petclinic@2.0.0` from the list of available repositories. To save this repository
-   group, please press the `Save` button in the bottom right corner of your screen:
+2. With the repository group selected, you can go to the [Moderne Organizations & repositories](https://app.moderne.io/organizations)
+   and see what repositories are included. There are more than 100 repositories from Netflix, spring-cloud
+   and spring-projects GitHub organizations.
 
-![repository-groups](assets/repository-groups.png)
+   ![organizations](assets/organizations.png)
+3. With the repository group selected, you can go to the [Moderne Marketplace](https://app.moderne.io/marketplace). From there, click on
+   `Static analysis and remediation`, and finally select `Common static analysis issues`.
 
-3. With the repository group created, you can go to the [Moderne Marketplace](https://app.moderne.io/marketplace). From
-   there, click on `Java`, then `Spring`, then `Spring Boot 3.x`, and finally select
-   [VERSION_MIGRATE_SPRING_BOOT](https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT):
+4. Click on the `Mode Details` link. From there, you can find what are the different sonarqube rules under the recipe list. This is because
+   Common static analysis issues is a composition of other recipes. You can restrict the ones you want to apply to see the results
+   of a particular recipe.
 
-![recipe](assets/springboot-recipe.png)
-
-4. After that, double-check that the repository group you created is selected by looking at the top right-hand corner of
-   the screen. It should say `petclinic`. Likewise, above the `DRY RUN` button, you should see that the recipe will run
-   against `1` repository. If you want more details about the recipe, you can click on the `More Details` link. From
-   there, you can find additional information such as a link to the source code for this recipe (all of the recipes are
-   OpenRewrite recipes).
-
+   ![recipe](assets/sonarqube-recipes.png)
 5. To begin running the recipe, click on the `DRY RUN` button.
 
-6. You will now be redirected to a page that shows all of the relevant recipe run information. Once it's finished, you
-   can click on the repository name to see the results:
+6. You will now be redirected to a page that shows all the relevant recipe run information. Once it's finished, you
+   can click on each repository name to see the results.
 
-![results](assets/execution.png)
+7. If you look at the results you might want to understand why a change has been introduced. Every single change has as three dots
+   option from where you can select `Why did this change?`.
+   ![recipe](assets/why-change.png)
 
-7. If you look at the results you should see that:
-
-* The `@Autowired` annotation was removed
-* JUnit 4 has been replaced with JUnit 5
-* `javax` has been replaced with `jakarta`
-* The code has been migrated to Java 17 and text blocks are used
-* Some best practices are applied (such as adding the `public` test method modifier)
+:::danger
+Please, do not create pull requests with the results produced by the Moderne platform if you are not an active contributor of those
+repositories.
+:::
 
 ## Fixing security vulnerabilities with the Moderne platform
 
