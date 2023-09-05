@@ -1,8 +1,6 @@
 ---
 sidebar_position: 4
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 # Moderne CLI exercise
 
@@ -14,63 +12,34 @@ Boot 2 to Spring Boot 3.
 
 ### Download and configure the Moderne CLI
 
-1. Go to the [Moderne platform](https://app.moderne.io) and sign in.
+1. Go to the [Moderne platform](https://app.moderne.io) and sign in. If you don't have an account, you can sign up for
+   free.
 
-<!--
-2. Click on the `?` in the top right corner and then select `Moderne CLI` from the `Tools` menu:
+2. Download the CLI by clicking on this [link](https://drive.google.com/file/d/1kFvtV_13UPnsW1VtzUTDzd6R-Q6Um-vf/view?usp=drive_link)
 
-   ![CLI download](assets/cli-download.png)
-
-3. You can then either press the `Download Latest` button or install it directly through the command line by copying
-   the `curl` command at the bottom of the modal:
-
-   ![](assets/cli-download2.png)
--->
-
-2. Download the CLI for your operating system:
-   <Tabs
-   defaultValue="mac"
-   values={[
-   {label: 'Mac', value: 'mac'},
-   {label: 'Linux', value: 'linux'},
-   {label: 'Windows', value: 'windows'},
-   ]}>
-   <TabItem value="mac">
-   
-   [moderne-cli-0.3.0.zip](https://drive.google.com/TODO)
-   
-   </TabItem>
-   <TabItem value="linux">
-   
-   [moderne-cli-0.3.0.zip](https://drive.google.com/TODO)
-   
-   </TabItem>
-   <TabItem value="windows">
-   
-   [moderne-cli-0.3.0.zip](https://drive.google.com/TODO)
-   
-   </TabItem>
-   </Tabs>
-
-4. Regardless of how you downloaded the CLI, you'll need to save it somewhere that your terminal can access. This could
+3. Regardless of how you downloaded the CLI, you'll need to save it somewhere that your terminal can access. This could
    involve updating your `PATH` to point to a specific location or this could involve putting it in a directory that's
    already on your `PATH` such as a `/usr/bin` directory.
 
-5. Ensure you can run the CLI by typing `mod help`. If everything is set up correctly, you should see a list of
+4. Ensure you can run the CLI by typing `mod help`. If everything is set up correctly, you should see a list of
    commands:
 
    ![](assets/mod-cli.png)
 
-6. Before you can run any commands, you'll need to create a Moderne Access Token. Go
+5. Before you can run any commands, you'll need to create a Moderne Access Token. Go
    to https://app.moderne.io/settings/access-token, enter a name for the token, and press `generate`.
 
-7. Once created, you should see a command that you can run to install the token on your system.
+6. Once created, you should see a command that you can run to install the token on your system.
 
    ```shell
    mod config moderne https://app.moderne.io --token mat-YOUR_TOKEN_HERE
    ```
 
-8. Install recipes
+7. Install recipes
+
+```shell
+  mod config recipes install --from-moderne
+```
 
 ### Configure the Spring PetClinic repository
 
@@ -974,7 +943,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
    We've decided not to cover Wro4j with recipes for now,
    as [Spring Petclinic has dropped Wro4J](https://github.com/spring-projects/spring-petclinic/pull/868) as well.
 
-## Run a recipe on a remote LST
+## Run a recipe on multiple local repositories
 
 In the previous example, we used the Moderne CLI to run a recipe against a repository on your local machine. This is
 fine when you only have one repository you're working with. However, what if you wanted to run a recipe against many
@@ -987,28 +956,141 @@ published their [Lossless Semantic Tree](https://docs.moderne.io/concepts/lossle
 This can be especially helpful when you're working on debugging a new recipe and want to test it against many
 repositories at once.
 
-For example, if you executed the following command,
-the [Code Cleanup](https://app.moderne.io/recipes/org.openrewrite.staticanalysis.CodeCleanup) recipe would be run
-against all of the Apache Maven repositories that have LST artifacts built in the Moderne platform:
+For this exercise, we have prepared a list of Spring 2.x real open source repositories from the `spring-projects` 
+GitHub organization that can be migrated. They are registered in the Moderne platform in the `Spring Projects 2.x` 
+organization. You can clone those repositories locally with the following steps:
 
 ```shell
-mod run --repositories "github.com/apache/maven.*@master" --recipeName org.openrewrite.staticanalysis.CodeCleanup --recipeGAVs rewrite-static-analysis
+mkdir -p $HOME/workshop
+mod clone $HOME/workshop --moderne-organization "Spring Projects 2.x"
 ```
 
-None of these repositories will be checked out locally and you won't have to wait for these repositories to build as the
-pre-built artifacts will simply be downloaded to your machine instead.
+Then you should be able to see 3 different repositories in the `$HOME/workshop/spring-projects`,  directory:
 
-You should see a folder structure created in your current working directory that looks like this:
-
-```text
-github.com/
-  apache/
-    maven/
-      master.patch
-    maven-antrun-plugin/
-      master.patch
-    ...
+```shell
+ls -ltr $HOME/workshop/spring-projects/
 ```
 
-Feel free to experiment with the run command by executing [any of our recipes](https://app.moderne.io/marketplace)
-against any open-source repositories that exist in the Moderne platform.
+<details>
+<summary>You should see output similar to the following.</summary>
+```
+total 0
+drwxr-xr-x  22 raquel  staff  704  5 sep 01:44 spring-hateoas-examples
+drwxr-xr-x  15 raquel  staff  480  5 sep 01:44 spring-session-data-mongodb-examples
+drwxr-xr-x  17 raquel  staff  544  5 sep 10:49 spring-data-release
+```
+</details>
+
+Now that you have the repositories locally, you can run a recipe against all of them at once. Since all of 
+these repositories have their LSTs published onto the Moderne platform, the build operation will download the
+LSTs without having to build the repositories locally. This will save you a lot of time!
+
+```shell
+mod build $HOME/workshop
+```
+
+<details>
+<summary>You should see output similar to the following.</summary>
+```
+        ▛▀▀▚▖  ▗▄▟▜
+        ▌   ▜▄▟▀  ▐
+        ▛▀▀█▀▛▀▀▀▀▜
+        ▌▟▀  ▛▀▀▀▀▜
+        ▀▀▀▀▀▀▀▀▀▀▀
+Moderne CLI v0.1.1-SNAPSHOT
+
+> Selecting repositories
+
+> spring-projects/spring-data-release@mainp/spring-projects/spring-hateoas-examples
+> spring-projects/spring-hateoas-examples@mainring-projects/spring-hateoas-examples
+> spring-projects/spring-session-data-mongodb-examples@main/spring-hateoas-examples
+Selected 3 repositories (0.45s)
+
+> Building LST(s)
+
+> spring-projects/spring-data-release@main
+Build output will be written to file:///Users/raquel/workshop/spring-projects/spring-data-release/.moderne/build/20230905113522-rGwH8/build.log
+
+🏗 Step 1 - download from Moderne         
+✅ Downloaded LST file:///Users/raquel/workshop/spring-projects/spring-data-release/.moderne/build/20230905113522-rGwH8/0-spring-data-release-20230904044606-ast.jar
+
+> spring-projects/spring-hateoas-examples@main
+Build output will be written to file:///Users/raquel/workshop/spring-projects/spring-hateoas-examples/.moderne/build/20230905113527-waV3z/build.log
+
+🏗 Step 1 - download from Moderne         
+✅ Downloaded LST file:///Users/raquel/workshop/spring-projects/spring-hateoas-examples/.moderne/build/20230905113527-waV3z/0-spring-hateoas-examples-20230904132908-ast.jar
+
+> spring-projects/spring-session-data-mongodb-examples@main
+Build output will be written to file:///Users/raquel/workshop/spring-projects/spring-session-data-mongodb-examples/.moderne/build/20230905113530-30lEn/build.log
+
+🏗 Step 1 - download from Moderne         
+✅ Downloaded LST file:///Users/raquel/workshop/spring-projects/spring-session-data-mongodb-examples/.moderne/build/20230905113530-30lEn/0-spring-session-data-mongodb-examples-20230904181534-ast.jar
+
+Built 3 repositories (9s)
+
+MOD SUCCEEDED in (9s)
+```
+</details>
+
+Now you can migrate all these repositories to Spring Boot 3 at once with the following command:
+
+```shell
+mod run $HOME/workshop --recipe org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1
+```
+
+<details>
+<summary>You should see output similar to the following.</summary>
+```
+         ▛▀▀▚▖  ▗▄▟▜
+        ▌   ▜▄▟▀  ▐
+        ▛▀▀█▀▛▀▀▀▀▜
+        ▌▟▀  ▛▀▀▀▀▜
+        ▀▀▀▀▀▀▀▀▀▀▀
+Moderne CLI v0.1.1-SNAPSHOT
+
+> Selecting repositories
+
+> spring-projects/spring-data-release@mainp/spring-projects/spring-hateoas-examples
+> spring-projects/spring-hateoas-examples@mainring-projects/spring-hateoas-examples
+> spring-projects/spring-session-data-mongodb-examples@main/spring-hateoas-examples
+Selected 3 repositories (0.52s)
+
+> Running recipe org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1
+
+> spring-projects/spring-data-release@main
+Fix results at file:///Users/raquel/workshop/spring-projects/spring-data-release/.moderne/run/20230905113712-JvUVv/fix.patch
+Search results at file:///Users/raquel/workshop/spring-projects/spring-data-release/.moderne/run/20230905113712-JvUVv/search.patch
+> spring-projects/spring-hateoas-examples@main                   
+Fix results at file:///Users/raquel/workshop/spring-projects/spring-hateoas-examples/.moderne/run/20230905113712-JvUVv/fix.patch
+Search results at file:///Users/raquel/workshop/spring-projects/spring-hateoas-examples/.moderne/run/20230905113712-JvUVv/search.patch
+> spring-projects/spring-session-data-mongodb-examples@main       
+Fix results at file:///Users/raquel/workshop/spring-projects/spring-session-data-mongodb-examples/.moderne/run/20230905113712-JvUVv/fix.patch
+Search results at file:///Users/raquel/workshop/spring-projects/spring-session-data-mongodb-examples/.moderne/run/20230905113712-JvUVv/search.patch
+Found results on 3 repositories (2m 8s)                                                
+Run mod apply /Users/raquel/workshop --recipe-run 20230905113712-JvUVv to apply the changes.
+
+MOD SUCCEEDED in (2m 8s)
+```
+</details>
+
+Now you can apply the changes to all these repositories at once with the following command:
+
+```shell
+mod apply $HOME/workshop --recipe-run 20230905113712-JvUVv
+```
+
+This will apply the changes to all the repositories at once. You can preview them with git going to each 
+repository and running this command
+
+```shell
+git diff
+```
+
+Finally, you can commit the changes to all the repositories at once with the following command:
+
+```shell
+mod commit $HOME/workshop -m "Migrate to spring boot 3" --recipe-run 20230905113712-JvUVv
+```
+
+Notice that you can also use `mod checkout` to create a branch for each repository and then use `mod commit` 
+to commit the changes. This might be useful if you want to create a pull request for each repository.
