@@ -39,12 +39,15 @@ it without having to build it over and over.
 6. Before you can run any commands, you'll need to create a Moderne Access Token. Go
    to https://app.moderne.io/settings/access-token, enter a name for the token, and press `generate`.
 
-7. Once created, you should see a command that you can run to install the token on your system. Either run that command
-   or export your token directly as an environment variable:
+7. Once created, you should see a command that you can run to install the token on your system.
 
    ```shell
-   export MODERNE_ACCESS_TOKEN="mat-YOUR_TOKEN_HERE"
+   mod config moderne https://app.moderne.io --token mat-YOUR_TOKEN_HERE
    ```
+
+8. Install recipes
+
+
 
 ### Configure the Spring PetClinic repository
 
@@ -105,7 +108,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
 1. Run the build command to generate the LST for the PetClinic repo:
 
    ```shell
-   mod build
+   mod build .
    ```
 
    <details>
@@ -117,35 +120,30 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
        ▛▀▀█▀▛▀▀▀▀▜
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
-   Moderne CLI v0.2.52
+   Moderne CLI v0.3.0
 
-   INFO: Watching the project changes...
-   Building ...........................................................................................
-   ........
-   BUILD SUCCESSFUL for ..
-   Report available at file:///home/tim/.moderne/build/cCuG4/index.html
-   1 repository built.
+   > Selecting repositories
 
-   Repository          Branch              Path
-   spring-projects/spring-petclinic
-   main                .
+   > spring-projects/spring-petclinic@mainnic
+   Selected 1 repositories (0.02s)
+   
+   > Building LST(s)
+   
+   > spring-projects/spring-petclinic@main
+   Build output will be written to file://./.moderne/build/20230904223334-5kM1v/build.log
+   
+   🏗 Step 1 - build with Maven
+   Selected a Java 8 JDK.
+   
+   🏗 Step 2 - build with Native
+   ✅ Built LST file://./.moderne/build/20230904223334-5kM1v/spring-petclinic-20230904223403-ast.jar (28s)
+   
+   
+   MOD SUCCEEDED in (28s)             .
    ```
    </details>
 
-2. Next, switch to Java 17 to run recipes. This is a requirement of the CLI:
-
-   ```shell
-   sdk install java VERSION_SDKMAN_JAVA17
-   sdk use java VERSION_SDKMAN_JAVA17
-   ```
-
-   OR
-
-   ```shell
-   export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_17
-   ```
-
-3. Kick off the recipe by running the following command from the
+2Kick off the recipe by running the following command from the
    `spring-petclinic` repository:
 
    ```shell
@@ -161,28 +159,20 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
        ▛▀▀█▀▛▀▀▀▀▜
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
-   Moderne CLI v0.2.52
+   Moderne CLI v0.3.0
+
+   > Selecting repositories
    
-   INFO: The tenant app is public.
-   INFO: The artifact settings are public.
-   INFO: Valid artifact repository settings provided.
-   INFO: Valid settings to send usage metrics provided.
-   INFO: Using the Moderne home directory /home/tim/.moderne
-   INFO: Using the Moderne access token from the provided access access token.
-   INFO: The access token belongs to a valid account for the tenant app.
-   INFO: Starting to resolve the recipe parameters.
-   Resolving recipe...............................
-   INFO: The recipe parameters are correct. Starting to resolve LST artifacts.
-   INFO: Resolved local LSTs artifacts of . because the --skipBuild option is enabled.
-   INFO: Running the recipe with 1 LST file(s).
-   INFO: The recipe changes will be applied directly in '.'
-   Running recipe in github.com/spring-projects/spring-petclinic@main..................................
-   ....................................................................................................
-   ......................................................................
-   There were 642 errors running the recipe. Please, re-run it with the verbose option to see the full stack trace.
-   Ran 326 recipes in 30.000796079s for github.com/spring-projects/spring-petclinic@main
-   Changed 27 files by 2 recipes with an estimated time savings of 2h 15m.
-   Applying changeset github.com/spring-projects/spring-petclinic@main.
+   > spring-projects/spring-petclinic@main
+   Selected 1 repositories (0.03s)
+   
+   > Running recipe org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1
+   
+   > spring-projects/spring-petclinic@main
+   No changes.
+   Found results on 0 repositories (14m 56s)
+   
+   MOD SUCCEEDED in (14m 56s)   
    ```
    </details>
 
