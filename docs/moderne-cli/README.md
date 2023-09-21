@@ -28,17 +28,17 @@ Boot 2 to Spring Boot 3.
    
    <TabItem value="mac">
 
-   [moderne-cli-0.5.5.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-macos/v0.5.5/moderne-cli-macos-v0.5.5)
+   [moderne-cli-VERSION_CLI.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-macos/vVERSION_CLI/moderne-cli-macos-vVERSION_CLI)
 
    </TabItem>
    <TabItem value="linux">
 
-   [moderne-cli-0.5.5.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-linux/v0.5.5/moderne-cli-linux-v0.5.5)
+   [moderne-cli-VERSION_CLI.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-linux/vVERSION_CLI/moderne-cli-linux-vVERSION_CLI)
 
    </TabItem>
    <TabItem value="windows">
 
-   [moderne-cli-0.5.5.zip](https://drive.google.com/TODO)
+   [moderne-cli-VERSION_CLI.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-windows/vVERSION_CLI/moderne-cli-windows-vVERSION_CLI)
 
    </TabItem>
    </Tabs>
