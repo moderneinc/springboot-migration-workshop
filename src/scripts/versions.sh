@@ -22,6 +22,7 @@ replace 'VERSION_REWRITE_SPRING'          '5.0.8'
 replace 'VERSION_RECIPE_SPRING_BOOT'      'UpgradeSpringBoot_3_1'
 replace 'VERSION_MIGRATE_SPRING_BOOT'     'Migrate to Spring Boot 3.1'
 replace 'VERSION_LINK_SPRING_BOOT'        'upgradespringboot_3_1'
+replace 'VERSION_CLI'                     '1.0.0'
 
 if [ -n "$inverse" ]; then
   echo "Replaced all versions with placeholders"

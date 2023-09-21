@@ -28,17 +28,17 @@ Boot 2 to Spring Boot 3.
    
    <TabItem value="mac">
 
-   [moderne-cli-0.3.0.zip](https://drive.google.com/TODO)
+   [moderne-cli-0.5.5.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-macos/v0.5.5/moderne-cli-macos-v0.5.5)
 
    </TabItem>
    <TabItem value="linux">
 
-   [moderne-cli-0.3.0.zip](https://drive.google.com/TODO)
+   [moderne-cli-0.5.5.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-linux/v0.5.5/moderne-cli-linux-v0.5.5)
 
    </TabItem>
    <TabItem value="windows">
 
-   [moderne-cli-0.3.0.zip](https://drive.google.com/TODO)
+   [moderne-cli-0.5.5.zip](TODO)
 
    </TabItem>
    </Tabs>
@@ -57,7 +57,7 @@ Boot 2 to Spring Boot 3.
     ▛▀▀█▀▛▀▀▀▀▜
     ▌▟▀  ▛▀▀▀▀▜
     ▀▀▀▀▀▀▀▀▀▀▀
-    Moderne CLI 1.0.0
+    Moderne CLI VERSION_CLI
 
     Usage:
 
@@ -198,7 +198,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
        ▛▀▀█▀▛▀▀▀▀▜
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
-   Moderne CLI 1.0.0
+   Moderne CLI VERSION_CLI
 
    > Selecting repositories
 
@@ -228,7 +228,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
 `spring-petclinic` repository:
 
    ```shell
-   mod run . --recipe org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1
+   mod run . --recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT
    ```
 
    <details>
@@ -240,14 +240,14 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
        ▛▀▀█▀▛▀▀▀▀▜
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
-    Moderne CLI 1.0.0
+    Moderne CLI VERSION_CLI
 
     > Selecting repositories
 
     > spring-projects/spring-petclinic@main
     Selected 1 repositories
     (0.48s)
-    > Running recipe org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1
+    > Running recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT
 
     > spring-projects/spring-petclinic@main
         ✅ Fix results at file:///Users/mikesol/Desktop/code/spring-petclinic/.moderne/run/20230921095147-SsGwh/fix.patch
@@ -1612,7 +1612,7 @@ mod build $HOME/workshop
        ▛▀▀█▀▛▀▀▀▀▜
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
-  Moderne CLI 1.0.0
+  Moderne CLI VERSION_CLI
 
   > Selecting repositories
 
@@ -1662,7 +1662,7 @@ mod run $HOME/workshop --recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE
        ▛▀▀█▀▛▀▀▀▀▜
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
-  Moderne CLI 1.0.0
+  Moderne CLI VERSION_CLI
 
   > Selecting repositories
 
@@ -1671,7 +1671,7 @@ mod run $HOME/workshop --recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE
   > spring-projects/spring-session-data-mongodb-examples@main
   Selected 3 repositories
   (0.4s)
-  > Running recipe org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1
+  > Running recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT
 
   > spring-projects/spring-data-release@main
       ✅ Fix results at file:///Users/mikesol/Desktop/code/workshop/spring-projects/spring-data-release/.moderne/run/20230921102510-bqlud/fix.patch
