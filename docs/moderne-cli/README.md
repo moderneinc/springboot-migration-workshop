@@ -50,7 +50,7 @@ Boot 2 to Spring Boot 3.
   <details>
   <summary>If everything is set up correctly, you should see output similar to the following:</summary>
 
-  ```shell
+  ```
   ➜  moderne-cli git:(main) mod
     ▛▀▀▚▖  ▗▄▟▜
     ▌   ▜▄▟▀  ▐
