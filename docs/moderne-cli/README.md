@@ -25,7 +25,7 @@ Boot 2 to Spring Boot 3.
    {label: 'Linux', value: 'linux'},
    {label: 'Windows', value: 'windows'},
    ]}>
-   
+
    <TabItem value="mac">
 
    [moderne-cli-VERSION_CLI.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-macos/vVERSION_CLI/moderne-cli-macos-vVERSION_CLI)
@@ -132,9 +132,10 @@ Boot 2 to Spring Boot 3.
    ```
 
 If this steps fails:
- 1. Download [the recipes.properties file](https://gist.github.com/rpau/e848744e3ece1fabbe4fb9451843e371) and store it at `$HOME/.moderne/cli/recipes.properties`
- 2. Download [the moderne.properties file](https://gist.github.com/rpau/8e87fd0b0349f22d6ef3d5c4af2e58b6) and store it at `$HOME/.moderne/cli/moderne.properties`
- 3. Edit the $HOME/.moderne/cli/moderne.properties and add your access token in `tenant.apiToken`.
+
+1. Download [the recipes.properties file](https://gist.github.com/rpau/e848744e3ece1fabbe4fb9451843e371) and store it at `$HOME/.moderne/cli/recipes.properties`
+2. Download [the moderne.properties file](https://gist.github.com/rpau/8e87fd0b0349f22d6ef3d5c4af2e58b6) and store it at `$HOME/.moderne/cli/moderne.properties`
+3. Edit the $HOME/.moderne/cli/moderne.properties and add your access token in `tenant.apiToken`.
 
 ### Configure the Spring PetClinic repository
 
@@ -229,7 +230,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
 
 
 2. Kick off the migration recipe by running the following command from the
-`spring-petclinic` repository:
+   `spring-petclinic` repository:
 
    ```shell
    mod run . --recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT
@@ -1548,7 +1549,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
             vet.setFirstName("Zaphod");
             vet.setLastName("Beeblebrox");
    ```  
-     
+
    </details>
 
    If you look at the results you should see that:
@@ -1572,7 +1573,7 @@ would take a considerable amount of time.
 
 Fortunately, the Moderne CLI offers the ability to work on groups of repositories. This can be especially helpful when you're working on debugging a new recipe and want to test it against many repositories at once.
 
-For this exercise, we have prepared a list of Spring 2.x real open-source repositories from the `spring-projects` 
+For this exercise, we have prepared a list of Spring 2.x real open-source repositories from the `spring-projects`
 GitHub organization that can be migrated. These repositories have been added to the Moderne platform and put inside the `Spring Projects 2.x` organization.
 
 To clone all of these repositories at once:
@@ -1597,9 +1598,10 @@ drwxr-xr-x  13 mikesol  staff  416 Sep 21 10:22 spring-data-release
 drwxr-xr-x  21 mikesol  staff  672 Sep 21 10:22 spring-hateoas-examples
 drwxr-xr-x  14 mikesol  staff  448 Sep 21 10:22 spring-session-data-mongodb-examples
 ```
+
 </details>
 
-Now that you have the repositories locally, you can run a recipe against all of them at once. Since all of 
+Now that you have the repositories locally, you can run a recipe against all of them at once. Since all of
 these repositories have their LSTs published onto the Moderne platform, the build operation will download the
 LSTs without having to build the repositories locally. This will save you a lot of time!
 
@@ -1649,6 +1651,7 @@ mod build $HOME/workshop
 
   MOD SUCCEEDED in (4s)
 ```
+
 </details>
 
 You can migrate all of these repositories to Spring Boot 3 at once with the following command:
@@ -1696,6 +1699,7 @@ mod run $HOME/workshop --recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE
 
   MOD SUCCEEDED in (1m 42s)
 ```
+
 </details>
 
 You can apply the changes to all these repositories at once with the following command:
