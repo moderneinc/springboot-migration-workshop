@@ -15,6 +15,10 @@ Go to https://moderneinc.github.io/springboot-migration-workshop/ or [docs](docs
 ./src/scripts/versions.sh --inverse
 ```
 
+### Install Docusaurus
+```bash
+npm install
+```
 ### Start Docusaurus
 ```bash
 npx docusaurus start
