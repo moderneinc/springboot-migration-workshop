@@ -112,6 +112,10 @@ Boot 2 to Spring Boot 3.
 
   </details>
 
+  :::tip
+  Run `mod generate-completion --help` and follow the instructions to enable tab completion for the CLI.
+  :::
+
 5. Before you can run any commands, you'll need to create a Moderne Access Token. Go
    to https://app.moderne.io/settings/access-token, enter a name for the token, and press `generate`.
 
