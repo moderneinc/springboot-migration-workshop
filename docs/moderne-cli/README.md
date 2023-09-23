@@ -128,14 +128,8 @@ Boot 2 to Spring Boot 3.
 7. With the Moderne connection established, install recipes on your machine:
 
    ```shell
-   mod config recipes install --from-moderne
+   mod config recipes install moderne
    ```
-
-If this steps fails:
-
-1. Download [the recipes.properties file](https://gist.github.com/rpau/e848744e3ece1fabbe4fb9451843e371) and store it at `$HOME/.moderne/cli/recipes.properties`
-2. Download [the moderne.properties file](https://gist.github.com/rpau/8e87fd0b0349f22d6ef3d5c4af2e58b6) and store it at `$HOME/.moderne/cli/moderne.properties`
-3. Edit the $HOME/.moderne/cli/moderne.properties and add your access token in `tenant.apiToken`.
 
 ### Configure the Spring PetClinic repository
 
