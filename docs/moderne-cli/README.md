@@ -252,12 +252,13 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
     > Running recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT
 
     > spring-projects/spring-petclinic@main
-        ✅ Fix results at file:///Users/mikesol/Desktop/code/spring-petclinic/.moderne/run/20230921095147-SsGwh/fix.patch
+        ✅ Fix results at file:///Users/mikesol/Desktop/code/spring-petclinic/.moderne/run/20230925102039-NVf33/fix.patch
+        ✅ Search results at file:///Users/mikesol/Desktop/code/spring-petclinic/.moderne/run/20230925102039-NVf33/search.patch
     Found results on 1 repositories (9m 37s)
 
     * What to do next
         > Click on one of the patch links above to view the changes on a particular repository
-        > Run mod study to examine data tables produced by this recipe
+        > Run mod study . --last-recipe-run --data-table <DATA-TABLE>  to examine data tables produced by this recipe
         > Run npm install -g diff2html-cli to produce patch files on subsequent runs that are easier to view
         > Run mod apply . --last-recipe-run  to apply the changes
 
@@ -1692,7 +1693,7 @@ mod run $HOME/workshop --recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE
 
   * What to do next
       > Click on one of the patch links above to view the changes on a particular repository
-      > Run mod study to examine data tables produced by this recipe
+      > Run mod study . --last-recipe-run --data-table <DATA-TABLE>  to examine data tables produced by this recipe
       > Run npm install -g diff2html-cli to produce patch files on subsequent runs that are easier to view
       > Run mod apply . --last-recipe-run  to apply the changes
 
