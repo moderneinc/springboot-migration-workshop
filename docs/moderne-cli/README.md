@@ -28,17 +28,17 @@ Boot 2 to Spring Boot 3.
 
    <TabItem value="mac">
 
-   [moderne-cli-VERSION_CLI.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-macos/vVERSION_CLI/moderne-cli-macos-vVERSION_CLI)
+   [moderne-cli-latest.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-macos/latest/moderne-cli-macos-latest)
 
    </TabItem>
    <TabItem value="linux">
 
-   [moderne-cli-VERSION_CLI.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-linux/vVERSION_CLI/moderne-cli-linux-vVERSION_CLI)
+   [moderne-cli-latest.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-linux/latest/moderne-cli-linux-latest)
 
    </TabItem>
    <TabItem value="windows">
 
-   [moderne-cli-VERSION_CLI.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-windows/vVERSION_CLI/moderne-cli-windows-vVERSION_CLI)
+   [moderne-cli-latest.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-windows/latest/moderne-cli-windows-latest)
 
    </TabItem>
    </Tabs>
@@ -57,7 +57,7 @@ Boot 2 to Spring Boot 3.
     ▛▀▀█▀▛▀▀▀▀▜
     ▌▟▀  ▛▀▀▀▀▜
     ▀▀▀▀▀▀▀▀▀▀▀
-    Moderne CLI VERSION_CLI
+    Moderne CLI v1
 
     Usage:
 
@@ -197,7 +197,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
        ▛▀▀█▀▛▀▀▀▀▜
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
-   Moderne CLI VERSION_CLI
+   Moderne CLI v1
 
    > Selecting repositories
 
@@ -239,7 +239,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
        ▛▀▀█▀▛▀▀▀▀▜
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
-    Moderne CLI VERSION_CLI
+    Moderne CLI v1
 
     > Selecting repositories
 
@@ -1612,7 +1612,7 @@ mod build $HOME/workshop
        ▛▀▀█▀▛▀▀▀▀▜
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
-  Moderne CLI VERSION_CLI
+  Moderne CLI latest
 
   > Selecting repositories
 
@@ -1663,7 +1663,7 @@ mod run $HOME/workshop --recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE
        ▛▀▀█▀▛▀▀▀▀▜
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
-  Moderne CLI VERSION_CLI
+  Moderne CLI latest
 
   > Selecting repositories
 
