@@ -57,7 +57,8 @@ Boot 2 to Spring Boot 3.
     ▛▀▀█▀▛▀▀▀▀▜
     ▌▟▀  ▛▀▀▀▀▜
     ▀▀▀▀▀▀▀▀▀▀▀
-    Moderne CLI v1
+    Moderne CLI v1.0.3
+    Running in a local developer environment
 
     Usage:
 
@@ -197,7 +198,8 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
        ▛▀▀█▀▛▀▀▀▀▜
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
-   Moderne CLI v1
+   Moderne CLI v1.0.3
+   Running in a local developer environment
 
    > Selecting repositories
 
@@ -239,7 +241,8 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
        ▛▀▀█▀▛▀▀▀▀▜
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
-    Moderne CLI v1
+    Moderne CLI v1.0.3
+    Running in a local developer environment
 
     > Selecting repositories
 
@@ -1612,7 +1615,8 @@ mod build $HOME/workshop
        ▛▀▀█▀▛▀▀▀▀▜
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
-  Moderne CLI latest
+  Moderne CLI v1.0.3
+  Running in a local developer environment
 
   > Selecting repositories
 
@@ -1663,7 +1667,8 @@ mod run $HOME/workshop --recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE
        ▛▀▀█▀▛▀▀▀▀▜
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
-  Moderne CLI latest
+  Moderne CLI v1.0.3
+  Running in a local developer environment
 
   > Selecting repositories
 
