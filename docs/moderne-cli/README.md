@@ -227,7 +227,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
    `spring-petclinic` repository:
 
    ```shell
-   mod run . --recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT
+   mod run . --recipe VERSION_RECIPE_SPRING_BOOT
    ```
 
    <details>
