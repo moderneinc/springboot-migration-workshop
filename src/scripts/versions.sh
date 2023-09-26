@@ -11,7 +11,7 @@ function replace() {
     grep --recursive --files-with-matches "$1" docs | xargs --no-run-if-empty sed --in-place "s/$1/$2/g"
   fi
 }
-replace 'VERSION_SDKMAN_JAVA8'            '8.0.382-tem'
+replace 'VERSION_SDKMAN_JAVA8'            '8.0.382-zulu'
 replace 'VERSION_SDKMAN_JAVA11'           '11.0.20-tem'
 replace 'VERSION_SDKMAN_JAVA17'           '17.0.8.1-tem'
 replace 'VERSION_SPRING_BOOT27'           '2.7.15'
