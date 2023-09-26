@@ -12,7 +12,7 @@ In this exercise, you will utilize the [Moderne platform](https://app.moderne.io
 ## Prepare your environment
 
 Go to [https://app.moderne.io/](https://app.moderne.io/) and register with your GitHub account. Once you've signed in,
-you'll find more than 25,000 open-source repositories that can be used to test OpenRewrite recipes without you having to
+you'll find more than 31,000 open-source repositories that can be used to test OpenRewrite recipes without you having to
 configure anything.
 
 ## Running recipes with the Moderne platform
