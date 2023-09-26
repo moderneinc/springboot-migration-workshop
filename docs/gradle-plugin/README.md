@@ -72,7 +72,7 @@ export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_11
 3. Make sure it runs on your machine:
 
    ```shell
-   ./gradlew build -x test
+   ./gradlew assmeble
    ```
 
 ## Migrate to SpringBoot 3 with OpenRewrite
