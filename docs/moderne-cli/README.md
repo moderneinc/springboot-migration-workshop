@@ -28,17 +28,17 @@ Boot 2 to Spring Boot 3.
 
    <TabItem value="mac">
 
-   [moderne-cli-VERSION_MODERNE_CLI.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-macos/VERSION_MODERNE_CLI/moderne-cli-macos-VERSION_MODERNE_CLI)
+   [moderne-cli-VERSION_MODERNE_CLI](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-macos/VERSION_MODERNE_CLI/moderne-cli-macos-VERSION_MODERNE_CLI)
 
    </TabItem>
    <TabItem value="linux">
 
-   [moderne-cli-VERSION_MODERNE_CLI.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-linux/VERSION_MODERNE_CLI/moderne-cli-linux-VERSION_MODERNE_CLI)
+   [moderne-cli-VERSION_MODERNE_CLI](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-linux/VERSION_MODERNE_CLI/moderne-cli-linux-VERSION_MODERNE_CLI)
 
    </TabItem>
    <TabItem value="windows">
 
-   [moderne-cli-VERSION_MODERNE_CLI.zip](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-windows/VERSION_MODERNE_CLI/moderne-cli-windows-VERSION_MODERNE_CLI)
+   [moderne-cli-VERSION_MODERNE_CLI](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-windows/VERSION_MODERNE_CLI/moderne-cli-windows-VERSION_MODERNE_CLI)
 
    </TabItem>
    </Tabs>
