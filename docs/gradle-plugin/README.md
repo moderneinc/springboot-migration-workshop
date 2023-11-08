@@ -94,7 +94,7 @@ here](https://docs.openrewrite.org/running-recipes/running-rewrite-on-a-gradle-p
    curl --output init.gradle <url>
    ```
 
-3. Now due to some [Guava incompatibility issues with Gradle 6](https://github.com/google/guava/releases/tag/v32.1.0)
+2. Now due to some [Guava incompatibility issues with Gradle 6](https://github.com/google/guava/releases/tag/v32.1.0)
    specifically, and Wro4j being incompatible with Gradle 7, we have to first awkwardly downgrade to Gradle 5.
 
    ```shell
@@ -103,7 +103,7 @@ here](https://docs.openrewrite.org/running-recipes/running-rewrite-on-a-gradle-p
 
    Don't worry; we will upgrade Gradle automatically as part of the recipe run, to be compatible with Java 17.
 
-4. With `init.gradle` copied over, if you run `rewriteRun`, you will apply the migration recipe:
+3. With `init.gradle` copied over, if you run `rewriteRun`, you will apply the migration recipe:
 
    ```shell
    ./gradlew --info --init-script init.gradle rewriteRun
