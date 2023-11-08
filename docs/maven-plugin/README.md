@@ -10,11 +10,14 @@ Spring Boot 3 using Maven.
 
 If you were migrating this by hand, you would need to do a variety of things such as:
 
-* Migrating to Spring Boot 2.7
 * Migrating to Java 17
-* Migrating to Jakarata EE 9
-* Migrating to Spring Security 6.0
+* Migrating to Spring Boot 2.7
+* Migrating to Spring Security 5.8
 * Migrating to Spring Cloud 2022
+* Migrating to Jakarata EE 9
+* Migrating to Spring Boot 3.0
+* Migrating to Spring Security 6.0
+* Migrating to Spring Boot 3.1
 * ...
 
 Fortunately, [OpenRewrite](https://docs.openrewrite.org/) has a
