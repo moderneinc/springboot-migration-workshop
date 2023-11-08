@@ -1185,7 +1185,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
     
         /**
     diff --git a/src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java b/src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java
-    index 08d6136..3VERSION_SPRING_BOOT310 100644
+    index 08d6136..3331750 100644
     --- a/src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java
     +++ b/src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java
     @@ -7,9 +7,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.

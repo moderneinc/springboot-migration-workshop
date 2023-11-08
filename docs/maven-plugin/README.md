@@ -172,7 +172,7 @@ Downloaded: https://repo.maven.apache.org/maven2/org/openrewrite/maven/rewrite-m
 [INFO] git.closest.tag.commit.count 15
 [INFO] git.build.time 2023-09-01T12:48:47+0200
 [INFO] git.build.version 2.0.0.BUILD-SNAPSHOT
-[INFO] git.build.host tim-xps-1VERSION_REWRITE_MAVEN_PLUGIN0
+[INFO] git.build.host tim-xps-15-9520
 [INFO] git.commit.id.describe-short b527de5
 [INFO] found property git.build.user.email
 [INFO] found property git.build.host
