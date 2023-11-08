@@ -123,14 +123,18 @@ Boot 2 to Spring Boot 3.
 6. Once created, copy the token and use it in the following command so that the CLI can communicate with Moderne:
 
    ```shell
-   mod config moderne https://app.moderne.io --token mat-YOUR_TOKEN_HERE
+   mod config moderne edit https://app.moderne.io --token mat-YOUR_TOKEN_HERE
    ```
 
-7. With the Moderne connection established, install recipes on your machine:
+7. With the Moderne connection established, install the recipe on your machine:
 
    ```shell
-   mod config recipes install moderne
+   mod config recipes moderne install VERSION_RECIPE_SPRING_BOOT
    ```
+   
+   :::tip
+   Alternatively you can sync all recipes available on Moderne with `mod config recipes moderne sync` although this can take a while to complete.
+   :::
 
 ### Configure the Spring PetClinic repository
 
@@ -210,9 +214,9 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
 
    > spring-projects/spring-petclinic@main
       Build output will be written to file:///Users/mikesol/Desktop/code/spring-petclinic/.moderne/build/20230921094850-s8Qfa/build.log
-      𓊍 Step 1 - build with Maven
-          Selected a Java 8 JDK.
-      𓊍 Step 2 - build resources using the native CLI
+      📶 Step 1 - build with Maven
+          Selected a Java 8 JDK
+      📶 Step 2 - build resources using the native CLI
       📈 Reported build metrics to Moderne
       ✅ Built LST file:///Users/mikesol/Desktop/code/spring-petclinic/.moderne/build/20230921094850-s8Qfa/spring-petclinic-20230921094920-ast.jar
    Built 1 repositories (30s)
