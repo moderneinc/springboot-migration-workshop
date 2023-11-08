@@ -207,7 +207,6 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
    Moderne CLI VERSION_MODERNE_CLI
-   Running in a local developer environment
 
    > Selecting repositories
 
@@ -223,6 +222,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
       📶 Step 2 - build resources using the native CLI
       📈 Reported build metrics to Moderne
       ✅ Built LST file:///Users/mikesol/Desktop/code/spring-petclinic/.moderne/build/20230921094850-s8Qfa/spring-petclinic-20230921094920-ast.jar
+      🧹 Cleaned 0 older builds.
    Built 1 repositories (30s)
 
    * What to do next
@@ -250,13 +250,12 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
     Moderne CLI VERSION_MODERNE_CLI
-    Running in a local developer environment
 
     > Selecting repositories
 
     > spring-projects/spring-petclinic@main
-    Selected 1 repositories
-    (0.48s)
+    Selected 1 repositories (0.48s)
+   
     > Running recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT
 
     > spring-projects/spring-petclinic@main
@@ -269,6 +268,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
         > Run mod study . --last-recipe-run --data-table <DATA-TABLE>  to examine data tables produced by this recipe
         > Run npm install -g diff2html-cli to produce patch files on subsequent runs that are easier to view
         > Run mod apply . --last-recipe-run  to apply the changes
+        > Run mod apply . --recipe-run 20230925102039-NVf33 to apply the changes
 
     MOD SUCCEEDED in (9m 38s)
    ```
@@ -1632,23 +1632,23 @@ mod build $HOME/workshop
   > spring-projects/spring-data-release@main
   > spring-projects/spring-hateoas-examples@main
   > spring-projects/spring-session-data-mongodb-examples@main
-  Selected 3 repositories
-  (0.36s)
+  Selected 3 repositories (0.36s)
+
   > Building LST(s)
 
   > spring-projects/spring-data-release@main
       Build output will be written to file:///Users/mikesol/Desktop/code/workshop/spring-projects/spring-data-release/.moderne/build/20230921102317-1wuaH/build.log
-      𓊍 Step 1 - download from Moderne
+      📶 Step 1 - download from Moderne
       ✅ Downloaded LST file:///Users/mikesol/Desktop/code/workshop/spring-projects/spring-data-release/.moderne/build/20230921102317-1wuaH/0-spring-data-release-20230921034129-ast.jar
       Cleaned 0 older builds.
   > spring-projects/spring-hateoas-examples@main
       Build output will be written to file:///Users/mikesol/Desktop/code/workshop/spring-projects/spring-hateoas-examples/.moderne/build/20230921102319-BBHxN/build.log
-      𓊍 Step 1 - download from Moderne
+      📶 Step 1 - download from Moderne
       ✅ Downloaded LST file:///Users/mikesol/Desktop/code/workshop/spring-projects/spring-hateoas-examples/.moderne/build/20230921102319-BBHxN/0-spring-hateoas-examples-20230921093801-ast.jar
       Cleaned 0 older builds.
   > spring-projects/spring-session-data-mongodb-examples@main
       Build output will be written to file:///Users/mikesol/Desktop/code/workshop/spring-projects/spring-session-data-mongodb-examples/.moderne/build/20230921102320-A1sUV/build.log
-      𓊍 Step 1 - download from Moderne
+      📶 Step 1 - download from Moderne
       ✅ Downloaded LST file:///Users/mikesol/Desktop/code/workshop/spring-projects/spring-session-data-mongodb-examples/.moderne/build/20230921102320-A1sUV/0-spring-session-data-mongodb-examples-20230921125257-ast.jar
       Cleaned 0 older builds.
   Built 3 repositories (3s)
@@ -1684,8 +1684,8 @@ mod run $HOME/workshop --recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE
   > spring-projects/spring-data-release@main
   > spring-projects/spring-hateoas-examples@main
   > spring-projects/spring-session-data-mongodb-examples@main
-  Selected 3 repositories
-  (0.4s)
+  Selected 3 repositories (0.4s)
+
   > Running recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT
 
   > spring-projects/spring-data-release@main
@@ -1704,6 +1704,7 @@ mod run $HOME/workshop --recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE
       > Run mod study . --last-recipe-run --data-table <DATA-TABLE>  to examine data tables produced by this recipe
       > Run npm install -g diff2html-cli to produce patch files on subsequent runs that are easier to view
       > Run mod apply . --last-recipe-run  to apply the changes
+      > Run mod apply . --recipe-run 20230921102510-bqlud to apply the changes
 
   MOD SUCCEEDED in (1m 42s)
 ```
