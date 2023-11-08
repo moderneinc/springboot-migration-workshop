@@ -88,7 +88,7 @@ here](https://docs.openrewrite.org/running-recipes/running-rewrite-on-a-gradle-p
 1. For simplicity, we've included an [init.gradle](init.gradle) file in this
    folder that contains the Spring Boot migration recipe as well as the
    OpenRewrite dependencies. Please copy [this file](init.gradle) to the
-   Spring PetClinic repository you have checked out locally.
+   Spring PetClinic repository you have checked out locally and rename it to `init.gradle`.
 
 2. Now due to some [Guava incompatibility issues with Gradle 6](https://github.com/google/guava/releases/tag/v32.1.0)
    specifically, and Wro4j being incompatible with Gradle 7, we have to first awkwardly downgrade to Gradle 5.
@@ -1715,7 +1715,7 @@ fixed.
    ```
 
 2. We'll change things up a bit by changing the build file rather than using an `init.gradle` file.
-   Download the [`configure-build.patch`](configure-build.patch) file to the root of the Spring PetClinic repository.
+   Download the [`configure-build.patch`](configure-build.patch) file to the root of the Spring PetClinic repository and rename it to `configure-build.patch`.
 
 3. Apply the patch file to automatically configure the rewrite Gradle plugin. We recommend that you look at the
    differences to understand how it is configured:
