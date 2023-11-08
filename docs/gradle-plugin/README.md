@@ -1715,7 +1715,7 @@ fixed.
    ```
 
 2. We'll change things up a bit by changing the build file rather than using an `init.gradle` file.
-   Download the [`configure-build.patch`](configure-build.patch) file to the root of the Spring PetClinic repository and rename it to `configure-build.patch`
+   Download the [`configure-build.patch`](configure-build.patch) file to the root of the Spring PetClinic repository and rename it to `configure-build.patch`.
 
 3. Apply the patch file to automatically configure the rewrite Gradle plugin. We recommend that you look at the
    differences to understand how it is configured:
