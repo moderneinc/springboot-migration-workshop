@@ -23,7 +23,6 @@ For a recap and detailed instructions see each of the indivual exercises:
 - [Gradle plugin](../gradle-plugin)
 - [Moderne CLI](../moderne-cli)
 - [Spring Tools](../spring-tools)
-- [Spring Boot Migrator](../spring-boot-migrator)
 
 You will want
 to [run the VERSION_MIGRATE_SPRING_BOOT recipe](https://docs.openrewrite.org/recipes/java/spring/boot3/VERSION_LINK_SPRING_BOOT),
