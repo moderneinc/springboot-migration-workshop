@@ -1628,23 +1628,23 @@ mod build $HOME/workshop
   > spring-projects/spring-data-release@main
   > spring-projects/spring-hateoas-examples@main
   > spring-projects/spring-session-data-mongodb-examples@main
-  Selected 3 repositories
-  (0.36s)
+  Selected 3 repositories (0.36s)
+
   > Building LST(s)
 
   > spring-projects/spring-data-release@main
       Build output will be written to file:///Users/mikesol/Desktop/code/workshop/spring-projects/spring-data-release/.moderne/build/20230921102317-1wuaH/build.log
-      𓊍 Step 1 - download from Moderne
+      📶 Step 1 - download from Moderne
       ✅ Downloaded LST file:///Users/mikesol/Desktop/code/workshop/spring-projects/spring-data-release/.moderne/build/20230921102317-1wuaH/0-spring-data-release-20230921034129-ast.jar
       Cleaned 0 older builds.
   > spring-projects/spring-hateoas-examples@main
       Build output will be written to file:///Users/mikesol/Desktop/code/workshop/spring-projects/spring-hateoas-examples/.moderne/build/20230921102319-BBHxN/build.log
-      𓊍 Step 1 - download from Moderne
+      📶 Step 1 - download from Moderne
       ✅ Downloaded LST file:///Users/mikesol/Desktop/code/workshop/spring-projects/spring-hateoas-examples/.moderne/build/20230921102319-BBHxN/0-spring-hateoas-examples-20230921093801-ast.jar
       Cleaned 0 older builds.
   > spring-projects/spring-session-data-mongodb-examples@main
       Build output will be written to file:///Users/mikesol/Desktop/code/workshop/spring-projects/spring-session-data-mongodb-examples/.moderne/build/20230921102320-A1sUV/build.log
-      𓊍 Step 1 - download from Moderne
+      📶 Step 1 - download from Moderne
       ✅ Downloaded LST file:///Users/mikesol/Desktop/code/workshop/spring-projects/spring-session-data-mongodb-examples/.moderne/build/20230921102320-A1sUV/0-spring-session-data-mongodb-examples-20230921125257-ast.jar
       Cleaned 0 older builds.
   Built 3 repositories (3s)
