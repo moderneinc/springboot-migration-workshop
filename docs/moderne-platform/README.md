@@ -41,7 +41,7 @@ configure anything.
    Common static analysis issues is a composition of other recipes. You can restrict the ones you want to apply to see the results
    of a particular recipe, by using [the recipe builder](https://app.moderne.io/recipes/builder).
 
-   ![recipe](assets/sonarqube-recipes.png)
+   ![recipe](assets/common-static-analysis.png)
 5. To begin running the recipe, click on the `DRY RUN` button.
 
 6. You will now be redirected to a page that shows all the relevant recipe run information. Once it's finished, you
