@@ -203,7 +203,6 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
    Moderne CLI VERSION_MODERNE_CLI
-   Running in a local developer environment
 
    > Selecting repositories
 
@@ -219,6 +218,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
       📶 Step 2 - build resources using the native CLI
       📈 Reported build metrics to Moderne
       ✅ Built LST file:///Users/mikesol/Desktop/code/spring-petclinic/.moderne/build/20230921094850-s8Qfa/spring-petclinic-20230921094920-ast.jar
+      🧹 Cleaned 0 older builds.
    Built 1 repositories (30s)
 
    * What to do next
@@ -246,13 +246,12 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
        ▌▟▀  ▛▀▀▀▀▜
        ▀▀▀▀▀▀▀▀▀▀▀
     Moderne CLI VERSION_MODERNE_CLI
-    Running in a local developer environment
 
     > Selecting repositories
 
     > spring-projects/spring-petclinic@main
-    Selected 1 repositories
-    (0.48s)
+    Selected 1 repositories (0.48s)
+   
     > Running recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT
 
     > spring-projects/spring-petclinic@main
@@ -265,6 +264,7 @@ Now that the repository is configured, it's time to migrate it to Spring Boot 3 
         > Run mod study . --last-recipe-run --data-table <DATA-TABLE>  to examine data tables produced by this recipe
         > Run npm install -g diff2html-cli to produce patch files on subsequent runs that are easier to view
         > Run mod apply . --last-recipe-run  to apply the changes
+        > Run mod apply . --recipe-run 20230925102039-NVf33 to apply the changes
 
     MOD SUCCEEDED in (9m 38s)
    ```
