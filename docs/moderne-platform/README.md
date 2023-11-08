@@ -17,24 +17,31 @@ configure anything.
 
 ## Running recipes with the Moderne platform
 
-1. Once you're logged in to [Moderne](https://app.moderne.io/), you will see a `Default` group in the top
-   right-hand corner of your screen.
+1. Once you're logged in to [Moderne](https://app.moderne.io/), you will see that the `Default` organization (a grouping of repositories)
+   is selected in the sidebar.
 
    ![context menu](assets/menu.png)
 
-2. With the repository group selected, you can go to the [Moderne Organizations & repositories](https://app.moderne.io/organizations)
-   and see what repositories are included. There are more than 100 repositories from Netflix, spring-cloud
+2. With the organization selected, you can go to the [repositories](https://app.moderne.io/organizations) page
+   and see what repositories are included. There are a few repositories selected from Netflix, spring-cloud
    and spring-projects GitHub organizations.
 
    ![organizations](assets/organizations.png)
-3. With the repository group selected, you can go to the [Moderne Marketplace](https://app.moderne.io/marketplace). From there, click on
+
+   :::tip
+   The default group has a small set of repositories so recipes will run quickly, if you would rather see more results you
+   can choose to use the `Netflix + Spring` organization which consists of more than 100 repositories
+   by clicking on Default and selecting the new orginization.
+   :::
+   
+3. With the organization selected, you can go to the [Moderne Marketplace](https://app.moderne.io/marketplace). From there, click on
    `Static analysis and remediation`, and finally select `Common static analysis issues`.
 
 4. Click on the `More Details` link. From there, you can find what are the different sonarqube rules under the recipe list. This is because
    Common static analysis issues is a composition of other recipes. You can restrict the ones you want to apply to see the results
    of a particular recipe, by using [the recipe builder](https://app.moderne.io/recipes/builder).
 
-   ![recipe](assets/sonarqube-recipes.png)
+   ![recipe](assets/common-static-analysis.png)
 5. To begin running the recipe, click on the `DRY RUN` button.
 
 6. You will now be redirected to a page that shows all the relevant recipe run information. Once it's finished, you
