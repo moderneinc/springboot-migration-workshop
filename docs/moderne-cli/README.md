@@ -1680,8 +1680,8 @@ mod run $HOME/workshop --recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE
   > spring-projects/spring-data-release@main
   > spring-projects/spring-hateoas-examples@main
   > spring-projects/spring-session-data-mongodb-examples@main
-  Selected 3 repositories
-  (0.4s)
+  Selected 3 repositories (0.4s)
+
   > Running recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE_SPRING_BOOT
 
   > spring-projects/spring-data-release@main
@@ -1700,6 +1700,7 @@ mod run $HOME/workshop --recipe org.openrewrite.java.spring.boot3.VERSION_RECIPE
       > Run mod study . --last-recipe-run --data-table <DATA-TABLE>  to examine data tables produced by this recipe
       > Run npm install -g diff2html-cli to produce patch files on subsequent runs that are easier to view
       > Run mod apply . --last-recipe-run  to apply the changes
+      > Run mod apply . --recipe-run 20230921102510-bqlud to apply the changes
 
   MOD SUCCEEDED in (1m 42s)
 ```
