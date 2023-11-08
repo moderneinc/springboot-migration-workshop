@@ -47,9 +47,9 @@ Boot 2 to Spring Boot 3.
   On MacOS you can also use homebrew: `brew install moderneinc/moderne/mod` and skip step 4.
   :::
 
-4. Once you have it downloaded, save it somewhere that your terminal can access. If you want it available in each of your terminal windows, consider updating your `PATH` to point to this location or aliasing `mod` to the location of the CLI. You could also save the file to a directory that's already on your `PATH` such as a `/usr/bin` directory.
+3. Once you have it downloaded, save it somewhere that your terminal can access. If you want it available in each of your terminal windows, consider updating your `PATH` to point to this location or aliasing `mod` to the location of the CLI. You could also save the file to a directory that's already on your `PATH` such as a `/usr/bin` directory.
 
-5. Ensure you can run the CLI by typing `mod`.
+4. Ensure you can run the CLI by typing `mod`.
 
   <details>
   <summary>If everything is set up correctly, you should see output similar to the following:</summary>
