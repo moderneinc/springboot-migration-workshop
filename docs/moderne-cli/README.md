@@ -31,7 +31,7 @@ Boot 2 to Spring Boot 3.
    [moderne-cli-VERSION_MODERNE_CLI](https://pkgs.dev.azure.com/moderneinc/moderne_public/_packaging/staging/maven/v1/io/moderne/moderne-cli-macos/VERSION_MODERNE_CLI/moderne-cli-macos-VERSION_MODERNE_CLI)
 
    :::tip
-   You can also use homebrew: `brew install moderneinc/moderne/mod` and skip step 4.
+   You can also use homebrew: `brew install moderneinc/moderne/mod` and skip step 3.
    :::
 
    </TabItem>
