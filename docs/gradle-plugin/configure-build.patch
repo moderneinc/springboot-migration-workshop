@@ -18,7 +18,7 @@ index c517cfc..c040d7d 100644
    id 'org.springframework.boot' version '2.4.5'
    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
    id 'java'
-+  id 'org.openrewrite.rewrite' version '6.4.3'
++  id 'org.openrewrite.rewrite' version 'VERSION_REWRITE_GRADLE_PLUGIN'
  }
 
  apply plugin: 'java'
