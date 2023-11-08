@@ -88,9 +88,13 @@ here](https://docs.openrewrite.org/running-recipes/running-rewrite-on-a-gradle-p
 1. For simplicity, we've included an [init.gradle](init.gradle) file in this
    folder that contains the Spring Boot migration recipe as well as the
    OpenRewrite dependencies. Please copy [this file](init.gradle) to the
-   Spring PetClinic repository you have checked out locally.
+   Spring PetClinic repository you have checked out locally and rename it to `init.gradle`.
 
-2. Now due to some [Guava incompatibility issues with Gradle 6](https://github.com/google/guava/releases/tag/v32.1.0)
+   ```shell
+   curl --output init.gradle <url>
+   ```
+
+3. Now due to some [Guava incompatibility issues with Gradle 6](https://github.com/google/guava/releases/tag/v32.1.0)
    specifically, and Wro4j being incompatible with Gradle 7, we have to first awkwardly downgrade to Gradle 5.
 
    ```shell
@@ -99,7 +103,7 @@ here](https://docs.openrewrite.org/running-recipes/running-rewrite-on-a-gradle-p
 
    Don't worry; we will upgrade Gradle automatically as part of the recipe run, to be compatible with Java 17.
 
-3. With `init.gradle` copied over, if you run `rewriteRun`, you will apply the migration recipe:
+4. With `init.gradle` copied over, if you run `rewriteRun`, you will apply the migration recipe:
 
    ```shell
    ./gradlew --info --init-script init.gradle rewriteRun
